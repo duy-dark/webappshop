@@ -1,9 +1,10 @@
+
 #modalForm{
 	display:none ;
 	position: fixed;
-	z-index: 1;
+	z-index: 2;
 	width: 400px;
-	height: 300px;
+	height: 280px;
 	left: 50%;
     transform: translateX(-50%);
 	background-color: #FFFFFF;
@@ -82,5 +83,18 @@ border-radius: 6px 6px 6px 6px;
 #closeTaiKhoan:hover{
 	background-color: #F1F1F1;
 color:red;
+}
 
+#btnRegister{
+position: absolute;
+top:400px;
+left:530px;
+}
+#btnLogin{
+	position: absolute;
+	top:210px;
+	left:270px;
+}
+.pos{
+	z-index: 1 ;
 }
