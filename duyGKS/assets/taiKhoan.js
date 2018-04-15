@@ -1,4 +1,5 @@
 
+$(document).ready(function(){
 
 $("#dangKi").click(function(){
 $("#dangNhapContent").css({"display":"none"});
@@ -19,9 +20,18 @@ $("#dangNhap").click(function(){
 
 $("#taiKhoan").click(function(){
 $("#modalForm").css({"display":"block"});
+$("#modalForm form")[0].reset();
+$("#modalForm form")[1].reset();
+	$("#dangKi").css({"background-color":"#FFFFFF","color":"black"});
+	$("#dangKiContent").css({"display":"none"});
+	$("#dangNhapContent").css({"display":"block"});
+	$("#modalForm").css({"height":"280px","width":"400px"});
+	$("#dangNhap").css({"background-color":"#F1F1F1","color":"green"});
 });
 
 $("#closeTaiKhoan").on('click',function(){
 	
-$("#modalForm").css({"display":"inline-block"});
+$(this).closest("#modalForm").css({"display":"none"});
+});
+
 });
