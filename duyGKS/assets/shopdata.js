@@ -1,0 +1,1 @@
+// FILE CHỨA DỮ LIỆU MÁY TÍNH TẠM THỜI 
