@@ -86,14 +86,14 @@ form {
     margin-top: 5px;
 }
 #header .fs-hdmn {
+  list-style: none;
   position: absolute;
-  top: 0;
+  top: 20px;
   right: 0;
   text-align: right;
 }
-.fs-hdmn ul {
-  list-style: none !important;
-}
+
+
 #header div li img{
      position: relative;
     min-height: 1px;

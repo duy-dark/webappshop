@@ -1,3 +1,14 @@
+#taiKhoan{
+	position: absolute;
+	top: 25px;
+	left:40px;
+	width: 240px;
+	list-style:none;
+}
+#taiKhoan img{
+	height: 40px;
+	width: 60px !important;;
+}
 
 #modalForm{
 	display: none;
