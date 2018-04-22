@@ -499,7 +499,7 @@ a.button:hover, input.button:hover {
 
 
 
-/*Dropdown menu + item dropdown*/
+/******************************Dropdown menu + item dropdown************************/
 .Brand {
   position: relative;
   display: inline-block;
@@ -521,4 +521,21 @@ a.button:hover, input.button:hover {
 .Dropdown-Content a:hover {background-color: #f1f1f1}
 .Brand:hover .Dropdown-Content{
   display: block;
+}
+/******************************LIen he************************/
+.contact-info {
+    overflow: auto;
+}
+#content .content .left {
+    float: left;
+    width: 49%;
+}
+#content h4 {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding-bottom: 7px;
 }
