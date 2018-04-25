@@ -11,9 +11,7 @@
 }
 
 #modalForm{
-	display: none;
 	position: fixed;
-	z-index: 2;
 	width: 400px;
 	height: 280px;
 	left: 50%;
@@ -119,4 +117,14 @@ left:530px;
 }
 .pos{
 	z-index: 1 ;
+}
+.wrapModalForm{
+	display: none;
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 2;
 }

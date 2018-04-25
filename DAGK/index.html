@@ -14,8 +14,8 @@
         <div id="header">
             <div id="logo">
                 <a href="../">
-				<img src="assets/image/logo2.png">
-			</a>
+                <img src="assets/image/logo2.png">
+            </a>
             </div>
             <form action="" class="search-form" id="search_mini_form">
                 <div id="search">
@@ -33,115 +33,117 @@
                     </li>
                 </ul>
                 <li id="taiKhoan">
-                        <a href="#">
+                    <a href="#">
                     <img class="header-right-image" src="assets/image/user.png" alt="">
                     <span>Tài Khoản</span>
-                		</a>
-                    </li>
-                <div id="modalForm">
-                    <div class="font" id="navTaiKhoan">
-                        <span id="dangNhap">Đăng nhập</span>
-                        <span id="dangKi">Đăng kí</span>
-                        <span id="closeTaiKhoan">&times</span>
-                    </div>
-                    <div id="dangNhapContent">
-                        <form class=" form-horizontal" data-toggle="validator" role="form">
-                            <br>
-                            <div class="form-group">
-                                <label for="userName" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User Name:</label>
-                                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
-                                    <input type="text" class="form-control" id="userName" placeholder="Enter your user name" data-error="Vui lòng nhập tên đăng nhập" required>
-                                    <p class="help-block with-errors"> </p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
-                                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
-                                    <input type="password" class="form-control" id="password" placeholder="Enter your password" data-error="Vui lòng nhập password" required>
-                                    <p class="help-block with-errors"> </p>
-                                </div>
-                            </div>
-                            <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8"></span>
-                            <button class="btn-success font" id="btnLogin">Login</button>
-                        </form>
-                    </div>
-                    <div id="dangKiContent">
-                        <form class=" form-horizontal" data-toggle="validator" role="form">
-                            <div id="dkiLeft" class=" col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        </a>
+                </li>
+                <div class="wrapModalForm">
+                    <div id="modalForm">
+                        <div class="font" id="navTaiKhoan">
+                            <span id="dangNhap">Đăng nhập</span>
+                            <span id="dangKi">Đăng kí</span>
+                            <span id="closeTaiKhoan">&times</span>
+                        </div>
+                        <div id="dangNhapContent">
+                            <form class=" form-horizontal" data-toggle="validator" role="form">
                                 <br>
                                 <div class="form-group">
-                                    <label for="hoTen" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Họ Tên:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="text" class="form-control" id="hoTen" placeholder="Nhập họ tên của bạn" data-error="Vui lòng nhập họ tên của bạn" required>
+                                    <label for="userName" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User Name:</label>
+                                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
+                                        <input type="text" class="form-control" id="userName" placeholder="Enter your user name" data-error="Vui lòng nhập tên đăng nhập" required>
                                         <p class="help-block with-errors"> </p>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="passwordDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="password" class="form-control" id="passwordDk" placeholder="Nhập password của bạn" data-error="Vui lòng nhập password của bạn" required>
+                                    <label for="password" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
+                                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
+                                        <input type="password" class="form-control" id="password" placeholder="Enter your password" data-error="Vui lòng nhập password" required>
                                         <p class="help-block with-errors"> </p>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="passwordDk2" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Confirm Password:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="password" class="form-control" id="passwordDk2" placeholder="Nhập lại password của bạn" data-error="Vui lòng nhập lại password của bạn" required>
-                                        <p class="help-block with-errors"> </p>
+                                <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8"></span>
+                                <button class="btn-success font" id="btnLogin">Login</button>
+                            </form>
+                        </div>
+                        <div id="dangKiContent">
+                            <form class=" form-horizontal" data-toggle="validator" role="form">
+                                <div id="dkiLeft" class=" col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="hoTen" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Họ Tên:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="text" class="form-control" id="hoTen" placeholder="Nhập họ tên của bạn" data-error="Vui lòng nhập họ tên của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="password" class="form-control" id="passwordDk" placeholder="Nhập password của bạn" data-error="Vui lòng nhập password của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordDk2" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Confirm Password:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="password" class="form-control" id="passwordDk2" placeholder="Nhập lại password của bạn" data-error="Vui lòng nhập lại password của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userNameDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User name:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="text" class="form-control" id="userNameDk" placeholder="Nhập tên đăng nhập của bạn" data-error="Vui lòng nhập tên đăng nhập của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gioiTih" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Giới tính:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <select class="form-control">
+                                                <option>Nam</option>
+                                                <option>Nữ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="dkiRight col-xs-6" class="col-sm-6 col-md-6 col-lg-6">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="ngaySinh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Ngày Sinh:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="date" class="form-control" id="ngaySinh" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sdt" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Số điện thoại:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại của bạn" data-error="Vui lòng nhập số điện thoại của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Email:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" data-error="Vui lòng nhập email của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cmnd" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">CMND:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="text" class="form-control" id="cmnd" placeholder="Nhập số CMND của bạn" data-error="Vui lòng nhập số CMND của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="userNameDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User name:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="text" class="form-control" id="userNameDk" placeholder="Nhập tên đăng nhập của bạn" data-error="Vui lòng nhập tên đăng nhập của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
+                                    <button class="btn-success font" id="btnRegister">Register</button>
                                 </div>
-                                <div class="form-group">
-                                    <label for="gioiTih" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Giới tính:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <select class="form-control">
-                                            <option>Nam</option>
-                                            <option>Nữ</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="dkiRight col-xs-6" class="col-sm-6 col-md-6 col-lg-6">
-                                <br>
-                                <div class="form-group">
-                                    <label for="ngaySinh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Ngày Sinh:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="date" class="form-control" id="ngaySinh" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sdt" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Số điện thoại:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại của bạn" data-error="Vui lòng nhập số điện thoại của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Email:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" data-error="Vui lòng nhập email của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cmnd" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">CMND:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="text" class="form-control" id="cmnd" placeholder="Nhập số CMND của bạn" data-error="Vui lòng nhập số CMND của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn-success font" id="btnRegister">Register</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,9 +153,9 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">
-		      	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-		      	&nbsp;&nbsp;<b>Trang Chủ</b>
-		      </a>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                &nbsp;&nbsp;<b>Trang Chủ</b>
+              </a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="Brand">
@@ -205,11 +207,11 @@
                         </div>
                         <!-- Carousel controls -->
                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-	                    <span class="glyphicon glyphicon-chevron-left"></span>
-	                </a>
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
                         <a class="carousel-control right" href="#myCarousel" data-slide="next">
-	                    <span class="glyphicon glyphicon-chevron-right"></span>
-	                </a>
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                     </div>
                 </div>
                 <div class="box">
@@ -344,8 +346,8 @@
                     <div class="row">
                         <div class="col-md-3 ">
                             <a href="../">
-							<img src="assets/image/logo2.png" alt="">
-						</a>
+                            <img src="assets/image/logo2.png" alt="">
+                        </a>
                             <br>
                             <br>
                             <span style="color: #fff;" class="glyphicon glyphicon-earphone" aria-hidden="true"> (028)22222222</span>

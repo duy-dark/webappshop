@@ -39,110 +39,112 @@
                     <span>Tài Khoản</span>
                         </a>
                 </li>
-                <div id="modalForm">
-                    <div class="font" id="navTaiKhoan">
-                        <span id="dangNhap">Đăng nhập</span>
-                        <span id="dangKi">Đăng kí</span>
-                        <span id="closeTaiKhoan">&times</span>
-                    </div>
-                    <div id="dangNhapContent">
-                        <form class=" form-horizontal" data-toggle="validator" role="form">
-                            <br>
-                            <div class="form-group">
-                                <label for="userName" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User Name:</label>
-                                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
-                                    <input type="text" class="form-control" id="userName" placeholder="Enter your user name" data-error="Vui lòng nhập tên đăng nhập" required>
-                                    <p class="help-block with-errors"> </p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
-                                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
-                                    <input type="password" class="form-control" id="password" placeholder="Enter your password" data-error="Vui lòng nhập password" required>
-                                    <p class="help-block with-errors"> </p>
-                                </div>
-                            </div>
-                            <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8"></span>
-                            <button class="btn-success font" id="btnLogin">Login</button>
-                        </form>
-                    </div>
-                    <div id="dangKiContent">
-                        <form class=" form-horizontal" data-toggle="validator" role="form">
-                            <div id="dkiLeft" class=" col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="wrapModalForm">
+                    <div id="modalForm">
+                        <div class="font" id="navTaiKhoan">
+                            <span id="dangNhap">Đăng nhập</span>
+                            <span id="dangKi">Đăng kí</span>
+                            <span id="closeTaiKhoan">&times</span>
+                        </div>
+                        <div id="dangNhapContent">
+                            <form class=" form-horizontal" data-toggle="validator" role="form">
                                 <br>
                                 <div class="form-group">
-                                    <label for="hoTen" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Họ Tên:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="text" class="form-control" id="hoTen" placeholder="Nhập họ tên của bạn" data-error="Vui lòng nhập họ tên của bạn" required>
+                                    <label for="userName" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User Name:</label>
+                                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
+                                        <input type="text" class="form-control" id="userName" placeholder="Enter your user name" data-error="Vui lòng nhập tên đăng nhập" required>
                                         <p class="help-block with-errors"> </p>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="passwordDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="password" class="form-control" id="passwordDk" placeholder="Nhập password của bạn" data-error="Vui lòng nhập password của bạn" required>
+                                    <label for="password" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
+                                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
+                                        <input type="password" class="form-control" id="password" placeholder="Enter your password" data-error="Vui lòng nhập password" required>
                                         <p class="help-block with-errors"> </p>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="passwordDk2" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Confirm Password:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="password" class="form-control" id="passwordDk2" placeholder="Nhập lại password của bạn" data-error="Vui lòng nhập lại password của bạn" required>
-                                        <p class="help-block with-errors"> </p>
+                                <span class="col-xs-8 col-sm-8 col-md-8 col-lg-8"></span>
+                                <button class="btn-success font" id="btnLogin">Login</button>
+                            </form>
+                        </div>
+                        <div id="dangKiContent">
+                            <form class=" form-horizontal" data-toggle="validator" role="form">
+                                <div id="dkiLeft" class=" col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="hoTen" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Họ Tên:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="text" class="form-control" id="hoTen" placeholder="Nhập họ tên của bạn" data-error="Vui lòng nhập họ tên của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="password" class="form-control" id="passwordDk" placeholder="Nhập password của bạn" data-error="Vui lòng nhập password của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordDk2" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Confirm Password:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="password" class="form-control" id="passwordDk2" placeholder="Nhập lại password của bạn" data-error="Vui lòng nhập lại password của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userNameDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User name:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                                            <input type="text" class="form-control" id="userNameDk" placeholder="Nhập tên đăng nhập của bạn" data-error="Vui lòng nhập tên đăng nhập của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gioiTih" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Giới tính:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <select class="form-control">
+                                                <option>Nam</option>
+                                                <option>Nữ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="dkiRight col-xs-6" class="col-sm-6 col-md-6 col-lg-6">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="ngaySinh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Ngày Sinh:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="date" class="form-control" id="ngaySinh" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sdt" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Số điện thoại:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại của bạn" data-error="Vui lòng nhập số điện thoại của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Email:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" data-error="Vui lòng nhập email của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cmnd" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">CMND:</label>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="text" class="form-control" id="cmnd" placeholder="Nhập số CMND của bạn" data-error="Vui lòng nhập số CMND của bạn" required>
+                                            <p class="help-block with-errors"> </p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="userNameDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User name:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
-                                        <input type="text" class="form-control" id="userNameDk" placeholder="Nhập tên đăng nhập của bạn" data-error="Vui lòng nhập tên đăng nhập của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
+                                    <button class="btn-success font" id="btnRegister">Register</button>
                                 </div>
-                                <div class="form-group">
-                                    <label for="gioiTih" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Giới tính:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <select class="form-control">
-                                            <option>Nam</option>
-                                            <option>Nữ</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="dkiRight col-xs-6" class="col-sm-6 col-md-6 col-lg-6">
-                                <br>
-                                <div class="form-group">
-                                    <label for="ngaySinh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Ngày Sinh:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="date" class="form-control" id="ngaySinh" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sdt" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Số điện thoại:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại của bạn" data-error="Vui lòng nhập số điện thoại của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Email:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" data-error="Vui lòng nhập email của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cmnd" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">CMND:</label>
-                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                        <input type="text" class="form-control" id="cmnd" placeholder="Nhập số CMND của bạn" data-error="Vui lòng nhập số CMND của bạn" required>
-                                        <p class="help-block with-errors"> </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn-success font" id="btnRegister">Register</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,7 +160,7 @@
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="Brand">
-                            <a  href="#"><b>Sản Phẩm</b></a>
+                            <a href="#"><b>Sản Phẩm</b></a>
                             <div class="Dropdown-Content">
                                 <a href="#">Acer</a>
                                 <a href="#">Apple</a>
@@ -176,168 +178,168 @@
             </nav>
         </div>
     </div>
-     <div id="Brand-goods">
-            <div id="Standard" class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="border-bottom: none;">
-                <p><b>Bộ lọc</b></p>
-                <div id="pride">
-                    <li>
-                        <b>Mức giá</b>
-                        <span class="glyphicon glyphicon-plus" style="float: right;"></span>
-                    </li>
-                    <div id="standard-option">
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Tất cả</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>trên 20 triệu</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>15 - 20 triệu</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>10 - 25 triệu</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>5 - 10 triệu</span>
-                        </label>
-                    </div>
-                </div>
-                <div id="cpu">
-                    <li>
-                        <b>CPU</b>
-                        <span class="glyphicon glyphicon-plus"  style="float: right;"></span>
-                    </li>
-                    <div id="standard-option">
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Tất cả</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Intel core I3</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Intel core I5</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Intel core I7</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Intel core IM</span>
-                        </label>    
-                    </div>
-                </div>
-                <div id="ram">
-                    <li>
-                        <b>Ram</b>
-                        <span class="glyphicon glyphicon-plus"  style="float: right;"></span>
-                    </li>
-                    <div id="standard-option">
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Tất cả</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>4 Gb</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>8 Gb</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>16 Gb</span>
-                        </label>   
-                    </div>
-                </div>
-                <div id="graphic-card">
-                    <li>
-                        <b>Card đồ họa</b>
-                        <span class="glyphicon glyphicon-plus"  style="float: right;"></span>
-                    </li>
-                    <div id="standard-option">
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Tất cả</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>NVIDIA Gerforce Series</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>AMD Series</span>
-                        </label>
-                        <label id="pick">
-                            <input type="checkbox" name="lappride">
-                            <span>Intel HD Graphic</span>
-                        </label> 
-                    </div>
+    <div id="Brand-goods">
+        <div id="Standard" class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="border-bottom: none;">
+            <p><b>Bộ lọc</b></p>
+            <div id="pride">
+                <li>
+                    <b>Mức giá</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Tất cả</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>trên 20 triệu</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>15 - 20 triệu</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>10 - 25 triệu</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>5 - 10 triệu</span>
+                    </label>
                 </div>
             </div>
-            <div id="Items" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                    <div class="name"><a href="#">Dell Ins N5378</a></div>
-                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                    <div class="describe">
-                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                        <p><strong>HĐH: Window 10</strong></p>
-                        <p><strong>Nặng: 1.6 Kg</strong></p>
-                    </div>
-                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                    <div class="name"><a href="#">Dell Ins N5378</a></div>
-                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                    <div class="describe">
-                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                        <p><strong>HĐH: Window 10</strong></p>
-                        <p><strong>Nặng: 1.6 Kg</strong></p>
-                    </div>
-                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                    <div class="name"><a href="#">Dell Ins N5378</a></div>
-                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                    <div class="describe">
-                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                        <p><strong>HĐH: Window 10</strong></p>
-                        <p><strong>Nặng: 1.6 Kg</strong></p>
-                    </div>
-                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                    <div class="name"><a href="#">Dell Ins N5378</a></div>
-                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                    <div class="describe">
-                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                        <p><strong>HĐH: Window 10</strong></p>
-                        <p><strong>Nặng: 1.6 Kg</strong></p>
-                    </div>
-                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+            <div id="cpu">
+                <li>
+                    <b>CPU</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Tất cả</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Intel core I3</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Intel core I5</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Intel core I7</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Intel core IM</span>
+                    </label>
                 </div>
             </div>
+            <div id="ram">
+                <li>
+                    <b>Ram</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Tất cả</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>4 Gb</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>8 Gb</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>16 Gb</span>
+                    </label>
+                </div>
+            </div>
+            <div id="graphic-card">
+                <li>
+                    <b>Card đồ họa</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Tất cả</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>NVIDIA Gerforce Series</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>AMD Series</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Intel HD Graphic</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="Items" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                <div class="name"><a href="#">Dell Ins N5378</a></div>
+                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                <div class="describe">
+                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                    <p><strong>HĐH: Window 10</strong></p>
+                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                </div>
+                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                <div class="name"><a href="#">Dell Ins N5378</a></div>
+                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                <div class="describe">
+                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                    <p><strong>HĐH: Window 10</strong></p>
+                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                </div>
+                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                <div class="name"><a href="#">Dell Ins N5378</a></div>
+                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                <div class="describe">
+                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                    <p><strong>HĐH: Window 10</strong></p>
+                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                </div>
+                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                <div class="name"><a href="#">Dell Ins N5378</a></div>
+                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                <div class="describe">
+                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                    <p><strong>HĐH: Window 10</strong></p>
+                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                </div>
+                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+            </div>
+        </div>
     </div>
     <footer>
         <footer class="main">
