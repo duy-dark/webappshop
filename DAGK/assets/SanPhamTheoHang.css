@@ -1,0 +1,72 @@
+#Brand-goods {
+	margin:0 auto;
+	width: 1200px;
+	list-style-type: none;
+	overflow: auto;
+}
+#Brand-goods div{
+	background-color: white;
+}
+/*bo loc san pham*/
+	#Brand-goods #Standard{
+		margin-right: 5px;
+		width: 220px;
+		float: left;	
+	}
+	#Brand-goods #Standard div{
+		border-bottom: 0.5px solid gray;
+	}
+	#Brand-goods #Standard span{
+		margin-left: 10px;
+	}
+		#Brand-goods #Standard #standard-option{
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+		#Brand-goods #Standard #standard-option label{
+			display: block;
+		}
+/*hien thi san pham*/
+	#Brand-goods #Items{
+		margin-left: 5px;
+		width: 970px;
+		float: right;
+	}
+		#Brand-goods #Items > div{
+			display: inline-block;
+		    /*vertical-align: top;
+		    marker-top: 20px;*/
+		    margin-top: 10px;
+		    margin-bottom: 20px;
+		    background: #fff;
+		    text-align: center;
+		    padding-bottom: 10px;
+		    padding-left: 10px;
+		    color: #666;
+		}
+		#Brand-goods #Items > div:hover{
+			box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+		}
+		#Brand-goods .image {
+		    display: block;
+		    margin-bottom: 5px;
+		}
+		 #Brand-goods .price {
+		    font-size: 12px;
+		    display: block;
+		    font-weight: normal;
+		    margin: 7px 0;
+		    padding: 0 8px;
+		    color: #F15A23;
+		}
+		#Brand-goods .price-new {
+		    font-weight: normal;
+		}
+		.box .box-category {
+		    list-style: none;
+		}
+		.box-category ul, .list-item {
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+		}
