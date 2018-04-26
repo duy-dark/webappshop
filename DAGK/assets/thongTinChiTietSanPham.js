@@ -46,3 +46,11 @@ $(".menu-dgsp").click(function() {
         $("#danhGiaSanPham").css('display','block');
     $("#thongTinChiTiet").css('display','none');
 });
+$(".luotThich").hover(function(){
+$(".luotThich img").attr('src','assets/image/heart2.png');
+$(".luotThich").css({"color":"red"});
+},function(){
+$(".luotThich img").attr('src','assets/image/heart.png');
+$(".luotThich").css({"color":"black"});
+}
+);
