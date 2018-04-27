@@ -130,9 +130,11 @@
 						}
 		#User-content #User-Infor{
 			width: 880px;
-			height: 700px;
 			padding-bottom: 10px;
 		}
+			#User-content #User-Infor #Infor-Content{
+				margin-bottom: 20px;
+			}
 			#User-content #User-Infor #Infor-Content div{
 				font-size: 18px;
 				margin-left: 20px;
@@ -146,9 +148,37 @@
 				width: 200px;
 			}
 			#User-content #User-Infor #Infor-Content input{
+				color: #585858;
 				width: 300px;
+				border-radius: 5px;
 			}
 				#User-content #User-Infor #Infor-Content #Account-Infor{
 					border-bottom: 1px solid gray;
 					padding-bottom: 30px;
 				}
+			#User-content #User-Infor #history-orders{
+				border-top: 1px solid gray;
+				padding-top: 10px;
+			}
+				#User-content #User-Infor #history-orders #order-content{
+					overflow: auto;
+					color: #DF7401;
+					height: 100px;
+					border: 1px solid gray;
+					border-radius: 5px;
+					text-align: center;
+					padding-right: 5px;
+					padding-left: 5px;
+				}
+				#User-content #User-Infor #history-orders #order-content div{
+					margin-left: 5px;
+					margin-right: 5px;
+	/*				margin-top: 5px;*/
+					marker-bottom: 5px;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				#User-content #User-Infor #history-orders #order-content div:hover{
+					background-color: #D8D8D8;
+				}
+
