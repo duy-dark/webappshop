@@ -41,20 +41,25 @@
 .cost h4 {
     display: inline;
 }
-.soLuongBan h4{
-display: inline;
+
+.soLuongBan h4 {
+    display: inline;
 }
+
 .cost span {
     color: red;
     font-size: 25pt;
 }
-.soLuongBan{
-	margin-top: -18px;
+
+.soLuongBan {
+    margin-top: -18px;
 }
+
 .soLuongBan span {
     color: black;
     font-size: 18pt;
 }
+
 .khuyenMai img {
     width: 750px;
     height: 100%;
@@ -129,13 +134,12 @@ display: inline;
 }
 
 .bottom {
-    margin-top: 30px;
+    margin-top: 60px;
     background-color: white;
-    
 }
 
 .ttct-navBar {
-    background-color: black;
+    background-color: #00A08A;
 }
 
 .ttct-navBar li {
@@ -153,7 +157,7 @@ display: inline;
 }
 
 .ttct-navBar li a {
-	display: inline-block;
+    display: inline-block;
     color: white;
     height: 100%;
     margin-top: 0;
@@ -176,65 +180,77 @@ display: inline;
     font-size: 1.4rem;
     line-height: 1.6;
 }
-/* Chrome, Safari, Opera */
+
+
+
 @-webkit-keyframes mymove {
-    50% {text-shadow: 1px 1px 2px red;}
+    50% {
+        text-shadow: 1px 1px 2px red;
+    }
 }
 
-/* Standard syntax */
+
+
 @keyframes mymove {
-    50% {text-shadow: 1px 1px 2px red;}
+    50% {
+        text-shadow: 1px 1px 2px red;
+    }
 }
+
 .title-ttct {
- 
+
     height: 40px;
-        -webkit-animation: mymove 0.1s infinite; /* Chrome, Safari, Opera */
-    animation: mymove 5s infinite;
+    -webkit-animation: mymove 4s infinite;
+    /* Chrome, Safari, Opera */
+    animation: mymove 4s infinite;
 
     color: black;
     text-align: center;
     margin-bottom: 20px;
     font-size: 2em;
-border-bottom: 1px solid black;
-border-top: 1px solid black;
+}
 
+.bottom .title-ttct {
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+}
 
+#binhLuan {
+    margin-left: 245px;
 }
-.bottom .title-ttct{
-	-webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
-}
-#binhLuan{
-	margin-left: 245px;
 
+#binhLuan textarea {
+    width: 80%;
 }
-#binhLuan textarea{
-	width: 80%;
+
+#sanPhamCungLoai {
+    margin-left: 40px;
 }
-#sanPhamCungLoai{
-	margin-left: 40px;
+
+#sanPhamCungNSX {
+    margin-left: 40px;
 }
-#sanPhamCungNSX{
-	margin-left:40px;
-}
-#bottomSlideImage{
-	overflow: auto;
+
+#bottomSlideImage {
+    overflow: auto;
     height: 240px;
     width: 100%;
     white-space: nowrap;
     text-align: center;
+}
 
+#bottomSlideImage span {
+    display: inline-block;
 }
-#bottomSlideImage span{
-display: inline-block;
+
+#bottomSlideImage img {
+    height: 200px;
 }
-#bottomSlideImage img{
-height: 200px;
-}
-#goTop{
-	position: fixed;
-	display: none;
-	right:10px;
-	bottom: 10px;
+
+#goTop {
+    position: fixed;
+    display: none;
+    right: 10px;
+    bottom: 10px;
 }
