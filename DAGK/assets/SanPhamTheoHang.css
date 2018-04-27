@@ -3,6 +3,7 @@
 	width: 1200px;
 	list-style-type: none;
 	overflow: auto;
+	margin-bottom: 50px;
 }
 #Brand-goods div{
 	background-color: white;
@@ -31,8 +32,9 @@
 		margin-left: 5px;
 		width: 970px;
 		float: right;
+		display: inline-block;
 	}
-		#Brand-goods #Items > div{
+		#Brand-goods #Items #Items-Content> div{
 			display: inline-block;
 		    /*vertical-align: top;
 		    marker-top: 20px;*/
@@ -44,7 +46,7 @@
 		    padding-left: 10px;
 		    color: #666;
 		}
-		#Brand-goods #Items > div:hover{
+		#Brand-goods #Items #Items-Content> div:hover{
 			box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 		}
 		#Brand-goods .image {
@@ -70,3 +72,83 @@
 		    margin: 0;
 		    padding: 0;
 		}
+
+/*file thong tin chi tiet tai khoan*/
+
+#User-content{
+	margin:0 auto;
+	margin-bottom: 50px;
+	width: 1200px;
+	list-style-type: none;
+	overflow: auto;
+}
+	#User-content > div{
+		background-color: white;
+		
+	}
+		#User-content #User-Avatar{
+			text-align: center;
+			font-size: 20px;
+			text-decoration-line: none;
+			width: 300px;
+			/**/
+			margin-left: 10px;
+			margin-right: 10px;
+			-webkit-box-shadow: -6px 6px 5px 0px rgba(199,199,199,1);
+			-moz-box-shadow: -6px 6px 5px 0px rgba(199,199,199,1);
+			box-shadow: -6px 6px 5px 0px rgba(199,199,199,1);
+		}
+			#User-content #User-Avatar
+			{
+				position: relative;
+			}
+				#User-content #User-Avatar{
+					padding-top: 20px;
+				}
+						#User-content #User-Avatar #user-image > img{
+							position: absolute;
+							top: 0px;
+							right: 0px;
+							left: 74px;
+							margin-top: 40px;
+							margin-bottom: 20px;
+							border: 1px solid gray;
+							border-radius: 50%;
+						}
+					#User-content #User-Avatar a{
+						text-decoration: none;
+						display: block;
+						margin-bottom: 10px;
+					}
+					#User-content #User-Avatar #user-type {
+						margin-top: 10px;
+						border-top: 1px solid gray;
+					}
+						#User-content #User-Avatar #user-type p{
+							color: red;
+
+						}
+		#User-content #User-Infor{
+			width: 880px;
+			height: 700px;
+			padding-bottom: 10px;
+		}
+			#User-content #User-Infor #Infor-Content div{
+				font-size: 18px;
+				margin-left: 20px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				/**/
+				color: #01A9DB;
+			}
+			#User-content #User-Infor #Infor-Content label{
+				margin-right: 20px;
+				width: 200px;
+			}
+			#User-content #User-Infor #Infor-Content input{
+				width: 300px;
+			}
+				#User-content #User-Infor #Infor-Content #Account-Infor{
+					border-bottom: 1px solid gray;
+					padding-bottom: 30px;
+				}
