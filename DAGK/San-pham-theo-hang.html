@@ -3,6 +3,7 @@
 
 <head>
     <title>3Dshop</title>
+    <link rel="icon" href="assets/image/Shop-icon.png">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/duysp.css">
@@ -14,7 +15,7 @@
     <div class="main-wrapper">
         <div id="header">
             <div id="logo">
-                <a href="../">
+                <a href="index.html">
                 <img src="assets/image/logo2.png">
                 </a>
             </div>
@@ -27,10 +28,10 @@
             <div class="col-xs-6 col-md-4">
                 <ul class="fs-hdmn">
                     <li>
-                        <a href="#">
-                    <img class="header-right-image" src="assets/image/giohang.jpg" alt="">
-                    <span> &nbsp;Giỏ Hàng</span>
-                    </a>
+                        <a href="gio-hang.html">
+                        <img class="header-right-image" src="assets/image/giohang.jpg" alt="">
+                        <span>Giỏ Hàng</span>
+                        </a>
                     </li>
                 </ul>
                 <li id="taiKhoan">
@@ -153,26 +154,42 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="index.html">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 &nbsp;&nbsp;<b>Trang Chủ</b>
               </a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="Brand">
-                            <a href="#"><b>Sản Phẩm</b></a>
-                            <div class="Dropdown-Content">
-                                <a href="#">Acer</a>
-                                <a href="#">Apple</a>
-                                <a href="#">Assus</a>
-                                <a href="#">Dell</a>
-                                <a href="#">Hp</a>
-                                <a href="#">Lenovo</a>
-                                <a href="#">Masstel</a>
-                                <a href="#">MSI</a>
-                            </div>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Menu</b><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                               <li>
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Loại sản phẩm<b class="caret"></b></a>
+                                  <ul class="dropdown-menu">
+                                      <li><a href="San-pham-theo-hang.html">LAPTOP GAMING - ĐỒ HOẠ</a></li>
+                                      <li><a href="San-pham-theo-hang.html">SẢN PHẨM 2 TRONG 1</a></li>
+                                      <li><a href="San-pham-theo-hang.html">LAPTOP SINH VIÊN - VĂN PHÒNG</a></li>
+                                      <li><a href="San-pham-theo-hang.html">LAPTOP MỎNG NHẸ</a></li>
+                                      <li><a href="San-pham-theo-hang.html">DOANH NHÂN</a></li> 
+                                   </ul>
+                               </li>
+                               <li>
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nhà sản xuất <b class="caret"></b></a>
+                                  <ul class="dropdown-menu">
+                                      <li><a href="San-pham-theo-hang.html">ACER</a></li>
+                                      <li><a href="San-pham-theo-hang.html">APPLE</a></li>
+                                      <li><a href="San-pham-theo-hang.html">ASUS</a></li>
+                                      <li><a href="San-pham-theo-hang.html">DELL</a></li>
+                                      <li><a href="San-pham-theo-hang.html">HP</a></li>
+                                      <li><a href="San-pham-theo-hang.html">LENOVO</a></li>
+                                      <li><a href="San-pham-theo-hang.html">MASSTEL</a></li>
+                                      <li><a href="San-pham-theo-hang.html">MSI</a></li>
+                                      
+                                   </ul>
+                               </li>
+                           </ul>
                         </li>
-                        <li><a href="#"><b>Liên Hệ</b></a></li>
+                        <li><a href="lien-he.html"><b>Liên Hệ</b></a></li>
                     </ul>
                 </div>
             </nav>
@@ -181,6 +198,78 @@
     <div id="Brand-goods">
         <div id="Standard" class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="border-bottom: none;">
             <p><b>Bộ lọc</b></p>
+            <div id="name">
+                <li>
+                    <b>Hãng sản xuất</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>Tất cả</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>MSI</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>MASSTEL</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>LENOVO</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>HP</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>DELL</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>ACER</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>APPLE</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>ASUS</span>
+                    </label>
+                </div>
+            </div>
+             <div id="gender">
+                <li>
+                    <b>Loại sản phẩm</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>LAPTOP GAMING - ĐỒ HOẠ</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>SẢN PHẨM 2 TRONG 1</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>LAPTOP SINH VIÊN - VĂN PHÒNG</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>DOANH NHÂN</span>
+                    </label>
+                    <label id="pick">
+                        <input type="checkbox" name="lappride">
+                        <span>5 - 10 triệu</span>
+                    </label>
+                </div>
+            </div>
             <div id="pride">
                 <li>
                     <b>Mức giá</b>
@@ -287,58 +376,74 @@
             </div>
         </div>
         <div id="Items" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                <div class="name"><a href="#">Dell Ins N5378</a></div>
-                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                <div class="describe">
-                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                    <p><strong>HĐH: Window 10</strong></p>
-                    <p><strong>Nặng: 1.6 Kg</strong></p>
+            <div id="Items-Content">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="#">Dell Ins N5378</a></div>
+                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                 </div>
-                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                <div class="name"><a href="#">Dell Ins N5378</a></div>
-                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                <div class="describe">
-                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                    <p><strong>HĐH: Window 10</strong></p>
-                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="#">Dell Ins N5378</a></div>
+                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                 </div>
-                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                <div class="name"><a href="#">Dell Ins N5378</a></div>
-                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                <div class="describe">
-                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                    <p><strong>HĐH: Window 10</strong></p>
-                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="#">Dell Ins N5378</a></div>
+                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                 </div>
-                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
-                <div class="name"><a href="#">Dell Ins N5378</a></div>
-                <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
-                <div class="describe">
-                    <p><strong>Màn Hình: 13 inch FullHD</strong></p>
-                    <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
-                    <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
-                    <p><strong>HĐH: Window 10</strong></p>
-                    <p><strong>Nặng: 1.6 Kg</strong></p>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="#"><img src="assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="#">Dell Ins N5378</a></div>
+                    <div class="price"><a href=""><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                 </div>
-                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
             </div>
+            <div style="width: 100%; display: inline-block; margin: 0 auto; text-align: center;">
+                 <div id="inner">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="San-pham-theo-hang.html">1</a></li>
+                        <li><a href="San-pham-theo-hang.html">2</a></li>
+                        <li><a href="San-pham-theo-hang.html">3</a></li>
+                        <li><a href="San-pham-theo-hang.html">4</a></li>
+                        <li><a href="San-pham-theo-hang.html">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+           
         </div>
     </div>
     <footer>
@@ -347,7 +452,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3 ">
-                            <a href="../">
+                            <a href="index.html">
                             <img src="assets/image/logo2.png" alt="">
                         </a>
                             <br>
@@ -401,6 +506,7 @@
     </footer>
     <script src="assets/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="assets/taiKhoan.js"></script>
+    <script type="text/javascript" src="assets/drop.js"></script>
     <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/bootstrap-validator-master/dist/validator.min.js"></script>
     <script type="text/javascript" src="assets/thongTinChiTietSanPham.js">

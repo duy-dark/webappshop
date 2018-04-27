@@ -2,6 +2,7 @@
 <html>
 <head>
     <title></title>
+    <link rel="icon" href="assets/image/Shop-icon.png">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/duysp.css">
@@ -11,7 +12,7 @@
 <div class="main-wrapper">
     <div id="header">
         <div id="logo">
-            <a href="../">
+            <a href="index.html">
                 <img src="assets/image/logo2.png">
             </a>
         </div>
@@ -150,16 +151,42 @@
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="index.html">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 &nbsp;&nbsp;<b>Trang Chủ</b>
               </a>
             </div>
             <ul class="nav navbar-nav">
-              <li>
-                <a><b>Sản Phẩm</b></a>
-              </li>
-              <li><a href="#"><b>Liên Hệ</b></a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Menu</b><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                       <li>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Loại sản phẩm<b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="San-pham-theo-hang.html">LAPTOP GAMING - ĐỒ HOẠ</a></li>
+                              <li><a href="San-pham-theo-hang.html">SẢN PHẨM 2 TRONG 1</a></li>
+                              <li><a href="San-pham-theo-hang.html">LAPTOP SINH VIÊN - VĂN PHÒNG</a></li>
+                              <li><a href="San-pham-theo-hang.html">LAPTOP MỎNG NHẸ</a></li>
+                              <li><a href="San-pham-theo-hang.html">DOANH NHÂN</a></li> 
+                           </ul>
+                       </li>
+                       <li>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nhà sản xuất <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="San-pham-theo-hang.html">ACER</a></li>
+                              <li><a href="San-pham-theo-hang.html">APPLE</a></li>
+                              <li><a href="San-pham-theo-hang.html">ASUS</a></li>
+                              <li><a href="San-pham-theo-hang.html">DELL</a></li>
+                              <li><a href="San-pham-theo-hang.html">HP</a></li>
+                              <li><a href="San-pham-theo-hang.html">LENOVO</a></li>
+                              <li><a href="San-pham-theo-hang.html">MASSTEL</a></li>
+                              <li><a href="San-pham-theo-hang.html">MSI</a></li>
+                              
+                           </ul>
+                       </li>
+                   </ul>
+                </li>
+                <li><a href="lien-he.html"><b>Liên Hệ</b></a></li>
             </ul>
           </div>
         </nav>
@@ -287,7 +314,7 @@
                                     <button style="background: #ffc300; color: white;" class="right button btn">
                                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Hoàn tất mua hàng
                                     </button>
-                                    <a href="#" style="background: #f15a23; color: white;" class="button btn">
+                                    <a href="San-pham-theo-hang.html" style="background: #f15a23; color: white;" class="button btn">
                                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Tiếp tục mua hàng
                                     </a>
                                 </form>
@@ -319,7 +346,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 ">
-                        <a href="../">
+                        <a href="index.html">
                             <img src="assets/image/logo2.png" alt="">
                         </a>
                         <br>
@@ -374,6 +401,7 @@
 </footer>
 <script src="assets/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="assets/taiKhoan.js"></script>
+<script type="text/javascript" src="assets/drop.js"></script>
 <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
