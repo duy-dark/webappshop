@@ -208,10 +208,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 2em;
-}
-
-.bottom .title-ttct {
-    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
 }

@@ -1,0 +1,131 @@
+.body2{
+	
+	background-color: white;
+	width: 100%;
+	height: 600px;
+}
+#leftBox{
+	padding-right: 0px;
+	padding-left: 0px;	
+	font-size: 1.7rem;
+font-weight: bold;
+line-height: 1.6;
+color: black;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+#leftBox div{
+	padding-left: 20px;
+
+}
+ .title{
+	padding-top: 3px;
+	background-color: #F5781B;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+
+}
+#leftBox .title:hover{
+	cursor: pointer;
+	background-color: #EB500C;
+}
+#leftBox .title:active{
+		background-color: #F5781B;
+}
+#leftBox .inBox{
+	margin-top: 10px;
+	padding-left:0px;
+
+}
+#leftBox label{
+	width: 100%;
+}
+#leftBox label:hover{
+cursor: pointer;
+	}
+#leftBox .inBox .extraCheck{
+	position: relative;
+float:right;
+top:4px;
+margin-right:15px;
+}
+#leftBox input[type='text']{
+	width: 88%;
+	color: #EB500C;
+}
+#leftBox .inBox>div{
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+#leftBox input[name="maHoaDon-content"]{
+	display:none;
+}
+#leftBox input[name="tenKhachHang-content"]{
+	display:none;
+}
+#leftBox input[name="ngayDatHang-content"]{
+	display:none;
+}
+#leftBox #tinhTrang{
+	display: none;
+}
+#leftBox input[name="tenSanPham-content"]{
+	display:none;
+}
+#leftBox input[name="loaiSanPham-content"]{
+	display:none;
+}
+#leftBox input[name="nsxSanPham-content"]{
+	display:none;
+}
+#leftBox input[name="xuatXuSanPham-content"]{
+	display:none;
+}
+#rightBox{
+
+	float:right;
+	width: 70%;
+	 font-size: 1.7rem;
+	 font-weight: bold;
+	 line-height: 1.6;
+color: black;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+#rightBox div{
+	padding-left: 20px;
+}
+#rightBox .title{
+	position: relative;
+	padding-top: 3px;
+height:36px;
+
+}
+#rightBox .list>li{
+	display: inline-block;
+
+}
+
+.list>li>ul{
+	list-style: none;
+	padding-top: 8px;
+
+}
+.list a{
+	color:black;
+}
+.list a:hover{
+	color:#049052;
+}
+.list span{
+	padding-top: 3px;
+	padding-bottom: 1px;
+	display: inline-block;
+	color:#049052;
+	width: 100%;
+	border-bottom: 1px solid #049052;
+}
