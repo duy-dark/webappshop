@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="assets/duysp.css">
     <link rel="stylesheet" type="text/css" href="assets/taiKhoan.css">
     <link rel="stylesheet" type="text/css" href="assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="assets/admin.css">
     <link rel="stylesheet" type="text/css" href="assets/quan-li-hoa-don-hang.css">
     <link rel="stylesheet" type="text/css" href="assets/thong-tin-chi-tiet-hoa-don-hang.css">
 </head>
@@ -195,60 +196,28 @@
                 </div>
             </nav>
         </div>
-        <div class="link">
-            <a href=""> <span >  DashBoard</span></a>     
-          <a href="quan-li-hoa-don-hang.html"> <span >  Quản lí hóa đơn</span></a>
-           Chi tiết hóa đơn 
-        </div>
-        <div class="body2">
-            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
-                <div class="title">Tìm kiếm hóa đơn theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/image/kinhLup.png"></div>
-                <div class="inBox">
-                    <div>
-                        <label>
-                            <span> Mã hóa đơn</span>
-                            <input type="checkbox" name="maHoaDon" class="extraCheck">
-                        </label>
-                        <input type="text" name="maHoaDon-content" placeholder="Nhập mã hóa đơn">
+        
+        <div class="row">
+          <div class="col-md-9 col-md-push-3">
+            <div id="sanpham">
+                <div id="rightBox" ">
+                    <div class="title ">Chi tiết hóa đơn :
+                    <span style="color:white;margin-left: 4px;" >0001</span>
+                    </div> 
+                    <div id="top-ChiTietHoaDon">
+                        <div id="kh">
+                            Khách hàng:
+                             <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html">Nguyễn Thị Phương Nhung
+                             </a>
+                         </div>
+                        <div id="ndh">
+                            Ngày đặt hàng: <span style="color: black;">15/9/2017</span>
+                         </div>
+                        <div id="ttdh">
+                        Tình trạng đơn hàng: <span class="chuaGiaoHang">Chưa giao hàng</span>
+                         </div>
                     </div>
-                    <div>
-                        <label>
-                            <span>Tên khách hàng</span>
-                            <form action=""></form>
-                            <input type="checkbox" name="tenKhachHang" class="extraCheck">
-                        </label>
-                        <input type="text" name="tenKhachHang-content" placeholder="Nhập tên khách hàng">
-                    </div>
-                    <div>
-                        <label>
-                            <span>Ngày đặt hàng</span>
-                            <input type="checkbox" name="ngayDatHang" class="extraCheck">
-                        </label>
-                        <input type="date" name="ngayDatHang-content">
-                    </div>
-                    <div>
-                        <label> <span>Tình trạng</span>
-                            <input type="checkbox" name="tinhTrang" class="extraCheck">
-                        </label>
-                        <select id="tinhTrang">
-                           <option class="chuaGiaoHang">
-                                 Chưa giao hàng
-                               
-                            </option>
-                            <option  class="dangGiaoHang">
-                              Đang giao hàng
-                            </option>
-                            <option class="daGiaoHang">
-                                Đã giao hàng
-                            </option>
-                        </select>
-                    </div>
-                    <div>
-                        <label> <span>Tên sản phẩm</span>
-                            <input type="checkbox" name="tenSanPham" class="extraCheck">
-                        </label>
-                        <input type="text" name="tenSanPham-content" placeholder="Nhập tên sản phẩm">
-                    </div>
+<<<<<<< HEAD
                     <div>
                         <label> <span>Loại sản phẩm</span>
                             <input type="checkbox" name="loaiSanPham" class="extraCheck">
@@ -310,21 +279,65 @@
                         <li class="dv">cái</li>
                         <li  class="sl">1</li>
                         <li  class="thanhTien">7.900.000 VNĐ</li>
+=======
+                    
+                    
+                    <div>Doanh mục sản phẩm:</div>
+                    <ul id="listName">
+                        <li class="stt">STT</li>
+                        <li class="tsp">Tên sản phẩm</li>
+                        <li class="dv">Đơn vị</li>
+                        <li class="sl">Số lượng</li>
+                        <li class="thanhTien">Thành tiền</li>
+>>>>>>> 8ea1468094f3ec517807393f65b95e893147d5e4
                     </ul>
-                     <ul>
-                        <li class="stt">0002</li>
-                        <li class="tsp"><a href="thong-tin-chi-tiet-san-pham2.html" title="Laptop Asus X541UV-GO607 Core i5-7200U/FreeDos 15.6 inch"><p>Laptop Asus X541UV-GO607 Core i5-7200U/FreeDos 15.6 inch</p></a> </li>
-                        <li class="dv">cái</li>
-                        <li  class="sl">1</li>
-                        <li  class="thanhTien">11.349.000 VNĐ</li>
+                    <ul id="content-ChiTietHoaDon">
+                        <ul>
+                            <li class="stt">0001</li>
+                            <li class="tsp"><a href="thong-tin-chi-tiet-san-pham.html" title="Laptop Dell Latitude E6540 Core i5 15.6 inch"><p>Laptop Dell Latitude E6540 Core i5 15.6 inch</p></a> </li>
+                            <li class="dv">cái</li>
+                            <li  class="sl">1</li>
+                            <li  class="thanhTien">7.900.000 VNĐ</li>
+                        </ul>
+                         <ul>
+                            <li class="stt">0002</li>
+                            <li class="tsp"><a href="thong-tin-chi-tiet-san-pham2.html" title="Laptop Asus X541UV-GO607 Core i5-7200U/FreeDos 15.6 inch"><p>Laptop Asus X541UV-GO607 Core i5-7200U/FreeDos 15.6 inch</p></a> </li>
+                            <li class="dv">cái</li>
+                            <li  class="sl">1</li>
+                            <li  class="thanhTien">11.349.000 VNĐ</li>
+                        </ul>
                     </ul>
-                </ul>
-                <br>
-                    <div>Tổng tiền: 
-                        <span id="tongTien" style="color:#337AB7;">19.249.00 VNĐ</span>
-                    </div>
                     <br>
+                        <div>Tổng tiền: 
+                            <span id="tongTien" style="color:#337AB7;">19.249.00 VNĐ</span>
+                        </div>
+                        <br>
+                </div>
             </div>
+          </div>
+          <div class="col-md-3 col-md-pull-9">
+            <div id="sidebar">
+                <!-- Sidebar Header -->
+                <div class="sidebar-header">
+                    <a href="admin.html"><h3>DASHBOARD</h3></a>
+                </div>
+
+                <!-- Sidebar Links -->
+                <ul class="list-unstyled components">
+                    <li class="active"><a href="quan-li-hang-hoa.html">Quản lý hàng hóa</a></li>
+                    <li><a href="quan-li-hoa-don-hang.html">Quản lý đơn hàng</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><!-- Link with dropdown items -->
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="#">Page</a></li>
+                            <li><a href="#">Page</a></li>
+                            <li><a href="#">Page</a></li>
+                        </ul>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>  
+          </div>
         </div>
     </div>
     <footer>
@@ -391,7 +404,6 @@
     <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js "></script>
     <script type="text/javascript " src="assets/bootstrap-validator-master/dist/validator.min.js "></script>
     <script type="text/javascript " src="assets/quan-li-hoa-don-hang.js "></script>
-    <script type="text/javascript " src="assets/thong-tin-chi-tiet-hoa-don-hang.js "></script>
     
 </body>
 
