@@ -12,6 +12,7 @@
 
 #modalForm{
 	position: fixed;
+	top:42px;
 	width: 400px;
 	height: 280px;
 	left: 50%;

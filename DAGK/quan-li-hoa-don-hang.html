@@ -194,6 +194,14 @@
                 </div>
             </nav>
         </div>
+        <div class="link">
+           
+               <a href=""> <span>  DashBoard</span></a>
+             
+          Quản lí hóa đơn
+           
+          
+        </div>
         <div class="body2">
             <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
                 <div class="title">Tìm kiếm hóa đơn theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/image/kinhLup.png"></div>
@@ -225,13 +233,14 @@
                             <input type="checkbox" name="tinhTrang" class="extraCheck">
                         </label>
                         <select id="tinhTrang">
-                            <option>
-                                Chưa giao hàng
+                            <option class="chuaGiaoHang">
+                                 Chưa giao hàng
+                               
                             </option>
-                            <option>
-                                Đang giao hàng
+                            <option  class="dangGiaoHang">
+                              Đang giao hàng
                             </option>
-                            <option>
+                            <option class="daGiaoHang">
                                 Đã giao hàng
                             </option>
                         </select>
@@ -331,18 +340,18 @@
                         <span> Tình trạng</span>
                        
                     <ul style="padding-left: 0px;">
-                        <li>
-                            Đã giao hàng
+                        <li class="daGiaoHang">
+                             Đã giao hàng
                         </li>
-                        <li>
-                            Đã giao hàng
+                        <li class="chuaGiaoHang">
+                             Chưa giao hàng
                         </li>
-                        <li>
-                            Đã giao hàng
+                        <li class="dangGiaoHang">
+                          Đang giao hàng
                         </li>
-                        <li>
-                            Đã giao hàng
-                        </li>
+                        <li class="dangGiaoHang">
+                             Đang giao hàng
+                        </li >
                   
                     </ul>
                     </li>
@@ -413,9 +422,8 @@
     <script type="text/javascript " src="assets/drop.js "></script>
     <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js "></script>
     <script type="text/javascript " src="assets/bootstrap-validator-master/dist/validator.min.js "></script>
-    <script type="text/javascript " src="assets/thongTinChiTietSanPham.js ">
-    </script>
     <script type="text/javascript " src="assets/quan-li-hoa-don-hang.js "></script>
+    
 </body>
 
 </html>
