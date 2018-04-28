@@ -5,9 +5,7 @@
 #bottom-ChiTietHoaDon{
 
 }
-#bottom-ChiTietHoaDon>div{
-	padding-left: 0px;
-	}
+
 #top-ChiTietHoaDon{
 	margin-top: 20px;
 
@@ -24,11 +22,12 @@ border: 0px solid #000000;
 #top-ChiTietHoaDon>div{
 	padding-left: 0px;
 }
-#rightBox a{
+#rightBox #top-ChiTietHoaDon a{
 	
 	color:#34A853;
 }
 #rightBox a:hover{
+	cursor: pointer;
 	color:#337AB7;
 }
 #rightBox>ul{
@@ -51,7 +50,7 @@ margin-top:0px;
 margin-bottom: -10px;
 overflow: hidden;
 }
-#rightBox li p{
+#content-ChiTietHoaDon li p{
 	white-space: nowrap;
 text-overflow: ellipsis;
 overflow: hidden;
