@@ -159,6 +159,9 @@ form {
     overflow: auto;
 }
 .box-product > div {
+   margin-top: 2px;
+   margin-right: 5px !important;
+   margin-left:5px;
     min-width: 23%;
     display: inline-block;
     vertical-align: top;
