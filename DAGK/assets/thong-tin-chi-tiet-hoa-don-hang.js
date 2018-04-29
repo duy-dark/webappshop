@@ -14,4 +14,8 @@ $("#ttdh button").click(function(){
 		$('#ttdh>span').attr('class','daGiaoHang');
 		$('#ttdh>span').html('Đã giao hàng');
 	}
+	if(value===3){
+		$('#ttdh>span').attr('class','daHuy');
+		$('#ttdh>span').html('Đã hủy');
+	}
 })

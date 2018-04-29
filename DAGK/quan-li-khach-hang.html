@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="assets/taiKhoan.css">
     <link rel="stylesheet" type="text/css" href="assets/SanPhamTheoHang.css">
     <link rel="stylesheet" type="text/css" href="assets/quan-li-hoa-don-hang.css">
-    <link rel="stylesheet" type="text/css" href="assets/dash-board.css">
+    <link rel="stylesheet" type="text/css" href="assets/quan-li-khach-hang.css">
 </head>
 
 <body>
@@ -157,13 +157,13 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.html">
-                  <span class="glyphicon glyphicon-home" aria-hidden="true"  style="font-size: 1.7rem"></span>
+                 <span class="glyphicon glyphicon-home" aria-hidden="true"  style="font-size: 1.7rem"></span>
                 &nbsp;&nbsp;<b style="font-size: 1.7rem">Trang Chủ</b>
               </a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b style="font-size: 1.7rem">Menu</b><b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b  style="font-size: 1.7rem">Menu</b><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Loại sản phẩm<b class="caret"></b></a>
@@ -190,26 +190,184 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="lien-he.html"><b style="font-size: 1.7rem">Liên Hệ</b></a></li>
+                        <li><a href="lien-he.html"><b  style="font-size: 1.7rem">Liên Hệ</b></a></li>
                     </ul>
                 </div>
             </nav>
         </div>
         <div class="link">
-            <a href=""> <span style="border-right: 0px solid black !important;">  DashBoard</span></a>
-            <div class="bg">
-            <div id="dashBoard">
-                <div id='qlddh'>
-                    <a href="quan-li-hoa-don-hang.html">QUẢN LÍ ĐƠN ĐẶT HÀNG</a>
-                </div>
-                <div id='qlsp'>
-                    <a href="quan-li-hang-hoa.html">QUẢN LÍ SẢN PHẨM</a>
-                </div>
-                <div id='qlkh'><a href="quan-li-khach-hang.html">QUẢN LÍ KHÁCH HÀNG</a></div>
-                <div id='qlttch' ">
-                   <a href="quan-li-thong-tin-shop.html ">QUẢN LÍ THÔNG TIN CỬA HÀNG</a>
+           
+               <a href="dash-board.html"> <span>  DashBoard</span></a>
+             
+          Quản lí khách hàng
+           
+          
+        </div>
+        <div class="body2">
+            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title">Tìm kiếm khách hàng theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/image/kinhLup.png"></div>
+                <div class="inBox">
+                    <div>
+                        <label>
+                            <span>Tên tài khoản</span>
+                            <input type="checkbox" name="tenTaiKhoan" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenTaiKhoan-content" placeholder="Nhập tên tài khoản">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Tên khách hàng</span>
+                            
+                            <input type="checkbox" name="tenKhachHang" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenKhachHang-content" placeholder="Nhập tên khách hàng">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Ngày sinh</span>
+                            <input type="checkbox" name="ngaySinh" class="extraCheck">
+                        </label>
+                        <input type="date" name="ngaySinh-content">
+                    </div>
+                    <div>
+                        <label> <span>Giới tính</span>
+                            <input type="checkbox" name="gioiTinh" class="extraCheck">
+                        </label>
+                        <select id="gioiTinh">
+                            <option style="font-weight: bold;" >
+                                 Nam
+                               
+                            </option>
+                            <option   style="font-weight: bold;" >
+                              Nữ
+                            </option>
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <label> <span>Loại khách hàng</span>
+                            <input type="checkbox" name="loaiKhachHang" class="extraCheck">
+                        </label>
+                        <select id="loaiKhachHang">
+                            <option class="thuong">
+                                 Thường
+                               
+                            </option>
+                            <option  class="den" >
+                              Đen
+                            </option>
+                            <option   class="vip">
+                              Vip
+                            </option>
+                        </select>
+                    </div>
+                   
                 </div>
             </div>
+            <div id="rightBox" ">
+                <div class="title ">Danh sách khách hàng phù hợp kết quả tìm kiếm</div> 
+                <ul class="list">
+                    <li id="ttk" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <span>Tài khoản</span>
+                    <ul style="padding-left: 0px;">
+                        <li>
+                            <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> nhungntp</a>
+                           
+                        </li>
+                         <li>
+                           <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> nhungntp</a>
+                           
+                        </li>
+                        <li>
+                            <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> nhungntp</a>
+                           
+                        </li>
+                         <li>
+                            <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> nhungntp</a>
+                           
+                        </li>
+
+                    </ul>
+                    </li>
+                    <li id="tkh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <span>Tên khách hàng</span> 
+                    <ul style="padding-left: 0px;">
+                        <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                        <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                         <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                        <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem.html"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                    </ul>
+                    </li>
+                    <li id="ns" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <span> Ngày sinh</span>
+                       
+                    <ul style="padding-left: 0px;">
+                        <li>
+                            15/11/1995
+                        </li>
+                        <li>
+                          15/11/1995
+                        </li>
+                        <li>
+                           15/11/1995
+                        </li>
+                        <li>
+                           15/11/1995
+                        </li>
+                  
+                    </ul>
+                    </li>
+                    <li id="gt" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <span> Giới tính</span>
+                       
+                    <ul style="padding-left: 0px;">
+                        <li >
+                             Nữ
+                        </li>
+                        <li >
+                            Nữ
+                        </li>
+                        <li >
+                         Nữ
+                        </li>
+                        <li >
+                             Nữ
+                        </li >
+                  
+                    </ul>
+                    </li>
+                    <li id="lkh" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <span> Loại KH</span>
+                       
+                    <ul style="padding-left: 0px;">
+                        <li class="vip">
+                             VIP
+                        </li>
+                        <li class="vip">
+                            VIP
+                        </li>
+                        <li class="vip">
+                         VIP
+                        </li>
+                        <li class="vip">
+                             VIP
+                        </li >
+                  
+                    </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -277,6 +435,8 @@
     <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js "></script>
     <script type="text/javascript " src="assets/bootstrap-validator-master/dist/validator.min.js "></script>
     <script type="text/javascript " src="assets/quan-li-hoa-don-hang.js "></script>
+    <script type="text/javascript" src="assets/quan-li-khach-hang.js"></script>
+    
 </body>
 
 </html>
