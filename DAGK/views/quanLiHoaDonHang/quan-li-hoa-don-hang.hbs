@@ -1,0 +1,176 @@
+{{#section 'css'}}
+        <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+{{/section}}
+
+        <div class="link">
+           
+               <a href="/dash-board"> <span>  DashBoard</span></a>
+             
+          Quản lí hóa đơn
+           
+          
+        </div>
+        <div class="body2">
+            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title">Tìm kiếm hóa đơn theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
+                <div class="inBox">
+                    <div>
+                        <label>
+                            <span> Mã hóa đơn</span>
+                            <input type="checkbox" name="maHoaDon" class="extraCheck">
+                        </label>
+                        <input type="text" name="maHoaDon-content" placeholder="Nhập mã hóa đơn">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Tên khách hàng</span>
+                            
+                            <input type="checkbox" name="tenKhachHang" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenKhachHang-content" placeholder="Nhập tên khách hàng">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Ngày đặt hàng</span>
+                            <input type="checkbox" name="ngayDatHang" class="extraCheck">
+                        </label>
+                        <input type="date" name="ngayDatHang-content">
+                    </div>
+                    <div>
+                        <label> <span>Tình trạng</span>
+                            <input type="checkbox" name="tinhTrang" class="extraCheck">
+                        </label>
+                        <select id="tinhTrang">
+                            <option class="chuaGiaoHang">
+                                 Chưa giao hàng
+                               
+                            </option>
+                            <option  class="dangGiaoHang">
+                              Đang giao hàng
+                            </option>
+                            <option class="daGiaoHang">
+                                Đã giao hàng
+                            </option>
+                            <option class="daHuy">
+                                Đã hủy
+                            </option>
+                        </select>
+                    </div>
+                    <div>
+                        <label> <span>Tên sản phẩm</span>
+                            <input type="checkbox" name="tenSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenSanPham-content" placeholder="Nhập tên sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Loại sản phẩm</span>
+                            <input type="checkbox" name="loaiSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="loaiSanPham-content" placeholder="Nhập loại sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Xuất xứ sản phẩm</span>
+                            <input type="checkbox" name="xuatXuSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="xuatXuSanPham-content" placeholder="Nhập xuất xứ sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Nhà sản xuất sản phẩm</span>
+                            <input type="checkbox" name="nsxSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="nsxSanPham-content" placeholder="Nhập nhà sản xuất sản phẩm">
+                    </div>
+                </div>
+            </div>
+            <div id="rightBox" ">
+                <div class="title ">Danh sách hóa đơn phù hợp kết quả tìm kiếm</div> 
+                <ul class="list">
+                    <li id="mhd" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <span>Mã hóa đơn</span>
+                    <ul style="padding-left: 0px;">
+                        <li>
+                            <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
+                           
+                        </li>
+                         <li>
+                           <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
+                           
+                        </li>
+                        <li>
+                            <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
+                           
+                        </li>
+                         <li>
+                            <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
+                           
+                        </li>
+
+                    </ul>
+                    </li>
+                    <li id="tkh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <span>Tên khách hàng</span> 
+                    <ul style="padding-left: 0px;">
+                        <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                        <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                         <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                        <li>
+                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
+                           
+                        </li>
+                    </ul>
+                    </li>
+                    <li id="ndh" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <span> Ngày đặt hàng</span>
+                       
+                    <ul style="padding-left: 0px;">
+                        <li>
+                            15/9/2017
+                        </li>
+                        <li>
+                            15/9/2017
+                        </li>
+                        <li>
+                            15/9/2017
+                        </li>
+                        <li>
+                            15/9/2017
+                        </li>
+                  
+                    </ul>
+                    </li>
+                    <li id="tt" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <span> Tình trạng</span>
+                       
+                    <ul style="padding-left: 0px;">
+                        <li class="daGiaoHang">
+                             Đã giao hàng
+                        </li>
+                        <li class="chuaGiaoHang">
+                             Chưa giao hàng
+                        </li>
+                        <li class="dangGiaoHang">
+                          Đang giao hàng
+                        </li>
+                        <li class="dangGiaoHang">
+                             Đang giao hàng
+                        </li >
+                  
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
