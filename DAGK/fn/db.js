@@ -7,7 +7,7 @@ exports.load = sql => {
             port: 3306,
             user: 'DUYMYSQL',
             password: '',
-            database: 'dackweb'
+            database: 'dack'
         });
 
         cn.connect();
@@ -31,7 +31,7 @@ exports.save = sql => {
             port: 3306,
             user: 'DUYMYSQL',
             password: '',
-            database: 'dackweb'
+            database: 'dack'
         });
 
         cn.connect();
