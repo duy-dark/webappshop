@@ -1,4 +1,4 @@
-$("#ttdh button").click(function(){
+$("#ttdh button").on("click",function(){
 	var value=$("#ttdh").find("select").val();
 	value=parseInt(value);
 	if(value===0){

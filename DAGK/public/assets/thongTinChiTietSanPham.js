@@ -1,4 +1,4 @@
-$(".slide-image img").click(function() {
+$(".slide-image img").on("click",function() {
     var image_html = $(this).attr("src");
     $(".sample-image img").attr("src", image_html);
     $(this).addClass("border-red-visited");
@@ -11,12 +11,12 @@ $(".slide-image img").click(function() {
 
 });
 
-$(".luotThich").click(function() {
+$(".luotThich").on("click",function() {
     var number = parseInt($(".luotThich span").text());
     number++;
     $(".luotThich span").text("" + number);
 });
-$(".soLuong button").click(function() {
+$(".soLuong button").on("click",function() {
     var number = parseInt($(".soLuong span").text());
     if ($(this).text() === '+') {
         number++;
@@ -29,7 +29,7 @@ $(".soLuong button").click(function() {
 $(".menu-dgsp").css('border-bottom', '2px solid white');
 $(".menu-dgsp").css('color', 'black');
 $("#danhGiaSanPham").css('display', 'none');
-$(".menu-ttct").click(function() {
+$(".menu-ttct").on("click",function() {
     $(".menu-ttct").css('border-bottom', '2px solid #FF5722');
     $(".menu-ttct").css('color', '#FF5722');
     $(".menu-dgsp").css('border-bottom', '2px solid white');
@@ -38,7 +38,7 @@ $(".menu-ttct").click(function() {
     $("#thongTinChiTiet").css('display', 'block');
 
 });
-$(".menu-dgsp").click(function() {
+$(".menu-dgsp").on("click",function() {
     $(".menu-dgsp").css('border-bottom', '2px solid #FF5722');
     $(".menu-dgsp").css('color', '#FF5722');
     $(".menu-ttct").css('border-bottom', '2px solid white');
@@ -61,7 +61,7 @@ $(window).scroll(function(){
     }
 });
 
-$("#goTop").click(function(){
+$("#goTop").on("click",function(){
 document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 });
