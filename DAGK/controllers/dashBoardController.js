@@ -10,6 +10,10 @@ router.get('/quan-li-hang-hoa', (req, res) => {
    res.render('quanLiHangHoa/quan-li-hang-hoa');
 });
 
+router.get('/quan-li-hang-hoa/thong-tin-chi-tiet-hang-hoa', (req, res) => {
+   res.render('quanLiHangHoa/thong-tin-chi-tiet-hang-hoa');
+});
+
 router.get('/quan-li-hoa-don-hang', (req, res) => {
   res.render('quanLiHoaDonHang/quan-li-hoa-don-hang');
 });

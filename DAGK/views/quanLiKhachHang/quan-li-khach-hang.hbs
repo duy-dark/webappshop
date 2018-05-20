@@ -11,7 +11,7 @@
 
   <div class="link">
            
-               <a href="dash-board"> <span>  DashBoard</span></a>
+               <a href="/dash-board"> <span>  DashBoard</span></a>
              
           Quản lí khách hàng
            
@@ -36,12 +36,20 @@
                         </label>
                         <input type="text" name="tenKhachHang-content" placeholder="Nhập tên khách hàng">
                     </div>
+
                     <div>
                         <label>
                             <span>Ngày sinh</span>
                             <input type="checkbox" name="ngaySinh" class="extraCheck">
                         </label>
-                        <input type="date" name="ngaySinh-content">
+                        <label id="tuNgay">
+                            <span> Từ ngày</span> <input type="date" name="ngaySinhTuNgay-content">
+                        </label>
+                         <label id="denNgay"> 
+                            <span>
+                                   Đến ngày</span>
+                                    <input type="date" name="ngaySinhDenNgay-content">
+                        </label>
                     </div>
                     <div>
                         <label> <span>Giới tính</span>
@@ -75,112 +83,33 @@
                             </option>
                         </select>
                     </div>
+                    <div>
+                        <label> <span>Tất cả</span>
+                            <input type="checkbox" name="tc" class="extraCheck">
+                        </label>
+                    </div>
                    
                 </div>
             </div>
             <div id="rightBox">
                 <div class="title ">Danh sách khách hàng phù hợp kết quả tìm kiếm</div> 
-                <ul class="list">
-                    <li id="ttk" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <span>Tài khoản</span>
-                    <ul style="padding-left: 0px;">
-                        <li>
-                            <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> nhungntp</a>
-                           
-                        </li>
-                         <li>
-                           <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> nhungntp</a>
-                           
-                        </li>
-                        <li>
-                            <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> nhungntp</a>
-                           
-                        </li>
-                         <li>
-                            <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> nhungntp</a>
-                           
-                        </li>
+               <ul id="listName">
+                    <li class="tkkh" title="Tài khoản KH"><p>Tài khoản KH</p></li>
+                    <li class="tkh" title="Tên khách hàng"><p>Tên khách hàng</p></li>
+                    <li class="ns" title="Ngày sinh"><p>Ngày sinh</p></li>
+                    <li class="gt" title="Giới tính"><p>Giới tính</p></li>
+                    <li class="lkh" title="Loại khách hàng"><p>Loại khách hàng</p></li>
+                </ul>
+                <ul id="content-ChiTietKhachHang">
+                    <ul>
+                    <li class="tkkh" title="Tài khoản KH"><p>Tài khoản KH</p></li>
+                    <li class="tkh" title="Tên khách hàng"><p>Tên khách hàng</p></li>
+                    <li class="ns" title="Ngày sinh"><p>Ngày sinh</p></li>
+                    <li class="gt" title="Giới tính"><p>Giới tính</p></li>
+                    <li class="lkh" title="Loại khách hàng"><p>Loại khách hàng</p></li>
+                    </ul>
 
-                    </ul>
-                    </li>
-                    <li id="tkh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <span>Tên khách hàng</span> 
-                    <ul style="padding-left: 0px;">
-                        <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                        <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                         <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                        <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                    </ul>
-                    </li>
-                    <li id="ns" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <span> Ngày sinh</span>
-                       
-                    <ul style="padding-left: 0px;">
-                        <li>
-                            15/11/1995
-                        </li>
-                        <li>
-                          15/11/1995
-                        </li>
-                        <li>
-                           15/11/1995
-                        </li>
-                        <li>
-                           15/11/1995
-                        </li>
-                  
-                    </ul>
-                    </li>
-                    <li id="gt" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <span> Giới tính</span>
-                       
-                    <ul style="padding-left: 0px;">
-                        <li >
-                             Nữ
-                        </li>
-                        <li >
-                            Nữ
-                        </li>
-                        <li >
-                         Nữ
-                        </li>
-                        <li >
-                             Nữ
-                        </li >
-                  
-                    </ul>
-                    </li>
-                    <li id="lkh" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <span> Loại KH</span>
-                       
-                    <ul style="padding-left: 0px;">
-                        <li class="vip">
-                             VIP
-                        </li>
-                        <li class="vip">
-                            VIP
-                        </li>
-                        <li class="vip">
-                         VIP
-                        </li>
-                        <li class="vip">
-                             VIP
-                        </li >
-                  
-                    </ul>
-                    </li>
+                     
                 </ul>
             </div>
         </div>

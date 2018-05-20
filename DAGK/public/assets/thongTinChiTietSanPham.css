@@ -245,9 +245,3 @@
     height: 200px;
 }
 
-#goTop {
-    position: fixed;
-    display: none;
-    right: 10px;
-    bottom: 10px;
-}

@@ -41,7 +41,16 @@
                             <span>Ngày đặt hàng</span>
                             <input type="checkbox" name="ngayDatHang" class="extraCheck">
                         </label>
-                        <input type="date" name="ngayDatHang-content">
+                        <label id="tuNgay">
+                            <span> Từ ngày</span> <input type="date" name="ngayDatHangTuNgay-content">
+                        </label>
+                         <label id="denNgay"> 
+                            <span>
+                                   Đến ngày</span>
+                                    <input type="date" name="ngayDatHangDenNgay-content">
+                            
+                        </label>
+                    
                     </div>
                     <div>
                         <label> <span>Tình trạng</span>
@@ -90,14 +99,19 @@
                 </div>
             </div>
             <div id="rightBox" >
+                
                 <div class="title">Chi tiết hóa đơn :
                 <span style="color:white;margin-left: 4px;" >0001</span>
                 </div> 
                 <div id="top-ChiTietHoaDon">
+                     <div id="tkkh">
+                        TK khách hàng:
+                         <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem">ntpnhung
+                         </a>
+                     </div>
                     <div id="kh">
                         Khách hàng:
-                         <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem">Nguyễn Thị Phương Nhung
-                         </a>
+                       <span> Nguyễn Thị Phương Nhung</span>
                      </div>
                     <div id="ndh">
                         Ngày đặt hàng: <span style="color: black;">15/9/2017</span>
@@ -118,26 +132,29 @@
                 
                 <div>Doanh mục sản phẩm:</div>
                 <ul id="listName">
-                    <li class="stt">STT</li>
-                    <li class="tsp">Tên sản phẩm</li>
-                    <li class="dv">Đơn vị</li>
-                    <li class="sl">Số lượng</li>
-                    <li class="thanhTien">Thành tiền</li>
+                    <li class="stt" title="STT"><p>STT</p></li>
+                    <li class="msp" title="Mã SP"><p>Mã SP</p></li>
+                    <li class="tsp" title="Tên sản phẩm"><p>Tên sản phẩm</p></li>
+                    <li class="dv" title="Đơn vị"><p>Đơn vị</p></li>
+                    <li class="sl" title="Số lượng"><p>Số lượng</li>
+                    <li class="thanhTien" title="Thành tiền"><p>Thành tiền</p></li>
                 </ul>
                 <ul id="content-ChiTietHoaDon">
                     <ul>
-                        <li class="stt">0001</li>
-                        <li class="tsp"><a href="thong-tin-chi-tiet-san-pham" title="Laptop Dell Latitude E6540 Core i5 15.6 inch"><p>Laptop Dell Latitude E6540 Core i5 15.6 inch</p></a> </li>
-                        <li class="dv">cái</li>
-                        <li  class="sl">1</li>
-                        <li  class="thanhTien">7.900.000 VNĐ</li>
+                        <li class="stt"><p>0001</p></li>
+                        <li class="msp" title="Mã SP"><a href="#"><p>Mã SP</p>0001</a></a></li>
+                        <li class="tsp"><p title="Laptop Dell Latitude E6540 Core i5 15.6 inch">Laptop Dell Latitude E6540 Core i5 15.6 inch</p> </li>
+                        <li class="dv"><p>cái</p></li>
+                        <li  class="sl"><p>1</p></li>
+                        <li  class="thanhTien"><p>7.900.000 VNĐ</p></li>
                     </ul>
-                     <ul>
-                        <li class="stt">0002</li>
-                        <li class="tsp"><a href="thong-tin-chi-tiet-san-pham2" title="Laptop Asus X541UV-GO607 Core i5-7200U/FreeDos 15.6 inch"><p>Laptop Asus X541UV-GO607 Core i5-7200U/FreeDos 15.6 inch</p></a> </li>
-                        <li class="dv">cái</li>
-                        <li  class="sl">1</li>
-                        <li  class="thanhTien">11.349.000 VNĐ</li>
+                    <ul>
+                        <li class="stt"><p>0001</p></li>
+                        <li class="msp" title="Mã SP"><a href="#"><p>Mã SP</p>0001</a></a></li>
+                        <li class="tsp"><p title="Laptop Dell Latitude E6540 Core i5 15.6 inch">Laptop Dell Latitude E6540 Core i5 15.6 inch</p> </li>
+                        <li class="dv"><p>cái</p></li>
+                        <li  class="sl"><p>1</p></li>
+                        <li  class="thanhTien"><p>7.900.000 VNĐ</p></li>
                     </ul>
                 </ul>
                 <br>
@@ -145,5 +162,6 @@
                         <span id="tongTien" style="color:#337AB7;">19.249.00 VNĐ</span>
                     </div>
                     <br>
-            </div>
+                </div>
+         
         </div>

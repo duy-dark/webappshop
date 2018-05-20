@@ -53,15 +53,4 @@ $(".luotThich").hover(function() {
     $(".luotThich img").attr('src', 'assets/image/heart.png');
     $(".luotThich").css({ "color": "black" });
 });
-$(window).scroll(function(){
- if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        $("#goTop").css({"display":"block"});
-    } else {
-        $("#goTop").css({"display":"none"});
-    }
-});
 
-$("#goTop").on("click",function(){
-document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});

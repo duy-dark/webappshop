@@ -48,28 +48,36 @@ margin-top:0px;
 margin-bottom: -10px;
 overflow: hidden;
 }
-#content-ChiTietHoaDon li p{
+#content-ChiTietHoaDon p{
 	white-space: nowrap;
 text-overflow: ellipsis;
 overflow: hidden;
 }
 
 .stt{
-	width: 7%;
+	width: 6%;
 
+}
+.msp{
+	width: 7%;
 }
 .tsp{
 	width:40%;
 }
 .dv{
-	width: 15%;
+	width: 10%;
 }
 .sl{
 	width: 15%;
 }
 .thanhTien{
+	position: absolute;
+	padding-left: 5px;
 	width: 20%;
 	border-right: 0px !important;
+}
+#kh span{
+color:#F38C06 !important;
 }
 #ttdh button{
 border-radius: 8px 8px 8px 8px;

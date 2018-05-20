@@ -28,6 +28,13 @@
                     </div>
                     <div>
                         <label>
+                            <span>Tài khoản KH</span>
+                            <input type="checkbox" name="taiKhoanKh" class="extraCheck">
+                        </label>
+                        <input type="text" name="taiKhoanKh-content" placeholder="Nhập tài khoản KH">
+                    </div>
+                    <div>
+                        <label>
                             <span>Tên khách hàng</span>
                             
                             <input type="checkbox" name="tenKhachHang" class="extraCheck">
@@ -39,7 +46,15 @@
                             <span>Ngày đặt hàng</span>
                             <input type="checkbox" name="ngayDatHang" class="extraCheck">
                         </label>
-                        <input type="date" name="ngayDatHang-content">
+                        <label id="tuNgay">
+                            <span> Từ ngày</span> <input type="date" name="ngayDatHangTuNgay-content">
+                        </label>
+                         <label id="denNgay"> 
+                            <span>
+                                   Đến ngày</span>
+                                    <input type="date" name="ngayDatHangDenNgay-content">
+                        </label>
+                    
                     </div>
                     <div>
                         <label> <span>Tình trạng</span>
@@ -67,6 +82,7 @@
                         </label>
                         <input type="text" name="tenSanPham-content" placeholder="Nhập tên sản phẩm">
                     </div>
+
                     <div>
                         <label> <span>Loại sản phẩm</span>
                             <input type="checkbox" name="loaiSanPham" class="extraCheck">
@@ -85,92 +101,31 @@
                         </label>
                         <input type="text" name="nsxSanPham-content" placeholder="Nhập nhà sản xuất sản phẩm">
                     </div>
+                     <div>
+                        <label> <span>Tất cả</span>
+                            <input type="checkbox" name="tc" class="extraCheck">
+                        </label>
+                    </div>
                 </div>
             </div>
             <div id="rightBox">
-                <div class="title ">Danh sách hóa đơn phù hợp kết quả tìm kiếm</div> 
-                <ul class="list">
-                    <li id="mhd" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <span>Mã hóa đơn</span>
-                    <ul style="padding-left: 0px;">
-                        <li>
-                            <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
-                           
-                        </li>
-                         <li>
-                           <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
-                           
-                        </li>
-                        <li>
-                            <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
-                           
-                        </li>
-                         <li>
-                            <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang"> 0001</a>
-                           
-                        </li>
-
-                    </ul>
-                    </li>
-                    <li id="tkh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <span>Tên khách hàng</span> 
-                    <ul style="padding-left: 0px;">
-                        <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                        <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                         <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                        <li>
-                                <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem"> Nguyễn Thị Phương Nhung</a>
-                           
-                        </li>
-                    </ul>
-                    </li>
-                    <li id="ndh" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <span> Ngày đặt hàng</span>
-                       
-                    <ul style="padding-left: 0px;">
-                        <li>
-                            15/9/2017
-                        </li>
-                        <li>
-                            15/9/2017
-                        </li>
-                        <li>
-                            15/9/2017
-                        </li>
-                        <li>
-                            15/9/2017
-                        </li>
-                  
-                    </ul>
-                    </li>
-                    <li id="tt" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <span> Tình trạng</span>
-                       
-                    <ul style="padding-left: 0px;">
-                        <li class="daGiaoHang">
-                             Đã giao hàng
-                        </li>
-                        <li class="chuaGiaoHang">
-                             Chưa giao hàng
-                        </li>
-                        <li class="dangGiaoHang">
-                          Đang giao hàng
-                        </li>
-                        <li class="dangGiaoHang">
-                             Đang giao hàng
-                        </li >
-                  
-                    </ul>
-                    </li>
+                <div class="title ">Danh sách sản phẩm phù hợp kết quả tìm kiếm</div> 
+                <ul id="listName">
+                    <li class="mhd" title="Mã hóa đơn"><p>Mã hóa đơn</p></li>
+                    <li class="tkkh" title="Tài khoản KH"><p>Tài khoản KH</p></li>
+                    <li class="tkh" title="Tên khách hàng"><p>Tên khách hàng</p></li>
+                    <li class="ndh" title="Ngày đặt hàng"><p>Ngày đặt hàng</p></li>
+                    <li class="tt" title="Tình trạng"><p>Tình trạng</p></li>
                 </ul>
+                <ul id="content-ChiTietHoaDon">
+                    <ul>
+                     <li class="mhd" title="Mã hóa đơn"><p><a href="#">001</a> </a></p></li>
+                     <li class="tkkh" title="Tài khoản KH"><p>Tài khoản KH</p></li>
+                    <li class="tkh" title="Tên khách hàng"><p>Tên khách hàng</p></li>
+                    <li class="ndh" title="Ngày đặt hàng"><p>Ngày đặt hàng</p></li>
+                    <li class="tt" title="Tình trạng"><p>Tình trạng</p></li>
+                    </ul>  
+                </ul>
+                
             </div>
         </div>

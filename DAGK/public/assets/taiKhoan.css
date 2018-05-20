@@ -129,3 +129,56 @@ left:530px;
 	background-color: rgba(0,0,0,0.4);
 	z-index: 2;
 }
+#menu1 a{
+  color: white !important;
+}
+#menu1 a:hover{
+color: #FB8F02 !important;
+}
+
+#menu1 >nav >div >ul >li >ul{
+	background-color: black;
+	font-size: 1.7rem;
+}
+
+#menu1 .loaiSP-content{
+	font-weight: bold;
+	font-size: 1.7rem;
+color: white;
+}
+#menu1 .loaiSP-content li{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+#menu1 .loaiSP-content li:hover{
+	cursor: pointer;
+	color:  #FB8F02 !important;
+
+}
+#menu1 .xx-content{
+	font-weight: bold;
+	font-size: 1.7rem;
+	color: white;
+}
+#menu1 .xx-content li{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+#menu1 .xx-content li:hover{
+	cursor: pointer;
+	color:  #FB8F02 !important;
+}
+
+#menu1 .nsx-content{
+	font-weight: bold;
+	font-size: 1.7rem;
+	color: white;
+}
+#menu1 .nsx-content li{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+#menu1 .nsx-content li:hover{
+	cursor: pointer;
+	color:  #FB8F02 !important;
+}

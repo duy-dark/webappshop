@@ -12,7 +12,8 @@ footer{
 	margin-top:50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	margin-bottom: 1000px;
+	overflow: hidden;
+
 border-radius: 200px 200px 200px 200px;
 -moz-border-radius: 200px 200px 200px 200px;
 -webkit-border-radius: 200px 200px 200px 200px;
