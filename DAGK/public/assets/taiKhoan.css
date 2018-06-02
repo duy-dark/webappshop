@@ -129,7 +129,11 @@ left:530px;
 	background-color: rgba(0,0,0,0.4);
 	z-index: 2;
 }
+#menu1 a[href="/home"]{
+	width: 150px;
+}
 #menu1 a{
+	
   color: white !important;
 }
 #menu1 a:hover{
