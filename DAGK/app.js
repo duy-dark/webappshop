@@ -36,10 +36,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/home', homeController);
-app.use('/gio-hang', gioHangController);
-app.use('/lien-he', lienHeController);
-app.use('/dash-board',dashBoardController);
-app.use('/san-pham',sanPhamController);
+app.use('/giohang', gioHangController);
+app.use('/lienhe', lienHeController);
+app.use('/dashboard',dashBoardController);
+app.use('/sanpham',sanPhamController);
 
 app.listen(3000, () => {
     console.log('Site running on port 3000');
