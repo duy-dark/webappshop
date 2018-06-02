@@ -3,6 +3,7 @@ var exphbs = require('express-handlebars');
 var express_handlebars_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var path = require('path');
+var wnumb = require('wnumb');
 
 var homeController = require('./controllers/homeController'),
 	gioHangController=require('./controllers/gioHangController'),
@@ -19,7 +20,13 @@ app.engine('hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: 'views/_layouts/',
     helpers: {
-        section: express_handlebars_sections()
+        section: express_handlebars_sections(),
+        number_format: n => {
+            var nf = wnumb({
+                thousand: ','
+            });
+            return nf.to(n);
+        }
     }
 }));
 app.set('view engine', 'hbs');

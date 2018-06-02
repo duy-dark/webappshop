@@ -41,61 +41,68 @@
                         <a href="../sanPham/San-pham-theo-hang"><b><span>SẢN PHẨM MỚI</span></b></a>
                     </div>
                     <div class="box-content">
-                        <div class="box-product">
-                            <div>
-                                <div class="image"><a href="thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/Lenovo-Miix-320-10ICR.png" alt=""></a></div>
-                                <div class="name"><a href="thong-tin-chi-tiet-san-pham">Lenovo Miix 320 10ICR</a></div>
-                                <div class="price"><a href="thong-tin-chi-tiet-san-pham"><span class="price-new"><b>6,190,000 &nbsp; đ</b></span></a></div>
+                        
+                         <div class="box-product">
+                            {{#each moi}}
+                           <div>
+                                <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                                <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham">{{TENSP}}</a></div>
+                                <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
                                 <div class="describe">
-                                    <p><strong>Màn Hình: 10.1 inch</strong></p>
-                                    <p><strong>Pin: 2 cell</strong></p>
-                                    <p><strong>Ram: 4GB</strong></p>
-                                    <p><strong>HĐH: WINDOWS 10 Home</strong></p>
+                                    <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                                    <p><strong>Pin: {{PIN}}</strong></p>
+                                    <p><strong>Ram: {{DL_RAM}}</strong></p>
+                                    <p><strong>HĐH: {{HDH}}</strong></p>
                                     <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
                                 </div>
                                 <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                             </div>
+                            {{/each}}
                         </div>
+                        
                     </div>
                     <div class="box-heading">
                         <b><span>SẢN PHẨM BÁN CHẠY</span></b>
                     </div>
                     <div class="box-content">
-                        <div class="box-product">
+                           <div class="box-product">
+                            {{#each banchay}}
                             <div>
-                                <div class="image"><a href="thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/asusx441.jpg" alt=""></a></div>
-                                <div class="name"><a href="thong-tin-chi-tiet-san-pham">Asus X541NA-GO012T/Pentium N4200</a></div>
-                                <div class="price"><a href="thong-tin-chi-tiet-san-pham"><span class="price-new"><b>8,590,000 &nbsp; đ</b></span></a></div>
+                                <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                                <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham">{{TENSP}}</a></div>
+                                <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
                                 <div class="describe">
-                                    <p><strong>Màn Hình:&nbsp;14 inchHD LED blacklight</strong></p>
-                                    <p><strong>CPU:&nbsp;&nbsp;intel, Core i3</strong></p>
-                                    <p><strong>Ram:&nbsp;&nbsp;4GB, DDR4</strong></p>
-                                    <p><strong>HĐH: &nbsp;&nbsp;Free DOS</strong></p>
-                                    <p><strong>Nặng: &nbsp;&nbsp;2.09&nbsp;Kg</strong></p>
+                                    <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                                    <p><strong>Pin: {{PIN}}</strong></p>
+                                    <p><strong>Ram: {{DL_RAM}}</strong></p>
+                                    <p><strong>HĐH: {{HDH}}</strong></p>
+                                    <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
                                 </div>
                                 <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                             </div>
-                           
+                            {{/each}}
                         </div>
                     </div>
                     <div class="box-heading">
                         <b><span>SẢN PHẨM ĐƯỢC XEM NHIỀU NHẤT</span></b>
                     </div>
                     <div class="box-content">
-                        <div class="box-product">
+                         <div class="box-product">
+                            {{#each xemnhieu}}
                             <div>
-                                <div class="image"><a href="thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/Lenovo-Miix-320-10ICR.png" alt=""></a></div>
-                                <div class="name"><a href="thong-tin-chi-tiet-san-pham">Lenovo Miix 320 10ICR</a></div>
-                                <div class="price"><a href="thong-tin-chi-tiet-san-pham"><span class="price-new"><b>6,190,000 &nbsp; đ</b></span></a></div>
+                                <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                                <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham">{{TENSP}}</a></div>
+                                <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
                                 <div class="describe">
-                                    <p><strong>Màn Hình: 10.1 inch</strong></p>
-                                    <p><strong>Pin: 2 cell</strong></p>
-                                    <p><strong>Ram: 4GB</strong></p>
-                                    <p><strong>HĐH: WINDOWS 10 Home</strong></p>
+                                    <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                                    <p><strong>Pin: {{PIN}}</strong></p>
+                                    <p><strong>Ram: {{DL_RAM}}</strong></p>
+                                    <p><strong>HĐH: {{HDH}}</strong></p>
                                     <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
                                 </div>
                                 <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
                             </div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
