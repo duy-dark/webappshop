@@ -18,7 +18,6 @@ exports.load = sql => {
             } else {
             	resolve(rows);
             }
-
             cn.end();
         });
     });
