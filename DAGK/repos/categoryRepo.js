@@ -1,13 +1,22 @@
 var db = require('../fn/db');
 
 exports.loadspmoinhat = () => {
-	var sql = `select * from sanpham order by SOLUONGSPDABAN DESC  limit 4 OFFSET 0`;
+	var sql = `select *,DATEDIFF(NOW(),NGAYNHAP ) as moinhat from sanpham order by moinhat ASC  limit 4 OFFSET 0`;
 	return db.load(sql);
 }
 exports.loadid = id => {
-	var sql = `select * from sanpham where MASP = ${id}`;
+	var sql = `select * from sanpham where MASP = ${id} `;
 	return db.load(sql);
 }
+exports.loadloai = LOAI => {
+	var sql = `select * from sanpham where LOAI = ${LOAI} limit 5 OFFSET 0`;
+	return db.load(sql);
+}
+exports.loadnsx = NSX => {
+	var sql = `select * from sanpham where NSX = ${NSX} limit 5 OFFSET 0`;
+	return db.load(sql);
+}
+
 exports.loadbanchay = () => {
 	var sql = `select * from sanpham order by SOLUONGSPDABAN DESC  limit 4 OFFSET 0 `;
 	return db.load(sql);
