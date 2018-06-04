@@ -24,19 +24,4 @@ router.get('/sanpham/san-pham-theo-hang', (req, res) => {
     });
 });
 
-
-router.get('/sanpham/thong-tin-chi-tiet-san-pham', (req, res) => {
-    var proId = req.params.proId;
-    productRepo.single(proId).then(rows => {
-        if (rows.length > 0) {
-            var vm = {
-                product: rows[0]
-            };
-            res.render('product/detail', vm);
-        } else {
-            res.end('NO PRODUCT');
-        }
-    });
-});
-
 module.exports = router;
