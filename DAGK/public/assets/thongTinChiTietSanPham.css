@@ -128,9 +128,7 @@
     background-color: white;
     height: 480px;
     margin-bottom: 30px;
-    -webkit-box-shadow: -9px 10px 29px -1px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -9px 10px 29px -1px rgba(0, 0, 0, 0.75);
-    box-shadow: -9px 10px 29px -1px rgba(0, 0, 0, 0.75);
+   
 }
 
 .bottom {

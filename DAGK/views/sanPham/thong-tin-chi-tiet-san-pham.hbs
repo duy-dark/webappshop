@@ -12,51 +12,46 @@
     <div id="thongTinChiTietSanPham">
         <div class="title">
             <span><a href="/home">Trang chủ </a>></span>
-            <span><a href="#">DELL </a>></span> Laptop Dell Latitude E6540 Core i5 15.6 inch
+            <span><a href="#">{{sp.NSX}} </a>></span> {{sp.TENSP}}
         </div>
         <div class="top">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 left-sample-image">
                 <br>
                 <br>
                 <div class="sample-image">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/1.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/1.JPG">
                 </div>
                 <br>
                 <div class="slide-image">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/1.JPG" class="border-red-visited">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/2.JPG">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/3.JPG">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/4.JPG">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/5.JPG">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/6.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/1.JPG" class="border-red-visited">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/2.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/3.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/4.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/5.JPG">
                 </div>
                 <br>
                 <div>
                     <span class="luotThich">
-                <img src="/assets/image/heart.png"> Thích: <span>0</span>
+                        <img src="/assets/image/heart.png">Thích: <span>{{sp.LUOTTHICH}}</span>
                     </span>
                     <span class="luotXem">
-                <img src="/assets/image/seen.png">
-                Lượt xem: <span>0</span>
+                        <img src="/assets/image/seen.png">
+                        Lượt xem: <span>{{sp.LUOTXEM}}</span>
                     </span>
                 </div>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 right-sample-image">
-                <h3><b>Laptop Dell Latitude E6540 Core i5 15.6 inch</b></h3>
-                <br>
-                <div class="simple-decription">
-                    Laptop Dell Latitude E6540 Core i5 15.6 inch cũ giá rẻ - có bàn phím số - vỏ nhôm - ram 4g - hdd 320g - bảo hành 12 tháng - tặng balo
-                </div>
+                <h4><b>{{sp.TENSP}}</b></h4>
                 <div class="cost">
                     <br>
                     <h4><b>Giá: </b></h4>
-                    <span> 7.900.000 VNĐ</span>
+                    <span> {{number_format sp.GIABAN}} đ</span>
                 </div>
-                <div class="soLuongBan">
-                     <br>
-                    <h4><b>Số lượng bán: </b></h4>
-                    <span> 24</span>
+                <br>
+                <div class="simple-decription">
+                    
                 </div>
+               
                 <div class="soLuong">
                     <h4><b>Mua ngay:</b></h4>
                     <button>+</button><span>0</span>
@@ -66,7 +61,7 @@
                     <img src="/assets/image/giohang.jpg"> Thêm vào giỏ hàng
                 </div>
                 <div class="khuyenMai">
-                    <img src="/assets/image/Laptop Dell Latitude E6540 Core i5 15.6 inch/khuyenMai.png">
+                    
                 </div>
             </div>
         </div>
@@ -156,35 +151,14 @@
                     <br>
                 </div>
                 <div id="bottomSlideImage">
+                    {{#each sploai}}
                     <span>
                         <a href="">
-                            <img src="/assets/image/sanpham/Asus_X541NA-GO012T-2.png">
-                        <div>Asus_X541NA-GO012T-2</div>
+                            <img src="/assets/image/sanpham/{{MASP}}/1.png">
+                        <div>{{TENSP}}</div>
                         </a>
                     </span>
-                    <span>
-                        <a href="">
-                        <img src="/assets/image/sanpham/Dell-Ins-N5378.png">
-                        <div>Dell-Ins-N5378</div>
-                         </a>
-                    </span>
-                    <span>
-                        <a href="">
-                        <img src="/assets/image/sanpham/HP-15-bs555TU.png">
-                        <div>HP-15-bs555TU</div>
-                         </a>
-                    </span>
-                    <span>
-                        <a href="">
-                        <img src="/assets/image/sanpham/HP-Pavilion-x360-14-ba066TU.png">
-                        <div>HP-Pavilion-x360-14-ba066TU</div>
-                         </a>
-                    </span>
-                    <span>
-                        <a href="">
-                        <img src="/assets/image/sanpham/Lenovo-Miix-320-10ICR.png">
-                        <div>Lenovo-Miix-320-10ICR</div> </a>
-                    </span>
+                    {{/each}}
                 </div>
             </div>
             <hr>
