@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require('express'),
     categoryRepo = require('../repos/categoryRepo');
 
@@ -23,7 +24,6 @@ router.get('/sanpham/san-pham-theo-hang', (req, res) => {
         };
         res.render('/sanPham/San-pham-theo-hang', vm);
     });
-});
 
 router.get('/thong-tin-chi-tiet-san-pham', (req, res) => {
     categoryRepo.loadid(+req.query.id).then(rows =>{

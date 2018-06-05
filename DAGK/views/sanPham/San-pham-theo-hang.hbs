@@ -17,66 +17,99 @@
                     <span class="glyphicon glyphicon-plus" style="float: right;"></span>
                 </li>
                 <div id="standard-option">
-                    <form>
-                        <label id="pick">
-                        <input type="radio" name="lappride" onclick="this.submit(value = "ALL")">
+                    <label id="pick">
+                        <input type="radio" name="lappride">
                         <span>Tất cả</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>MSI</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>MASSTEL</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>LENOVO</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>HP</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>DELL</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>ACER</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>APPLE</span>
-                        </label>
-                        <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>ASUS</span>
-                        </label>
-                    </form>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>MSI</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>MASSTEL</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>LENOVO</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>HP</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>DELL</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>ACER</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>APPLE</span>
+                    </label>
+                    <label id="pick">
+                        <input type="radio" name="lappride">
+                        <span>ASUS</span>
+                    </label>
                 </div>
             </div>
         </div>
         <div id="Items" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
             <div id="Items-Content">
-                {{#each products}}
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                       <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
-                        <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham">{{TENSP}}</a></div>
-                        <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
+                    <div class="image"><a href="thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="thong-tin-chi-tiet-san-pham">Dell Ins N5378</a></div>
+                    <div class="price"><a href="thong-tin-chi-tiet-san-pham"><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
                     <div class="describe">
-                        <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
-                        <p><strong>CPU: {{CPU}}</strong></p>
-                        <p><strong>Ram: {{DL_RAM}}</strong></p>
-                        <p><strong>HĐH: {{HDH}}</strong></p>
-                        <p><strong>Nặng: {{TRONGLUONG}}</strong></p>
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
                     </div>
-                    {{#if ../layoutVM.isLogged}}
                     <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
-                    {{/if}}
                 </div>
-                {{/each}}
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="thong-tin-chi-tiet-san-pham2"><img src="/assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="thong-tin-chi-tiet-san-pham2">Dell Ins N5378</a></div>
+                    <div class="price"><a href="thong-tin-chi-tiet-san-pham2"><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="thong-tin-chi-tiet-san-pham"><img src="/assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="thong-tin-chi-tiet-san-pham">Dell Ins N5378</a></div>
+                    <div class="price"><a href="thong-tin-chi-tiet-san-pham"><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image"><a href="thong-tin-chi-tiet-san-pham2"><img src="/assets/image/sanpham/Dell-Ins-N5378.png" alt=""></a></div>
+                    <div class="name"><a href="thong-tin-chi-tiet-san-pham2">Dell Ins N5378</a></div>
+                    <div class="price"><a href="thong-tin-chi-tiet-san-pham2"><span class="price-new"><b>23,990,000 &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: 13 inch FullHD</strong></p>
+                        <p><strong>CPU: Intel, Core i7, 2.70 GHz</strong></p>
+                        <p><strong>Ram: 8GB, DDR4, 2133MHz</strong></p>
+                        <p><strong>HĐH: Window 10</strong></p>
+                        <p><strong>Nặng: 1.6 Kg</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                </div>
             </div>
             <div style="width: 100%; display: inline-block; margin: 0 auto; text-align: center;">
                  <div id="inner">

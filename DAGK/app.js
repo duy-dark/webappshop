@@ -7,6 +7,7 @@ var wnumb = require('wnumb');
 var session = require('express-session');
 
 
+
 var homeController = require('./controllers/homeController'),
 	gioHangController=require('./controllers/gioHangController'),
 	lienHeController=require('./controllers/lienHeController'),
@@ -23,7 +24,7 @@ app.engine('hbs', exphbs({
     layoutsDir: 'views/_layouts/',
     helpers: {
         section: express_handlebars_sections(),
-         number_format: n => {
+        number_format: n => {
             var nf = wnumb({
                 thousand: ','
             });
