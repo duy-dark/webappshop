@@ -37,22 +37,19 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
-    /*
-    categoryRepo.loadnsxid(+req.query.id).then(rows=>{
-        console.log(rows.length);
-         var vm = {
-            products: rows
-        };
-        
-        res.render('sanPham/San-pham-theo-hang', vm);
-    });
-    */
+    
 });
 router.get('/thong-tin-chi-tiet-san-pham', (req, res) => {
-    categoryRepo.loadid(+req.query.id).then(rows =>{
-        var vm={
-            sp:rows[0]
-        }
+    var p1= categoryRepo.loadid(+req.query.id);
+    var p2= categoryRepo.loadloaiid(+req.query.id);
+    var p3= categoryRepo.loadnsxidttct(+req.query.id);
+    Promise.all([p1, p2,p3]).then(([rows, rows1,rows2])=>
+    {
+        var vm = {
+            sp: rows[0],
+            sploai: rows1,
+            spnsx: rows2
+        };
         res.render('sanPham/thong-tin-chi-tiet-san-pham',vm);
     });
 });
