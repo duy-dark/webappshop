@@ -13,7 +13,7 @@ exports.loadloai = LOAI => {
 	return db.load(sql);
 }
 exports.loadloaiid = id => {
-	var sql = `select sp.* from sanpham sp, sanpham sp1 where sp.LOAI = sp1.LOAI and sp1.MASP = ${id}`;
+	var sql = `select sp.* from sanpham sp, sanpham sp1 where sp.LOAI = sp1.LOAI and sp1.MASP = ${id} limit 5 OFFSET 0`;
 	return db.load(sql);
 }
 exports.loadnsxid = id => {

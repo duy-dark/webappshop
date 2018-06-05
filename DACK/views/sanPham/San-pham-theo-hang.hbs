@@ -5,8 +5,6 @@
 {{#section 'js'}}
     <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
         document.getElementById("toggleButton").addEventListener("click", myFunction(this));
-
-
         function hid(val) {
         var x = document.getElementById(val);
         if (x.style.display === "none") {
@@ -15,6 +13,8 @@
             x.style.display = "none";
         }   
        }
+
+
     </script>
 {{/section}}
 
@@ -79,7 +79,7 @@
             <div id="Items-Content">
                 {{#each products}}
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                    <div class="image" style="height: 250px; "><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
                     <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">{{TENSP}}</a></div>
                     <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
                     <div class="describe">
