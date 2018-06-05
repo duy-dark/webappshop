@@ -25,14 +25,7 @@ exports.loadxemnhieunhat = () => {
 	var sql = `select * from sanpham order by LUOTXEM DESC  limit 4 OFFSET 0 `;
 	return db.load(sql);
 }
-exports.loadnsx = () => {
-	var sql = `select NSX from sanpham group by NSX`;
-	return db.load(sql);
-}
-exports.loadnsx = () => {
-	var sql = `select LOAI from sanpham group by LOAI`;
-	return db.load(sql);
-}
+
 exports.add = sanpham => {
 	var sql = `insert into sanpham(TENSP,NSX,LOAI,DLRAM,L_RAM,TD_RAM,SL_RAM,LD_DIACUNG,DL_DIACUNG,DOHOA,KT_MANHINH,DP_MANHINH,CN_MANHINH,CU_MANHINH,AMTHANH,DIAQUANG,GIAOTIEP,WIFI_MANG,KNKD_MANG,CARDREADER,WEBCAM,HDH,PIN,THONGTINKHAC_CBVT,THONGTINKHAC_DBP,THONGTINKHAC_PKKT,KICHTHUOC,TRONGLUONG,CHATLIEU,BAOHANH,LUOTXEM,LUOTTHICH,GIABAN,CPU,SOLUONGSPCON,GIAMUA,SOLUONGSPDABAN,NGAYNHAP) 
 				values('${sanpham.TENSP}','${sanpham.NSX}','${sanpham.LOAI}','${sanpham.DLRAM}','${sanpham.L_RAM}','${sanpham.TD_RAM}','${sanpham.SL_RAM}','${sanpham.LD_DIACUNG}','${sanpham.DL_DIACUNG}','${sanpham.DOHOA}','${sanpham.KT_MANHINH}','${sanpham.CN_MANHINH}','${sanpham.CU_MANHINH}','${sanpham.AMTHANH}','${sanpham.DIAQUANG}','${sanpham.GIAOTIEP}','${sanpham.WIFI_MANG}','${sanpham.KNKD_MANG}','${sanpham.CARDREADER}','${sanpham.WEBCAM}','${sanpham.HDH}','${sanpham.PIN}','${sanpham.THONGTINKHAC_CBVT}','${sanpham.THONGTINKHAC_DBP}','${sanpham.THONGTINKHAC_PKKT}','${sanpham.KICHTHUOC}','${sanpham.TRONGLUONG}','${sanpham.CHATLIEU}','${sanpham.BAOHANH}','${0}','${0}','${sanpham.GIAMUA}','${sanpham.CPU}','${sanpham.SOLUONGSPCON}','${sanpham.GIABAN}','${0}','${sanpham.NGAYNHAP}')`;
