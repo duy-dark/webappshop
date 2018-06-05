@@ -3,11 +3,18 @@
 {{/section}}
 
 {{#section 'js'}}
-   <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
-   $('.loadCat').on('click', function() {
-        var id = $(this).data('proid');
-        $('#pickCat').submit();
-    });
+    <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
+        document.getElementById("toggleButton").addEventListener("click", myFunction(this));
+
+
+        function hid(val) {
+        var x = document.getElementById(val);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }   
+       }
     </script>
 {{/section}}
 
@@ -18,47 +25,53 @@
             <div id="name">
                 <li>
                     <b>Hãng sản xuất</b>
-                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                    <span id="toggleButton" class="glyphicon glyphicon-plus" style="float: right;" ></span>
                 </li>
                 <div id="standard-option">
-                    <form id="pickCat"  method="submit" action="get/San-pham-theo-hang">
-                        <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>Tất cả</span>
-                        </label>
-                        <label data-proid={{26}} id="pick" class="loadCat">
-                            <input type="radio" name="lappride">
-                            <span>MSI</span>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>MASSTEL</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/MSI" style="text-decoration-line: none;"><span>MSI</span></a>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>LENOVO</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/MASSTEL" style="text-decoration-line: none;"><span>MASSTEL</span></a>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>HP</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/LENOVO" style="text-decoration-line: none;"><span>LENOVO</span></a>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>DELL</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/HP" style="text-decoration-line: none;"><span>HP</span></a>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>ACER</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/DELL" style="text-decoration-line: none;"><span>DELL</span></a>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>APPLE</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/Acer" style="text-decoration-line: none;"><span>Acer</span></a>
                         </label>
                         <label id="pick">
-                            <input type="radio" name="lappride">
-                            <span>ASUS</span>
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/Apple" style="text-decoration-line: none;"><span>Apple</span></a>
                         </label>
-                    </form>
+                        <label id="pick">
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/Asus" style="text-decoration-line: none;"><span>Asus</span></a>
+                        </label>
+                </div>
+                <li onclick="hid("standard-option2")>
+                    <b>Loại Sản Phẩm</b>
+                    <span id="toggleButton" class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="standard-option">
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/MSI" style="text-decoration-line: none;"><span>Gamming</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/MASSTEL" style="text-decoration-line: none;"><span>Doanh Nhân</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/LENOVO" style="text-decoration-line: none;"><span>Cao Cấp</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/Sản-phẩm-theo-hãng/HP" style="text-decoration-line: none;"><span>Phổ Thông</span></a>
+                        </label>
                 </div>
             </div>
         </div>
