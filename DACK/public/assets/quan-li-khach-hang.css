@@ -1,0 +1,36 @@
+#leftBox input[name="tenKhachHang-content"]{
+	display:none;
+}
+#leftBox input[name="tenTaiKhoan-content"]{
+	display:none;
+}
+#leftBox input[name="ngaySinh-content"]{
+	border: 2px inset black;
+	display:none;
+}
+#leftBox #gioiTinh{
+	border: 2px inset black;
+	display: none;
+}
+#leftBox #loaiKhachHang{
+	border: 2px inset black;
+	display: none;
+}
+.tkkh{
+	width: 15%;
+}
+.tkh{
+	width: 30%;	
+}
+.ns{
+	width: 20%;
+}
+.gt{
+	width: 12%;
+}
+.lkh{
+	position: absolute;
+	padding-left: 5px;
+	width: 20%;
+	border-right: none !important;
+}

@@ -1,0 +1,185 @@
+#Brand-goods {
+	margin:0 auto;
+	width: 1200px;
+	list-style-type: none;
+	overflow: auto;
+	margin-bottom: 50px;
+}
+#Brand-goods div{
+	background-color: white;
+}
+/*bo loc san pham*/
+	#Brand-goods #Standard{
+		margin-right: 5px;
+		width: 220px;
+		float: left;	
+	}
+	#Brand-goods #Standard div{
+		border-bottom: 0.5px solid gray;
+	}
+	#Brand-goods #Standard span{
+		margin-left: 10px;
+	}
+		#Brand-goods #Standard #standard-option{
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+		#Brand-goods #Standard #standard-option label{
+			display: block;
+		}
+/*hien thi san pham*/
+	#Brand-goods #Items{
+		margin-left: 5px;
+		width: 970px;
+		float: right;
+		display: inline-block;
+	}
+		#Brand-goods #Items #Items-Content> div{
+			display: inline-block;
+		    /*vertical-align: top;
+		    marker-top: 20px;*/
+		    margin-top: 10px;
+		    margin-bottom: 20px;
+		    background: #fff;
+		    text-align: center;
+		    padding-bottom: 10px;
+		    padding-left: 10px;
+		    color: #666;
+		}
+		#Brand-goods #Items #Items-Content> div:hover{
+			z-index: 1;
+			box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+		}
+		#Brand-goods .image {
+		    display: block;
+		    margin-bottom: 5px;
+		}
+		 #Brand-goods .price {
+		    font-size: 12px;
+		    display: block;
+		    font-weight: normal;
+		    margin: 7px 0;
+		    padding: 0 8px;
+		    color: #F15A23;
+		}
+		#Brand-goods .price-new {
+		    font-weight: normal;
+		}
+		.box .box-category {
+		    list-style: none;
+		}
+		.box-category ul, .list-item {
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+		}
+
+/*file thong tin chi tiet tai khoan*/
+
+#User-content{
+	margin:0 auto;
+	margin-bottom: 50px;
+	width: 1200px;
+	list-style-type: none;
+	overflow: auto;
+}
+	#User-content > div{
+		background-color: white;
+		
+	}
+		#User-content #User-Avatar{
+			text-align: center;
+			font-size: 20px;
+			text-decoration-line: none;
+			width: 300px;
+			/**/
+			margin-left: 10px;
+			margin-right: 10px;
+			-webkit-box-shadow: -6px 6px 5px 0px rgba(199,199,199,1);
+			-moz-box-shadow: -6px 6px 5px 0px rgba(199,199,199,1);
+			box-shadow: -6px 6px 5px 0px rgba(199,199,199,1);
+		}
+			#User-content #User-Avatar
+			{
+				position: relative;
+			}
+				#User-content #User-Avatar{
+					padding-top: 20px;
+				}
+						#User-content #User-Avatar #user-image > img{
+							position: absolute;
+							top: 0px;
+							right: 0px;
+							left: 74px;
+							margin-top: 40px;
+							margin-bottom: 20px;
+							border: 1px solid gray;
+							border-radius: 50%;
+						}
+					#User-content #User-Avatar a{
+						text-decoration: none;
+						display: block;
+						margin-bottom: 10px;
+					}
+					#User-content #User-Avatar #user-type {
+						margin-top: 10px;
+						border-top: 1px solid gray;
+					}
+						#User-content #User-Avatar #user-type p{
+							color: red;
+
+						}
+		#User-content #User-Infor{
+			width: 880px;
+			padding-bottom: 10px;
+		}
+			#User-content #User-Infor #Infor-Content{
+				margin-bottom: 20px;
+			}
+			#User-content #User-Infor #Infor-Content div{
+				font-size: 18px;
+				margin-left: 20px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				/**/
+				color: #01A9DB;
+			}
+			#User-content #User-Infor #Infor-Content label{
+				margin-right: 20px;
+				width: 200px;
+			}
+			#User-content #User-Infor #Infor-Content input{
+				color: #585858;
+				width: 300px;
+				border-radius: 5px;
+			}
+				#User-content #User-Infor #Infor-Content #Account-Infor{
+					border-bottom: 1px solid gray;
+					padding-bottom: 30px;
+				}
+			#User-content #User-Infor #history-orders{
+				border-top: 1px solid gray;
+				padding-top: 10px;
+			}
+				#User-content #User-Infor #history-orders #order-content{
+					overflow: auto;
+					color: #DF7401;
+					height: 100px;
+					border: 1px solid gray;
+					border-radius: 5px;
+					text-align: center;
+					padding-right: 5px;
+					padding-left: 5px;
+				}
+				#User-content #User-Infor #history-orders #order-content div{
+					margin-left: 5px;
+					margin-right: 5px;
+	/*				margin-top: 5px;*/
+					marker-bottom: 5px;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				#User-content #User-Infor #history-orders #order-content div:hover{
+					background-color: #D8D8D8;
+				}
+

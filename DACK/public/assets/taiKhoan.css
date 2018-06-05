@@ -1,0 +1,188 @@
+#taiKhoan{
+	position: absolute;
+	top: 25px;
+	left:40px;
+	width: 240px;
+	list-style:none;
+}
+#taiKhoan img{
+	height: 40px;
+	width: 60px !important;;
+}
+
+#modalForm{
+	position: fixed;
+	top:42px;
+	width: 400px;
+	height: 280px;
+	left: 50%;
+    transform: translateX(-50%);
+	background-color: #FFFFFF;
+	cursor: default;
+	-webkit-box-shadow: -3px 4px 18px 2px rgba(0,0,0,0.75);
+-moz-box-shadow: -3px 4px 18px 2px rgba(0,0,0,0.75);
+box-shadow: -3px 4px 18px 2px rgba(0,0,0,0.75);
+border-radius: 6px 6px 6px 6px;
+-moz-border-radius: 6px 6px 6px 6px;
+-webkit-border-radius: 6px 6px 6px 6px;
+
+}
+.font{
+	font-family: 'Open Sans';
+        font-size: 16pt;
+        font-weight: 500;
+}
+#navTaiKhoan{
+	border-bottom: 1px solid #BDB7B7;
+	padding-top:5px;
+}
+#dangNhap{
+	padding-top:7px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 3px;
+	color: green;
+	background-color: #F1F1F1;
+	border-radius: 6px 0px 0px 0px;
+-moz-border-radius: 6px 0px 0px 0px;
+-webkit-border-radius: 6px 0px 0px 0px;
+
+}
+#dangNhap:hover{
+	cursor: pointer;
+}
+
+#dangNhapContent button{
+margin-left:20px;
+color: black;
+font-weight:600;
+
+border-radius: 6px 6px 6px 6px;
+-moz-border-radius: 6px 6px 6px 6px;
+-webkit-border-radius: 6px 6px 6px 6px;
+}
+#dangKi{
+	padding-left: 20px;
+		border-radius: 6px 6px 0px 0px;
+-moz-border-radius: 6px 6px 0px 0px;
+-webkit-border-radius: 6px 6px 0px 0px;
+}
+#dangKi:hover{
+	cursor:pointer;
+	
+}
+#dangKiContent{
+	display: none;
+}
+#dangKiContent button{
+	margin-left:40px;
+color: black;
+font-weight:600;
+
+border-radius: 6px 6px 6px 6px;
+-moz-border-radius: 6px 6px 6px 6px;
+-webkit-border-radius: 6px 6px 6px 6px;
+}
+#closeTaiKhoan{
+	float: right;
+	margin-top:-5px;
+	margin-right: 0px;
+	font-size: 20pt;
+	font-weight: 900;
+	color: grey;
+	padding-right: 15px;
+	height: 35px;
+	padding-left: 10px;
+		border-radius: 0px 6px 0px 0px;
+-moz-border-radius: 0px 6px 0px 0px;
+-webkit-border-radius: 0px 6px 0px 0px;
+	
+	
+	
+}
+#closeTaiKhoan:hover{
+	background-color: #F1F1F1;
+	cursor: pointer;
+color:red;
+}
+
+#btnRegister{
+position: absolute;
+top:400px;
+left:530px;
+}
+#btnLogin{
+	position: absolute;
+	top:210px;
+	left:270px;
+}
+.pos{
+	z-index: 1 ;
+}
+.wrapModalForm{
+	display: none;
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 2;
+}
+#menu1 a[href="/home"]{
+	width: 150px;
+}
+#menu1 a{
+	
+  color: white !important;
+}
+#menu1 a:hover{
+color: #FB8F02 !important;
+}
+
+#menu1 >nav >div >ul >li >ul{
+	background-color: black;
+	font-size: 1.7rem;
+}
+
+#menu1 .loaiSP-content{
+	font-weight: bold;
+	font-size: 1.7rem;
+color: white;
+}
+#menu1 .loaiSP-content li{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+#menu1 .loaiSP-content li:hover{
+	cursor: pointer;
+	color:  #FB8F02 !important;
+
+}
+#menu1 .xx-content{
+	font-weight: bold;
+	font-size: 1.7rem;
+	color: white;
+}
+#menu1 .xx-content li{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+#menu1 .xx-content li:hover{
+	cursor: pointer;
+	color:  #FB8F02 !important;
+}
+
+#menu1 .nsx-content{
+	font-weight: bold;
+	font-size: 1.7rem;
+	color: white;
+}
+#menu1 .nsx-content li{
+	padding-top: 7px;
+	padding-left: 15px;
+}
+#menu1 .nsx-content li:hover{
+	cursor: pointer;
+	color:  #FB8F02 !important;
+}

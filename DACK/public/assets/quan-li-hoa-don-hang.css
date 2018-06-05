@@ -1,0 +1,286 @@
+.body2{
+	
+	background-color: white;
+	width: 100%;
+	margin-bottom: 100px;
+	overflow: hidden;
+	padding:5px;
+	padding-bottom: 10px;
+	
+}
+#leftBox{
+	padding-right: 0px;
+	padding-left: 0px;	
+	font-size: 1.7rem;
+font-weight: bold;
+line-height: 1.6;
+color: black;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+#leftBox div{
+	padding-left: 20px;
+
+}
+ .title{
+	padding-top: 3px;
+	background-color: #F5781B;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+
+}
+#leftBox .title:hover{
+	cursor: pointer;
+	background-color: #EB500C;
+}
+#leftBox .title:active{
+		background-color: #F5781B;
+}
+#leftBox .inBox{
+	padding-left:0px;
+
+}
+#leftBox label{
+	width: 100%;
+}
+#leftBox label:hover{
+cursor: pointer;
+	}
+#leftBox .inBox .extraCheck{
+	position: relative;
+float:right;
+top:4px;
+margin-right:15px;
+}
+#leftBox input[type='text']{
+	padding-left: 3px;
+	border: 2px inset black;
+	border-radius: 5px;
+	width: 88%;
+	color: black;
+}
+#leftBox .inBox>div{
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+#leftBox input[name="maHoaDon-content"]{
+	display:none;
+}
+#leftBox input[name="taiKhoanKh-content"]{
+	display:none;
+}
+#leftBox input[name="tenKhachHang-content"]{
+	display:none;
+}
+#leftBox input[name="ngayDatHang-content"]{
+	border: 2px inset black;
+	display:none;
+}
+#leftBox #tinhTrang{
+	border: 2px inset black;
+	display: none;
+}
+#leftBox input[name="tenSanPham-content"]{
+	display:none;
+}
+#leftBox input[name="loaiSanPham-content"]{
+	display:none;
+}
+#leftBox input[name="nsxSanPham-content"]{
+	display:none;
+}
+#leftBox input[name="xuatXuSanPham-content"]{
+	display:none;
+}
+#rightBox{
+
+	float:right;
+	width: 70%;
+	 font-size: 1.7rem;
+	 font-weight: bold;
+	 line-height: 1.6;
+color: black;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+#rightBox div{
+	padding-left: 20px;
+}
+#rightBox .title{
+	position: relative;
+	padding-top: 3px;
+height:36px;
+
+}
+#rightBox #listName{
+	color:#048C50;
+}
+#rightBox a{
+	color:black;
+}
+#rightBox a:hover{
+	cursor: pointer;
+	color:#048C50;
+}
+
+#rightBox>ul{
+	position: relative;
+		padding-left: 20px;
+	margin-bottom: 0px;
+	border-bottom: 2px solid black;
+
+}
+#rightBox>ul>ul{
+	padding-left: 0px;
+
+}
+#rightBox li{
+display:inline-block;
+border-right: 1px solid black;
+padding-top: 3px;
+height: 33px;
+margin-top:0px;
+margin-bottom: -10px;
+overflow: hidden;
+}
+#rightBox p{
+	white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+}
+
+.mhd{
+	width: 13%;
+
+}
+.tkkh{
+	width:15%;
+}
+.tkh{
+	width:25%;
+}
+.ndh{
+	width: 25%;
+}
+.tt{
+	position: absolute;
+	padding-left: 5px;
+	width: 20%;
+	border-right: 0px !important;
+}
+
+.link {
+	
+margin-top:-10px;
+margin-bottom: 30px;
+color: #337AB7;
+height: 40px;
+	font-size: 1.7rem;
+	font-weight: bold;
+	background-color: #222222;
+	color: white ;
+
+	border-radius: 9px 9px 9px 9px;
+-moz-border-radius: 9px 9px 9px 9px;
+-webkit-border-radius: 9px 9px 9px 9px;
+border: 0px solid #000000;
+}
+
+.link span{
+	padding-top: 8px;
+	list-style: none;
+	display:inline-block;
+	padding-right: 15px;
+	padding-left: 15px;
+	height: 40px;
+	color: white ;
+	border-right: 5px solid white;
+}
+.link span:hover{
+color:#F5781B;
+background-color: black;
+
+	border-radius: 9px 0px 0px 9px;
+-moz-border-radius: 9px 0px 0px 9px;
+-webkit-border-radius: 9px 0px 0px 9px;
+
+	}
+.chuaGiaoHang{
+font-weight: bold;
+color: red;
+}
+.dangGiaoHang{
+	font-weight: bold;
+color:#3287D0;
+}
+.daGiaoHang{
+	font-weight: bold;
+	color:#14B833;
+}
+.daHuy{
+	font-weight: bold;
+	text-decoration: line-through;
+
+}
+.vip{
+font-weight: bold;
+color: red;
+}
+.thuong{
+font-weight: bold;
+	color:#14B833;
+}
+.den{
+font-weight: bold;
+
+}
+
+#tuNgay{
+	display: none;
+}
+#tuNgay input{
+	padding-left: 3px;
+	border: 2px inset black;
+	border-radius: 5px;
+	width: 88%;
+	color: black;
+}
+#denNgay{
+	display:none;
+}
+#denNgay input{
+	padding-left: 3px;
+	border: 2px inset black;
+	border-radius: 5px;
+	width: 88%;
+	color: black;
+}
+
+#leftBox2{
+	padding-right: 0px;
+	padding-left: 0px;	
+	font-size: 1.7rem;
+font-weight: bold;
+line-height: 1.6;
+color: black;
+	   -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+#leftBox2 div{
+	padding-left: 20px;
+
+}
+
+#leftBox2 .title:hover{
+	cursor: pointer;
+	background-color: #EB500C;
+}
+#leftBox2 .title:active{
+		background-color: #F5781B;
+}

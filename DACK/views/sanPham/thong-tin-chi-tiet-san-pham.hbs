@@ -1,0 +1,200 @@
+{{#section 'css'}}
+  <link rel="stylesheet" type="text/css" href="/assets/thongTinChiTietSanPham.css">
+{{/section}}
+
+{{#section 'js'}}
+   <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
+    </script>
+{{/section}}
+
+
+   </div>
+    <div id="thongTinChiTietSanPham">
+        <div class="title">
+            <span><a href="/home">Trang chủ </a>></span>
+            <span><a href="/sanpham/San-pham-theo-hang?id={{sp.MASP}}">{{sp.NSX}} </a>></span> {{sp.TENSP}}
+        </div>
+        <div class="top">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 left-sample-image">
+                <br>
+                <br>
+                <div class="sample-image">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/1.JPG">
+                </div>
+                <br>
+                <div class="slide-image">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/1.JPG" class="border-red-visited">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/2.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/3.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/4.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/5.JPG">
+                </div>
+                <br>
+                <div>
+                    <span class="luotThich">
+                        <img src="/assets/image/heart.png">Thích: <span>{{sp.LUOTTHICH}}</span>
+                    </span>
+                    <span class="luotXem">
+                        <img src="/assets/image/seen.png">
+                        Lượt xem: <span>{{sp.LUOTXEM}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 right-sample-image">
+                <h4><b>{{sp.TENSP}}</b></h4>
+                <div class="cost">
+                    <br>
+                    <h4><b>Giá: </b></h4>
+                    <span> {{number_format sp.GIABAN}} đ</span>
+                </div>
+                <br>
+                <div class="simple-decription">
+                    
+                </div>
+               
+                <div class="soLuong">
+                    <h4><b>Mua ngay:</b></h4>
+                    <button>+</button><span>0</span>
+                    <button>-</button>
+                </div>
+                <div class="themVaoGioHang">
+                    <img src="/assets/image/giohang.jpg"> Thêm vào giỏ hàng
+                </div>
+                <div class="khuyenMai">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="ttct-navBar">
+                <ul>
+                    <li><a href="#moTa">THÔNG TIN CHI TIẾT SẢN PHẨM</a></li>
+                    <li><a href="#xuatXu">XUẤT XỨ</a></li>
+                    <li><a href="#loai">LOẠI</a></li>
+                    <li><a href="#nhaSanXuat">NHÀ SẢN XUẤT</a></li>
+                    <li><a href="#binhLuan">BÌNH LUẬN</a></li>
+                    <li><a href="#sanPhamCungLoai">SP CÙNG LOẠI</a></li>
+                    <li><a href="#sanPhamCungNSX">SP CÙNG NSX</a></li>
+                </ul>
+            </div>
+            <div id="moTa">
+                <div class="title-ttct">THÔNG TIN CHI TIẾT SẢN PHẨM</div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                    CPU Intel® Core™ i5, 2.50 GHz
+                    <br>
+                    <hr> RAM 4GB
+                    <br>
+                    <hr> Độ Phân Giải 1366x768
+                    <br>
+                    <hr> Màn Hình 15.6 inch
+                    <br>
+                    <hr> VGA Intel® HD Graphics
+                    <br>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                    Ổ Cứng HDD 320GB
+                    <br>
+                    <hr> PIN/Battery 6 cell
+                    <br>
+                    <hr> Bảo Hành 12 tháng
+                    <br>
+                    <hr> Khuyến Mãi Tặng Cặp + Chuột Laptop
+                    <br>
+                    <hr>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="xuatXu" style="display: inline-block;width: 350px;margin-right:25px;margin-left:50px;text-align: center;margin-top: 40px">
+                <div class="title-ttct" style="margin-bottom: 15px;">
+                    XUẤT XỨ
+                </div>
+                <a href="">Mỹ-Châu Âu</a>
+                <hr>
+            </div>
+            <div id="loai" style="display: inline-block;width: 350px;margin-right:25px;text-align: center;">
+                <div class=" title-ttct" style="margin-bottom: 15px;">
+                    LOẠI
+                </div>
+                <a href="">Laptop cũ</a>
+                <hr>
+            </div>
+            <div id="nhaSanXuat" style="display: inline-block;width: 350px;text-align: center;">
+                <div class=" title-ttct" style="margin-bottom: 15px;">
+                    NHÀ SẢN XUẤT
+                </div>
+                <a href="">Dell Inc Company</a>
+                <hr>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="binhLuan">
+                <div>
+                    <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em; "> BÌNH LUẬN SẢN PHẨM:</div>
+                    <br>
+                    <textarea placeholder="Bạn nghĩ gì về sản phẩm này?" data-autosize-on="true" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 66px;"></textarea>
+                    <div style="margin-top: 14px;">
+                        <button class="btn-primary" style="height: 35px;width: 130px;">Gửi bình luận</button>
+                    </div>
+                </div>
+                <br>
+                <div id="yKienBinhLuan" style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em; ">
+                    Ý KIẾN BẠN ĐỌC(0):
+                    <br>
+                    <br>
+                </div>
+                <br>
+            </div>
+            <hr>
+            <div id="sanPhamCungLoai">
+                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600;">
+                    SẢN PHẨM CÙNG LOẠI:
+                    <br>
+                    <br>
+                </div>
+                <div id="bottomSlideImage">
+                    {{#each sploai}}
+                    <span>
+                        <a href="">
+                            <img src="/assets/image/sanpham/{{MASP}}/1.png">
+                        <div>{{TENSP}}</div>
+                        </a>
+                    </span>
+                    {{/each}}
+                </div>
+            </div>
+            <hr>
+            <div id="sanPhamCungNSX">
+                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600;">
+                    SẢN PHẨM CÙNG NHÀ SẢN XUẤT:
+                    <br>
+                    <br>
+                </div>
+                <div id="bottomSlideImage">
+                    <span>
+                        <a href="">
+                        <img src="/assets/image/sanpham/HP-Pavilion-x360-14-ba066TU.png">
+                        <div>HP-Pavilion-x360-14-ba066TU</div> </a>
+                    </span>
+                    <span>
+                        <a href="">
+                        <img src="/assets/image/sanpham/Lenovo-Miix-320-10ICR.png">
+                        <div>Lenovo-Miix-320-10ICR</div> </a>
+                    </span>
+                    <span>
+                        <a href="">
+                        <img src="/assets/image/sanpham/Asus_X541NA-GO012T-2.png">
+                        <div>Asus_X541NA-GO012T-2</div> </a>
+                    </span>
+                    <span>
+                        <a href="">
+                        <img src="/assets/image/sanpham/Dell-Ins-N5378.png">
+                        <div>Dell-Ins-N5378</div> </a>
+                    </span>
+                    <span>
+                        <a href="">
+                        <img src="/assets/image/sanpham/HP-15-bs555TU.png">
+                        <div>HP-15-bs555TU</div> </a>
+                    </span>
+                </div>
+            </div>
+
+        </div>

@@ -1,0 +1,86 @@
+#listName{
+
+	border-top: 2px solid black;
+}
+
+
+#top-ChiTietHoaDon{
+	margin-top: 20px;
+	padding-bottom: 10px;
+	line-height: 1.8;
+	margin-bottom: 20px;
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+	border-radius: 9px 9px 9px 9px;
+	-moz-border-radius: 9px 9px 9px 9px;
+	-webkit-border-radius: 9px 9px 9px 9px;
+	border: 0px solid #000000;
+}
+#top-ChiTietHoaDon>div{
+	padding-left: 0px;
+}
+#rightBox #top-ChiTietHoaDon a{
+	
+	color:#34A853;
+}
+#rightBox a:hover{
+	cursor: pointer;
+	color:#337AB7;
+}
+#rightBox>ul{
+	position: relative;
+		padding-left: 20px;
+	margin-bottom: 0px;
+	border-bottom: 2px solid black;
+
+}
+#rightBox>ul>ul{
+	padding-left: 0px;
+
+}
+#rightBox li{
+display:inline-block;
+border-right: 1px solid black;
+padding-top: 3px;
+height: 33px;
+margin-top:0px;
+margin-bottom: -10px;
+overflow: hidden;
+}
+#content-ChiTietHoaDon p{
+	white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
+}
+
+.stt{
+	width: 6%;
+
+}
+.msp{
+	width: 7%;
+}
+.tsp{
+	width:40%;
+}
+.dv{
+	width: 10%;
+}
+.sl{
+	width: 15%;
+}
+.thanhTien{
+	position: absolute;
+	padding-left: 5px;
+	width: 20%;
+	border-right: 0px !important;
+}
+#kh span{
+color:#F38C06 !important;
+}
+#ttdh button{
+border-radius: 8px 8px 8px 8px;
+-moz-border-radius: 8px 8px 8px 8px;
+-webkit-border-radius: 8px 8px 8px 8px;
+border: 0px solid #000000;
+}

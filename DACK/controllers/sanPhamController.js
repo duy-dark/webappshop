@@ -4,9 +4,16 @@ var express = require('express'),
 var router = express.Router();
 
 
-router.get('/sanpham/san-pham-theo-hang', (req, res) => {
-    var p1 = productRepo.load(NSX);
-    var x = req.query.value
+router.get('/San-pham-theo-hang', (req, res) => {
+    categoryRepo.loadnsxid(+req.query.id).then(rows=>{
+        console.log(rows.length);
+         var vm = {
+            products: rows
+        };
+        
+        res.render('sanPham/San-pham-theo-hang', vm);
+    });
+    /*
     Promise.all ([p1]).then(([rows, count_rows]) => {
         var numbers = [];
         for (i = 1; i <= nPages; i++) {
@@ -20,8 +27,9 @@ router.get('/sanpham/san-pham-theo-hang', (req, res) => {
             noProducts: rows.length === 0,
             page_numbers: numbers
         };
-        res.render('/sanPham/San-pham-theo-hang', vm);
+        res.render('sanPham/San-pham-theo-hang', vm);
     });
+    */
 });
 router.get('/thong-tin-chi-tiet-san-pham', (req, res) => {
     categoryRepo.loadid(+req.query.id).then(rows =>{
