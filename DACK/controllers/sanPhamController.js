@@ -37,10 +37,6 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
-<<<<<<< HEAD
-=======
-    
->>>>>>> e6925d4392d4f32996a088442a5461a09c3b96e7
 });
 router.get('/thong-tin-chi-tiet-san-pham', (req, res) => {
     var p1= categoryRepo.loadid(+req.query.id);
