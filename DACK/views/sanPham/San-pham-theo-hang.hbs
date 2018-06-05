@@ -4,6 +4,10 @@
 
 {{#section 'js'}}
    <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
+   $('.loadCat').on('click', function() {
+        var id = $(this).data('proid');
+        $('#pickCat').submit();
+    });
     </script>
 {{/section}}
 
@@ -17,42 +21,44 @@
                     <span class="glyphicon glyphicon-plus" style="float: right;"></span>
                 </li>
                 <div id="standard-option">
-                    <label id="pick">
+                    <form id="pickCat"  method="submit" action="get/San-pham-theo-hang">
+                        <label id="pick">
                         <input type="radio" name="lappride">
                         <span>Tất cả</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>MSI</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>MASSTEL</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>LENOVO</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>HP</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>DELL</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>ACER</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>APPLE</span>
-                    </label>
-                    <label id="pick">
-                        <input type="radio" name="lappride">
-                        <span>ASUS</span>
-                    </label>
+                        </label>
+                        <label data-proid={{26}} id="pick" class="loadCat">
+                            <input type="radio" name="lappride">
+                            <span>MSI</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>MASSTEL</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>LENOVO</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>HP</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>DELL</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>ACER</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>APPLE</span>
+                        </label>
+                        <label id="pick">
+                            <input type="radio" name="lappride">
+                            <span>ASUS</span>
+                        </label>
+                    </form>
                 </div>
             </div>
         </div>
@@ -76,13 +82,24 @@
             </div>
             <div style="width: 100%; display: inline-block; margin: 0 auto; text-align: center;">
                  <div id="inner">
-                    <ul class="pagination">
+                  <!--   <ul class="pagination">
                         <li><a href="#">&laquo;</a></li>
                         <li><a href="San-pham-theo-hang">1</a></li>
                         <li><a href="San-pham-theo-hang">2</a></li>
                         <li><a href="San-pham-theo-hang">3</a></li>
                         <li><a href="San-pham-theo-hang">4</a></li>
                         <li><a href="San-pham-theo-hang">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul> -->
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        {{#each page_numbers}}
+                            {{#if isCurrentPage}}
+                            <li class="active"><a href="javascript:;">{{value}}</a></li>
+                            {{else}}
+                            <li><a href="?page={{value}}">{{value}}</a></li>
+                            {{/if}}
+                        {{/each}}
                         <li><a href="#">&raquo;</a></li>
                     </ul>
                 </div>
