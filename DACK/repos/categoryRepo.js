@@ -9,14 +9,21 @@ exports.loadid = id => {
 	return db.load(sql);
 }
 exports.loadloai = LOAI => {
-	var sql = `select * from sanpham where LOAI = '${LOAI}' limit 5 OFFSET 0`;
+	var sql = `select * from sanpham where LOAI = '${LOAI}'`;
+	return db.load(sql);
+}
+exports.loadloaiid = id => {
+	var sql = `select sp.* from sanpham sp, sanpham sp1 where sp.LOAI = sp1.LOAI and sp1.MASP = ${id}`;
 	return db.load(sql);
 }
 exports.loadnsxid = id => {
 	var sql = `select sp.* from sanpham sp, sanpham sp1 where sp.NSX = sp1.NSX and sp1.MASP = ${id}`;
 	return db.load(sql);
 }
-
+exports.loadnsxidttct = id => {
+	var sql = `select sp.* from sanpham sp, sanpham sp1 where sp.NSX = sp1.NSX and sp1.MASP = ${id} limit 5 OFFSET 0`;
+	return db.load(sql);
+}
 exports.loadbanchay = () => {
 	var sql = `select * from sanpham order by SOLUONGSPDABAN DESC  limit 4 OFFSET 0 `;
 	return db.load(sql);
