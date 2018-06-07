@@ -37,6 +37,19 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
+<<<<<<< HEAD
+    
+=======
+    categoryRepo.loadnsxid(+req.query.id).then(rows=>{
+        console.log(rows.length);
+         var vm = {
+            products: rows
+        };
+        
+        res.render('sanPham/San-pham-theo-hang', vm);
+    });
+    */
+>>>>>>> c100b02b3fbdf32ff6b9c5c9ec97d0ba9416908d
 });
 router.get('/thong-tin-chi-tiet-san-pham', (req, res) => {
     var p1= categoryRepo.loadid(+req.query.id);
