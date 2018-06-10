@@ -5,7 +5,102 @@ var express = require('express'),
 
 var router = express.Router();
 
+router.get('/San-pham-theo-hang/:id', (req, res) => {
+    var catId = req.params.id;
+    var page = req.query.page;
+    if (!page) page = 1;
+    if (page < 1) page = 1;
 
+    var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
+    var p1 = productRepo.loadPageByCat(catId, offset);
+    var p2 = productRepo.countByCat(catId);
+
+    Promise.all([p1, p2]).then(([rows, count_rows]) => {
+        var total = count_rows[0].total;
+        var nPages = total / config.PRODUCTS_PER_PAGE;
+        if (total % config.PRODUCTS_PER_PAGE > 0)
+            nPages++;
+
+        var numbers = [];
+        for (i = 1; i <= nPages; i++) {
+            numbers.push({
+                value: i,
+                isCurrentPage: i === +page
+            });
+        }
+
+        var vm = {
+            products: rows,
+            noProducts: rows.length === 0,
+            page_numbers: numbers
+        };
+        res.render('sanPham/San-pham-theo-hang', vm);
+    });
+});
+router.get('/San-pham-theo-hang/danhsachloai/:id', (req, res) => {
+    var catId = req.params.id;
+    var page = req.query.page;
+    if (!page) page = 1;
+    if (page < 1) page = 1;
+
+    var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
+    var p1 = productRepo.loadPageByloai(catId, offset);
+    var p2 = productRepo.countByloai(catId);
+
+    Promise.all([p1, p2]).then(([rows, count_rows]) => {
+        var total = count_rows[0].total;
+        var nPages = total / config.PRODUCTS_PER_PAGE;
+        if (total % config.PRODUCTS_PER_PAGE > 0)
+            nPages++;
+
+        var numbers = [];
+        for (i = 1; i <= nPages; i++) {
+            numbers.push({
+                value: i,
+                isCurrentPage: i === +page
+            });
+        }
+
+        var vm = {
+            products: rows,
+            noProducts: rows.length === 0,
+            page_numbers: numbers
+        };
+        res.render('sanPham/San-pham-theo-hang', vm);
+    });
+});
+router.get('/San-pham-theo-hang/danhsachhang/:id', (req, res) => {
+    var catId = req.params.id;
+    var page = req.query.page;
+    if (!page) page = 1;
+    if (page < 1) page = 1;
+
+    var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
+    var p1 = productRepo.loadPageByhang(catId, offset);
+    var p2 = productRepo.countByhang(catId);
+
+    Promise.all([p1, p2]).then(([rows, count_rows]) => {
+        var total = count_rows[0].total;
+        var nPages = total / config.PRODUCTS_PER_PAGE;
+        if (total % config.PRODUCTS_PER_PAGE > 0)
+            nPages++;
+
+        var numbers = [];
+        for (i = 1; i <= nPages; i++) {
+            numbers.push({
+                value: i,
+                isCurrentPage: i === +page
+            });
+        }
+
+        var vm = {
+            products: rows,
+            noProducts: rows.length === 0,
+            page_numbers: numbers
+        };
+        res.render('sanPham/San-pham-theo-hang', vm);
+    });
+});
 router.get('/San-pham-theo-hang/:id', (req, res) => {
     var catId = req.params.id;
     var page = req.query.page;
