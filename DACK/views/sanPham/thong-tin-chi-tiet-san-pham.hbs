@@ -1,0 +1,399 @@
+{{#section 'css'}}
+  <link rel="stylesheet" type="text/css" href="/assets/thongTinChiTietSanPham.css">
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js"></script>
+{{/section}}
+
+
+   </div>
+    <div id="thongTinChiTietSanPham">
+        <div class="title">
+            <span><a href="/home">Trang chủ </a>></span>
+            <span><a href="/sanpham/San-pham-theo-hang/{{sp.MASP}}">{{sp.NSX}} </a>></span> {{sp.TENSP}}
+        </div>
+        <div class="top">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 left-sample-image">
+                <br>
+                <br>
+                <div class="sample-image">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/1.JPG">
+                </div>
+                <br>
+                <div class="slide-image">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/1.JPG" class="border-red-visited">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/2.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/3.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/4.JPG">
+                    <img src="/assets/image/sanpham/{{sp.MASP}}/5.JPG">
+                </div>
+                <br>
+                <div>
+                    <span class="luotThich">
+                        <img src="/assets/image/heart.png">Thích: <span>{{sp.LUOTTHICH}}</span>
+                    </span>
+                    <span class="luotXem">
+                        <img src="/assets/image/seen.png">
+                        Lượt xem: <span>{{sp.LUOTXEM}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 right-sample-image">
+                <div class="col-xs-12 col-md-8">
+                    <br>
+                    <h4><b>{{sp.TENSP}}</b></h4>
+                    <div class="cost">
+                        <br>
+                        <h4><b>Giá: </b></h4>
+                        <span> {{number_format sp.GIABAN}} đ</span>
+                    </div>
+                    <br>
+                    <div class="simple-decription">
+                        
+                    </div>
+                   
+                    <div class="soLuong">
+                        <h4><b>Mua ngay:</b></h4>
+                        <button>+</button><span>0</span>
+                        <button>-</button>
+                    </div>
+                    <div class="themVaoGioHang">
+                        <a href="#">
+                        <img src="/assets/image/giohang.jpg"> Thêm vào giỏ hàng
+                        </a>
+                    </div>
+                    <div class="alert alert-success">
+                      5 khách hàng vừa cho sản phẩm vào giỏ hàng 15 phút trước
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-body" style="background-color:green; color:white;"><b>Khuyến mại đặc biệt (SL có hạn)</b></div>
+                      <div class="panel-footer" >
+                          <ul>
+                              <li style="padding: 0 15px;">Tặng Balo Laptop</li>
+                              <li style="padding: 0 15px;">Tặng Voucher 400,000đ mua Office 365</li>
+                              <li style="padding: 0 15px;">Tặng Voucher 600,000đ khi mua Windows 10 FPP</li>
+                          </ul>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <br>
+                    <b>3DShop cam kết</b>
+                    <br>
+                    <br>
+                    <ul style="list-style:none; padding: 0px 15px;">
+                        <li style=" padding: 10px 5px;">
+                            <span class="glyphicon glyphicon-thumbs-up"></span> &nbsp;Hàng chính hãng
+                        </li>
+                        <li style="padding: 10px 5px;">
+                            <span class="glyphicon glyphicon-certificate"></span>&nbsp;Bảo hành 12 tháng chính hãng
+                        </li>
+                        <li style=" padding: 10px 5px;" >
+                            <span class="glyphicon glyphicon-globe"></span>&nbsp;Giao hàng miễn phí toàn quốc trong 60 phút 
+                        </li>
+                        <li style=" padding: 10px 5px;">
+                            <span class="glyphicon glyphicon-map-marker"></span>&nbsp;Bảo hành nhanh tại 3DShop trên toàn quốc
+                        </li>
+                        <li style="padding: 10px 5px;">
+                            <span class="glyphicon glyphicon-refresh"></span>&nbsp;Đổi trả thoải mái theo nhu cầu
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <legend class="padht">Thông số kỹ thuật của {{sp.TENSP}}</legend>
+            <div class="row">
+              <div class="col-xs-6">
+                  <legend class="maudo padht1">Thông số cơ bản</legend>
+                  <legend class="padht1">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">CPU :</div>
+                            <div class="col-xs-12 col-md-8">{{sp.CPU}}</div>
+                        </div>
+                  </legend>
+                  <legend class="padht1">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">RAM :</div>
+                            <div class="col-xs-12 col-md-8">{{sp.DL_RAM}},{{sp.L_RAM}}</div>
+                        </div>
+                  </legend>  
+                  <legend class="padht1">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">Đĩa Cứng :</div>
+                            <div class="col-xs-12 col-md-8">{{sp.LD_DIACUNG}},{{sp.DL_DIACUNG}}</div>
+                        </div>
+                  </legend>
+                  <legend class="padht1">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">Card màn hình :</div>
+                            <div class="col-xs-12 col-md-8">{{sp.DOHOA}}</div>
+                        </div>
+                  </legend>
+                  <legend class="padht1">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4">Cổng kết nối :</div>
+                            <div class="col-xs-12 col-md-8">LAN {{sp.LAN_MANG}} WIFI {{sp.WIFI_MANG}}</div>
+                        </div>
+                  </legend>
+              </div>
+              <div class="col-xs-6">
+                  <img src="/assets/image/sanpham/{{sp.MASP}}/detail.jpg" style="width:50%;">
+              </div>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">xem chi tiết</button>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Thông số kỹ thuật chi tiết</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/assets/image/sanpham/{{sp.MASP}}/detail.jpg" style="width:60%;">
+                                <legend class="maudo padht1"><b>Bo mạch</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Dung Lượng RAM :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.DL_RAM}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Loại RAM :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.L_RAM}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Tốc độ RAM :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.TD_RAM}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Số Lượng RAM :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.SL_RAM}}</div>
+                                    </div>
+                                </legend> 
+                                <legend class="maudo padht1"><b>Bộ xử lý</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Chipset :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.CPU}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Đĩa Cứng</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Loại Đĩa Cứng :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.LD_DIACUNG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Dung Lượng :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.DL_DIACUNG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Màn Hình</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Kích Thước :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.KT_MANHINH}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Độ Phân Giải :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.DP_MANHINH}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Công nghệ :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.CN_MANHINH}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Cảm ứng :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.CU_MANHINH}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Âm Thanh</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Thông tin :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.AMTHANH}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Đĩa Quang</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Có sắn đĩa quang :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.DIAQUANG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Tính năng mở rộng &amp; cổng giao tiếp</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Cổng giao tiếp :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.GIAOTIEP}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Giao Tiếp Mạng</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Lan :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.LAN_MANG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Wifi :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.WIFI_MANG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Kết nối khác :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.KNKD_MANG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Card Reader</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Thẻ nhớ :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.CARDREADER}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>WebCam</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Thông tin :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.WEBCAM}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Hệ điều hành</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Hệ điều hành :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.HDH}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>PIN/Battery</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Pin :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.PIN}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Thông tin khác</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Cảm biến vân tay :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.THONGTINKHAC_CBVT}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Đèn bàn phím :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.THONGTINKHAC_DBP}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Phụ kiện kèm theo :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.THONGTINKHAC_PKKT}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Kích thước &amp; trọng lượng</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Kich thước :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.KICHTHUOC}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Trọng lượng :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.TRONGLUONG}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Chât liệu :<u></u> :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.CHATLIEU}}</div>
+                                    </div>
+                                </legend>
+                                <legend class="maudo padht1"><b>Bảo hành</b></legend>
+                                <legend class="padht1">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-4">Thời gian bảo hành :</div>
+                                        <div class="col-xs-12 col-md-8">{{sp.BAOHANH}}</div>
+                                    </div>
+                                </legend>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+            
+        </div>
+        <div class="top1">
+            <hr>
+            <div id="sanPhamCungLoai">
+                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600;">
+                    SẢN PHẨM CÙNG LOẠI:
+                    <br>
+                    <br>
+                </div>
+                <div id="product-slider">
+                    {{#each sploai}}
+                    <div class="product-box" style="width:20%">
+                        <a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">
+                            <img src="/assets/image/sanpham/{{MASP}}/1.jpg" style="width:100%;" class="image">
+                            <div style="background-color: white;">
+                                <div>{{TENSP}}</div>
+                                <div style="color:red;">{{number_format GIABAN}}</div>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>  
+                
+            </div>
+        </div>
+        <div class="top1">
+            <div id="sanPhamCungNSX">
+                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600;">
+                    SẢN PHẨM CÙNG NHÀ SẢN XUẤT:
+                    <br>
+                    <br>
+                </div>
+                <div id="product-slider">
+                    {{#each spnsx}}
+                    <div class="product-box" style="width:20%">
+                        <a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">
+                            <img src="/assets/image/sanpham/{{MASP}}/1.jpg" style="width:100%;" class="image">
+                            <div style="background-color: white;">
+                                <div>{{TENSP}}</div>
+                                <div style="color:red;">{{number_format GIABAN}}</div>
+                            </div>
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+            
+        <div class="top1">
+            comment
+        </div>
+       

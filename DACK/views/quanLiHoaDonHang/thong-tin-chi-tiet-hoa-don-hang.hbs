@@ -1,0 +1,179 @@
+
+{{#section 'css'}}
+   
+    <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/thong-tin-chi-tiet-hoa-don-hang.css">
+
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+    <script type="text/javascript " src="/assets/thong-tin-chi-tiet-hoa-don-hang.js "></script>
+{{/section}}
+
+        <div class="link">
+            <a href="/dash-board"> <span >  DashBoard</span></a>     
+          <a href="/dash-board/quan-li-hoa-don-hang"> <span >  Quản lí hóa đơn</span></a>
+           Chi tiết hóa đơn 
+        </div>
+        <div class="body2">
+            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title">Tìm kiếm hóa đơn theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
+                <div class="inBox">
+                    <div>
+                        <label>
+                            <span> Mã hóa đơn</span>
+                            <input type="checkbox" name="maHoaDon" class="extraCheck">
+                        </label>
+                        <input type="text" name="maHoaDon-content" placeholder="Nhập mã hóa đơn">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Tài khoản KH</span>
+                            <input type="checkbox" name="taiKhoanKh" class="extraCheck">
+                        </label>
+                        <input type="text" name="taiKhoanKh-content" placeholder="Nhập tài khoản KH">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Tên khách hàng</span>
+                            <form action=""></form>
+                            <input type="checkbox" name="tenKhachHang" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenKhachHang-content" placeholder="Nhập tên khách hàng">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Ngày đặt hàng</span>
+                            <input type="checkbox" name="ngayDatHang" class="extraCheck">
+                        </label>
+                        <label id="tuNgay">
+                            <span> Từ ngày</span> <input type="date" name="ngayDatHangTuNgay-content">
+                        </label>
+                         <label id="denNgay"> 
+                            <span>
+                                   Đến ngày</span>
+                                    <input type="date" name="ngayDatHangDenNgay-content">
+                            
+                        </label>
+                    
+                    </div>
+                    <div>
+                        <label> <span>Tình trạng</span>
+                            <input type="checkbox" name="tinhTrang" class="extraCheck">
+                        </label>
+                        <select id="tinhTrang">
+                           <option class="chuaGiaoHang">
+                                 Chưa giao hàng
+                               
+                            </option>
+                            <option  class="dangGiaoHang">
+                              Đang giao hàng
+                            </option>
+                            <option class="daGiaoHang">
+                                Đã giao hàng
+                            </option>
+                            <option class="daHuy" >
+                                Đã hủy
+                            </option>
+                        </select>
+                    </div>
+                    <div>
+                        <label> <span>Tên sản phẩm</span>
+                            <input type="checkbox" name="tenSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenSanPham-content" placeholder="Nhập tên sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Loại sản phẩm</span>
+                            <input type="checkbox" name="loaiSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="loaiSanPham-content" placeholder="Nhập loại sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Xuất xứ sản phẩm</span>
+                            <input type="checkbox" name="xuatXuSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="xuatXuSanPham-content" placeholder="Nhập xuất xứ sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Nhà sản xuất sản phẩm</span>
+                            <input type="checkbox" name="nsxSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="nsxSanPham-content" placeholder="Nhập nhà sản xuất sản phẩm">
+                    </div>
+                     <div>
+                        <label> <span>Tất cả</span>
+                            <input type="checkbox" name="tc" class="extraCheck">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="rightBox" >
+                
+                <div class="title">Chi tiết hóa đơn :
+                <span style="color:white;margin-left: 4px;" >0001</span>
+                </div> 
+                <div id="top-ChiTietHoaDon">
+                     <div id="tkkh">
+                        TK khách hàng:
+                         <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem">ntpnhung
+                         </a>
+                     </div>
+                    <div id="kh">
+                        Khách hàng:
+                       <span> Nguyễn Thị Phương Nhung</span>
+                     </div>
+                    <div id="ndh">
+                        Ngày đặt hàng: <span style="color: black;">15/9/2017</span>
+                     </div>
+                    <div id="ttdh">
+                    Tình trạng đơn hàng: <span class="chuaGiaoHang">Chưa giao hàng</span>
+                    &nbsp;<button class="btn-danger">Thay đổi</button>
+                    <select>
+                        <option value="0"  class="chuaGiaoHang">Chưa giao hàng</option>
+                        <option value="1"  class="dangGiaoHang">Đang giao hàng</option>
+                        <option value="2"  class="daGiaoHang">Đã giao hàng</option>
+                          <option value="3"  class="daHuy">Đã hủy</option>
+                    </select>
+                     </div>
+
+                </div>
+                
+                
+                <div>Doanh mục sản phẩm:</div>
+                <ul id="listName">
+                    <li class="stt" title="STT"><p>STT</p></li>
+                    <li class="msp" title="Mã SP"><p>Mã SP</p></li>
+                    <li class="tsp" title="Tên sản phẩm"><p>Tên sản phẩm</p></li>
+                    <li class="dv" title="Đơn vị"><p>Đơn vị</p></li>
+                    <li class="sl" title="Số lượng"><p>Số lượng</li>
+                    <li class="thanhTien" title="Thành tiền"><p>Thành tiền</p></li>
+                </ul>
+                <ul id="content-ChiTietHoaDon">
+                    <ul>
+                        <li class="stt"><p>0001</p></li>
+                        <li class="msp" title="Mã SP"><a href="#"><p>Mã SP</p>0001</a></a></li>
+                        <li class="tsp"><p title="Laptop Dell Latitude E6540 Core i5 15.6 inch">Laptop Dell Latitude E6540 Core i5 15.6 inch</p> </li>
+                        <li class="dv"><p>cái</p></li>
+                        <li  class="sl"><p>1</p></li>
+                        <li  class="thanhTien"><p>7.900.000 VNĐ</p></li>
+                    </ul>
+                    <ul>
+                        <li class="stt"><p>0001</p></li>
+                        <li class="msp" title="Mã SP"><a href="#"><p>Mã SP</p>0001</a></a></li>
+                        <li class="tsp"><p title="Laptop Dell Latitude E6540 Core i5 15.6 inch">Laptop Dell Latitude E6540 Core i5 15.6 inch</p> </li>
+                        <li class="dv"><p>cái</p></li>
+                        <li  class="sl"><p>1</p></li>
+                        <li  class="thanhTien"><p>7.900.000 VNĐ</p></li>
+                    </ul>
+                </ul>
+                <br>
+                    <div>Tổng tiền: 
+                        <span id="tongTien" style="color:#337AB7;">19.249.00 VNĐ</span>
+                    </div>
+                    <br>
+                </div>
+         
+        </div>

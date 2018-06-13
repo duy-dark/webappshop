@@ -1,0 +1,111 @@
+
+  <div id="content">
+            <div class="slider-wrapper">
+                <div class="quangcao">
+                    <img src="/assets/image/quangcao/quangcao.png">
+                </div>
+                <div class="bs-example">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators pos">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="../../assets/image/quangcao/qc1.png" alt="First Slide">
+                            </div>
+                            <div class="item">
+                                <img src="../../assets/image/quangcao/qc2.jpg" alt="Second Slide">
+                            </div>
+                            <div class="item">
+                                <img src="../../assets/image/quangcao/qc3.png" alt="Third Slide">
+                            </div>
+                            <div class="item">
+                                <img src="../../assets/image/quangcao/qc4.png" alt="Fourth Slide">
+                            </div>
+                        </div>
+                        <!-- Carousel controls -->
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-heading">
+                        <a href="../sanPham/San-pham-theo-hang"><b><span>SẢN PHẨM MỚI</span></b></a>
+                    </div>
+                    <div class="box-content">
+                        
+                         <div class="box-product">
+                            {{#each moi}}
+                           <div>
+                                <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                                <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">{{TENSP}}</a></div>
+                                <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
+                                <div class="describe">
+                                    <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                                    <p><strong>Pin: {{PIN}}</strong></p>
+                                    <p><strong>Ram: {{DL_RAM}}</strong></p>
+                                    <p><strong>HĐH: {{HDH}}</strong></p>
+                                    <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
+                                </div>
+                                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        
+                    </div>
+                    <div class="box-heading">
+                        <b><span>SẢN PHẨM BÁN CHẠY</span></b>
+                    </div>
+                    <div class="box-content">
+                           <div class="box-product">
+                            {{#each banchay}}
+                            <div>
+                                <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                                <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">{{TENSP}}</a></div>
+                                <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
+                                <div class="describe">
+                                    <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                                    <p><strong>Pin: {{PIN}}</strong></p>
+                                    <p><strong>Ram: {{DL_RAM}}</strong></p>
+                                    <p><strong>HĐH: {{HDH}}</strong></p>
+                                    <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
+                                </div>
+                                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="box-heading">
+                        <b><span>SẢN PHẨM ĐƯỢC XEM NHIỀU NHẤT</span></b>
+                    </div>
+                    <div class="box-content">
+                         <div class="box-product">
+                            {{#each xemnhieu}}
+                            <div>
+                                <div class="image" style="width:200px "><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                                <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">{{TENSP}}</a></div>
+                                <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
+                                <div class="describe">
+                                    <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                                    <p><strong>Pin: {{PIN}}</strong></p>
+                                    <p><strong>Ram: {{DL_RAM}}</strong></p>
+                                    <p><strong>HĐH: {{HDH}}</strong></p>
+                                    <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
+                                </div>
+                                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

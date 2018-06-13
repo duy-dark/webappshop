@@ -1,0 +1,112 @@
+{{#section 'css'}}
+    <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript">
+        function hid(val) {   
+            var x = document.getElementById(val);
+
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+       }
+
+
+    </script>
+{{/section}}
+
+    </div>
+    <div id="Brand-goods">
+        <div id="Standard" class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="border-bottom: none;">
+            <p><b>Bộ lọc</b></p>
+            <div id="name">
+                <li id="toggleButton" onclick="hid('option1')">
+                    <b>Hãng sản xuất</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="option1" class="standard-option">
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/MSI" style="text-decoration-line: none;"><span>MSI</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/MASSTEL" style="text-decoration-line: none;"><span>MASSTEL</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/LENOVO" style="text-decoration-line: none;"><span>LENOVO</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/HP" style="text-decoration-line: none;"><span>HP</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/DELL" style="text-decoration-line: none;"><span>DELL</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/Acer" style="text-decoration-line: none;"><span>Acer</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/Apple" style="text-decoration-line: none;"><span>Apple</span></a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachhang/Asus" style="text-decoration-line: none;"><span>Asus</span></a>
+                        </label>
+                </div>
+                <li id="toggleButton" onclick="hid('option2')">
+                    <b>Loại Sản Phẩm</b>
+                    <span class="glyphicon glyphicon-plus" style="float: right;"></span>
+                </li>
+                <div id="option2" class="standard-option">
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachloai/Gaming" style="text-decoration-line: none;">Gaming</a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachloai/Phổ thông" style="text-decoration-line: none;">Phổ Thông</a>
+                        </label>
+                        <label id="pick">
+                             <a href="/sanpham/San-pham-theo-hang/danhsachloai/Cao cấp" style="text-decoration-line: none;">Cao Cấp</a>
+                        </label>
+                        <label id="pick">
+                            <a href="/sanpham/San-pham-theo-hang/danhsachloai/Doanh nhân" style="text-decoration-line: none;">Doanh Nhân</a>
+                        </label>
+                </div>
+            </div>
+        </div>
+        <div id="Items" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div id="Items-Content">
+                {{#each products}}
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="image" style="height: 250px; "><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:100%"></a></div>
+                    <div class="name"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}">{{TENSP}}</a></div>
+                    <div class="price"><a href="/sanpham/thong-tin-chi-tiet-san-pham?id={{MASP}}"><span class="price-new"><b> {{number_format GIABAN}} &nbsp; đ</b></span></a></div>
+                    <div class="describe">
+                        <p><strong>Màn Hình: {{KT_MANHINH}}</strong></p>
+                        <p><strong>Pin: {{PIN}}</strong></p>
+                        <p><strong>Ram: {{DL_RAM}}</strong></p>
+                        <p><strong>HĐH: {{HDH}}</strong></p>
+                        <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
+                    </div>
+                    <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                  </div>
+                {{/each}}
+            </div>
+            <div style="width: 100%; display: inline-block; margin: 0 auto; text-align: center;">
+                 <div id="inner">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        {{#each page_numbers}}
+                            {{#if isCurrentPage}}
+                            <li class="active"><a href="javascript:;">{{value}}</a></li>
+                            {{else}}
+                            <li><a href="?page={{value}}">{{value}}</a></li>
+                            {{/if}}
+                        {{/each}}
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+        </div>

@@ -2,8 +2,8 @@ var express = require('express');
 
 var router = express.Router();
 
-router.post('/taikhoan', (req, res) => {
-   
+router.get('/', (req, res) => {
+    res.render('lienHe/lien-he');
 });
 
 
