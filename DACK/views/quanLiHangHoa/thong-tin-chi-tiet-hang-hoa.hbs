@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
     <link rel="stylesheet" type="text/css" href="/assets/calendar.css">
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/">
+    <link rel="stylesheet" type="text/css" href="/assets/thongTinChiTietSanPham.css">
 
 
 {{/section}}
@@ -64,33 +66,250 @@
 
                  <div class="title">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></div>
             </div>
+            {{#with sp}}
+            <form action="" method="POST" role="form">
+            <div id="rightBox" >
 
-              <div id="rightBox" >
-                    <div class="title ">Danh sách sản phẩm phù hợp kết quả tìm kiếm</div> 
-                <ul id="listName">
-                    <li class="msp" title="Mã SP"><p>Mã SP</p></li>
-                    <li class="tsp" title="Tên sản phẩm"><p>Tên sản phẩm</p></li>
-                    <li class="asp" title="Ảnh"><p>Ảnh</p></li>
-                    <li class="sltk" title="SL tồn kho"><p>SL tồn kho</p></li>
-                    <li class="sldb" title="SL đã bán"><p>SL đã bán</p></li>
-                    <li class="tln" title="Tổng lợi nhuận"><p>Tổng lợi nhuận</p></li>
-                </ul>
-                <ul id="content-ChiTietHangHoa">
-                    <ul>
-                    <li class="msp"><p><a href="#">001</a> </a</p></li>
-                    <li class="tsp"><p></p></li>
-                    <li class="asp">
-                       <img src="/assets/image/LaptopAsus/1.jpg">
-                    </li>
-                    <li class="sltk"><p></p></li>
-                    <li class="sldb"><p></p></li>
-                     <li class="tln"><p></p></li>
-                    </ul>
-                     
-                </ul>
-                
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Thông số kỹ thuật chi tiết</h4>
+                    </div>
 
-                    
-            </div>
+                    <div class="modal-body">
+                        <img src="/assets/image/sanpham/{{MASP}}/detail.jpg" style="width:60%;">
+                        <legend class="maudo padht1"><b>Thông Tin</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Mã SP:</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="MASP" readonly value="{{MASP}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Tên Sản Phẩm :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="TENSP" placeholder="Input field" value="{{TENSP}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Nhà Sản Xuất :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="NSX" placeholder="Input field" value="{{NSX}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">loại Sản Phẩm :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="LOAI" placeholder="Input field" value="{{LOAI}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Bo mạch</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Dung Lượng RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DL_RAM" placeholder="Input field" value="{{DL_RAM}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Loại RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="L_RAM" placeholder="Input field" value="{{L_RAM}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Tốc độ RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="TD_RAM" placeholder="Input field" value="{{TD_RAM}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Số Lượng RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="SL_RAM" placeholder="Input field" value="{{SL_RAM}}">
+                            </div>
+                        </legend> 
+                        <legend class="maudo padht1"><b>Bộ xử lý</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Chipset :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CPU" placeholder="Input field" value="{{CPU}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Đĩa Cứng</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Loại Đĩa Cứng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="LD_DIACUNG" placeholder="Input field" value="{{LD_DIACUNG}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Dung Lượng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DL_DIACUNG" placeholder="Input field" value="{{DL_DIACUNG}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Màn Hình</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Kích Thước :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="KT_MANHINH" placeholder="Input field" value="{{KT_MANHINH}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Độ Phân Giải :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DP_MANHINH" placeholder="Input field" value="{{DP_MANHINH}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Công nghệ :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CN_MANHINH" placeholder="Input field" value="{{CN_MANHINH}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Cảm ứng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CU_MANHINH" placeholder="Input field" value="{{CU_MANHINH}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Âm Thanh</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thông tin :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="AMTHANH" placeholder="Input field" value="{{AMTHANH}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Đĩa Quang</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Có sắn đĩa quang :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DIAQUANG" placeholder="Input field" value="{{DIAQUANG}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Tính năng mở rộng &amp; cổng giao tiếp</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Cổng giao tiếp :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="GIAOTIEP" placeholder="Input field" value="{{GIAOTIEP}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Giao Tiếp Mạng</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Lan :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="LAN_MANG" placeholder="Input field" value="{{LAN_MANG}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Wifi :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="WIFI_MANG" placeholder="Input field" value="{{WIFI_MANG}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Kết nối khác :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="KNKD_MANG" placeholder="Input field" value="{{KNKD_MANG}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Card Reader</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thẻ nhớ :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CARDREADER" placeholder="Input field" value="{{CARDREADER}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>WebCam</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thông tin :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="WEBCAM" placeholder="Input field" value="{{WEBCAM}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Hệ điều hành</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Hệ điều hành :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="HDH" placeholder="Input field" value="{{HDH}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>PIN/Battery</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Pin :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="PIN" placeholder="Input field" value="{{PIN}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Thông tin khác</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Cảm biến vân tay :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="THONGTINKHAC_CBVT" placeholder="Input field" value="{{THONGTINKHAC_CBVT}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Đèn bàn phím :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="THONGTINKHAC_DBP" placeholder="Input field" value="{{THONGTINKHAC_DBP}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Phụ kiện kèm theo :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="THONGTINKHAC_PKKT" placeholder="Input field" value="{{THONGTINKHAC_PKKT}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Kích thước &amp; trọng lượng</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Kich thước :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="KICHTHUOC" placeholder="Input field" value="{{KICHTHUOC}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Trọng lượng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="TRONGLUONG" placeholder="Input field" value="{{TRONGLUONG}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Chât liệu :<u></u> :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CHATLIEU" placeholder="Input field" value="{{CHATLIEU}}">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Bảo hành</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thời gian bảo hành :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="BAOHANH" placeholder="Input field" value="{{BAOHANH}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Giá Bán :</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="GIABAN" placeholder="Input field" value="{{GIABAN}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">GIAMUA :</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="GIAMUA" placeholder="Input field" value="{{GIAMUA}}">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Số Lượng Còn :</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="SOLUONGSPCON" placeholder="Input field" value="{{SOLUONGSPCON}}">
+                            </div>
+                        </legend>
+
+                    </div>
+                    <div style="text-align: center; padding: 20px; ">
+                        <button type="submit" class="btn btn-success">UPDATE</button>      
+                    </div>
+                </div>
+            </form>
+            {{/with}}
 
         </div>
