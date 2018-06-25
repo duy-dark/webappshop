@@ -6,13 +6,16 @@ var path = require('path');
 var wnumb = require('wnumb');
 var session = require('express-session');
 
-
+var handleLayoutMDW = require('./middle-wares/handleLayout');
+var handle404MDW = require('./middle-wares/handle404');
+var restrict = require('./middle-wares/restrict');
 
 var homeController = require('./controllers/homeController'),
 	gioHangController=require('./controllers/gioHangController'),
 	lienHeController=require('./controllers/lienHeController'),
     dashBoardController=require('./controllers/dashBoardController'),
-    sanPhamController=require('./controllers/sanPhamController');
+    sanPhamController=require('./controllers/sanPhamController'),
+    accountController=require('./controllers/accountController');
 
 
     
@@ -46,16 +49,19 @@ app.use(session({
     saveUninitialized: true,
    
 }));
-
+app.use(handleLayoutMDW);
 app.get('/', (req, res) => {
     res.redirect('/home');
 });
 
 app.use('/home', homeController);
-app.use('/gio-hang', gioHangController);
 app.use('/lien-he', lienHeController);
 app.use('/dash-board',dashBoardController);
 app.use('/sanpham',sanPhamController);
+app.use('/gio-hang', restrict, cartController);
+app.use('/account',accountController);
+
+app.use(handle404MDW);
 
 app.listen(3000, () => {
     console.log('Site running on port 3000');

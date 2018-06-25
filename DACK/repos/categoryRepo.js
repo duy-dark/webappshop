@@ -1,5 +1,13 @@
 var db = require('../fn/db');
 
+exports.loadALLLOAI = () => {
+	var sql = `select LOAI from sanpham  GROUP BY LOAI`;
+	return db.load(sql);
+}
+exports.loadALLNSX = () => {
+	var sql = `select NSX from sanpham  GROUP BY NSX`;
+	return db.load(sql);
+}
 exports.loadspmoinhat = () => {
 	var sql = `select *,DATEDIFF(NOW(),NGAYNHAP ) as moinhat from sanpham order by moinhat ASC  limit 4 OFFSET 0`;
 	return db.load(sql);
