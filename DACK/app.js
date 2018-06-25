@@ -15,7 +15,7 @@ var homeController = require('./controllers/homeController'),
 	lienHeController=require('./controllers/lienHeController'),
     dashBoardController=require('./controllers/dashBoardController'),
     sanPhamController=require('./controllers/sanPhamController'),
-    accountController=require('./controllers/accountController');
+    taiKhoanController=require('./controllers/taiKhoanController');
 
 
     
@@ -58,8 +58,8 @@ app.use('/home', homeController);
 app.use('/lien-he', lienHeController);
 app.use('/dash-board',dashBoardController);
 app.use('/sanpham',sanPhamController);
-app.use('/gio-hang', restrict, cartController);
-app.use('/account',accountController);
+app.use('/gio-hang', restrict, gioHangController);
+app.use('/taiKhoan',taiKhoanController);
 
 app.use(handle404MDW);
 

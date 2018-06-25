@@ -4,6 +4,7 @@ var express = require('express'),
 var router = express.Router();
 
 router.get('/', (req, res) => {
+    /*
     var p1=categoryRepo.loadspmoinhat();
 	var p2=categoryRepo.loadxemnhieunhat();
 	var p3=categoryRepo.loadbanchay();
@@ -14,7 +15,8 @@ router.get('/', (req, res) => {
             xemnhieu: rows1
         };
         res.render('home/index', vm);
-    });
+    });*/
+    res.render('home/index');
 });
 
 module.exports = router;

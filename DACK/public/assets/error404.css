@@ -1,0 +1,23 @@
+.content{
+	height: 300px;
+	margin-bottom: 30px;
+	border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 2px solid #000000;
+}
+.content h1{
+	position: relative;
+	display: inline-block;
+	padding-top: 70px;
+	font-size: 40pt;
+	font-family: Palatino Linotype;
+	left: 50%;
+   transform: translateX(-50%);
+   animation:animateText 2s infinite;
+}
+@keyframes animateText {
+    0% {color: red;}
+     50%{color: black;}
+     100% {color: red;}
+}

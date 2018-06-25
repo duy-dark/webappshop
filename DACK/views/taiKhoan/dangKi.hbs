@@ -1,0 +1,101 @@
+  {{#section 'js'}}
+   <script type="text/javascript" src="/assets/dangKi.js"></script>
+{{/section}}
+  <div id="dangKiTitle">
+      ĐĂNG KÍ TÀI KHOẢN
+  </div>
+  <div id="dangKiBackground">
+    {{#if isExist}}
+          <div id="dangKiInform">
+            <div class="alert alert-warning" style="width:80%;margin: auto;text-align: center;font-family: 'Droid serif', serif;font-size: 20px !important; padding-top:5px !important;padding-bottom:5px !important;margin-bottom: 10px;border: 2px solid red !important;">
+          <img src="/assets/image/warning.png">Username đã tồn tại! Vui lòng chọn tên khác !
+        </div>
+        </div>
+    {{/if}}
+  <div id="dangKiContent">
+    <form class=" form-horizontal" data-toggle="validator" role="form" action="/taiKhoan/dangKi" method="post">
+        <div id="dkiLeft" class=" col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <br>
+            <div class="form-group">
+                <label for="hoTen" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Họ Tên:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                    <input type="text" class="form-control" id="hoTen" name="fhoTen" placeholder="Nhập họ tên của bạn" data-error="Vui lòng nhập họ tên của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passwordDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Password:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                    <input type="password" class="form-control" id="passwordDk" name="fpasswordDk"  placeholder="Nhập password của bạn" data-error="Vui lòng nhập password của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passwordDk2" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Confirm Password:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                    <input type="password" class="form-control" id="passwordDk2" placeholder="Nhập lại password của bạn" data-error="Vui lòng nhập lại password của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                    <p id="noMatch" style="color: #B34442;">Password nhập lại không đúng</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userNameDk" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">User name:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                    <input type="text" class="form-control" id="userNameDk" name="fuserNameDk"  placeholder="Nhập tên đăng nhập của bạn" data-error="Vui lòng nhập tên đăng nhập của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gioiTih" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Giới tính:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <select class="form-control" name="fgioiTinh">
+                        <option value="nam">Nam</option>
+                        <option value="nu">Nữ</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="dkiRight col-xs-6" class="col-sm-6 col-md-6 col-lg-6">
+            <br>
+            <div class="form-group">
+                <label for="ngaySinh" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Ngày Sinh:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="date" class="form-control" id="ngaySinh" name="fngaySinh"  required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sdt" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Số điện thoại:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="text" class="form-control" id="sdt"  name="fsdt" placeholder="Nhập số điện thoại của bạn" data-error="Vui lòng nhập số điện thoại của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Email:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="email" class="form-control" id="email" name="femail"  placeholder="Nhập email của bạn" data-error="Vui lòng nhập email của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cmnd" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">CMND:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="text" class="form-control" id="cmnd" name="fcmnd"  placeholder="Nhập số CMND của bạn" data-error="Vui lòng nhập số CMND của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+             <div class="form-group">
+                <label for="diachi" class="col-xs-4 col-sm-4 col-md-4 col-lg-4 control-label">Địa chỉ:</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <input type="text" class="form-control" id="diachi" name="fdiachi"  placeholder="Nhập địa chỉ của bạn" data-error="Vui lòng nhập địa chỉ của bạn" required>
+                    <p class="help-block with-errors"> </p>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;width:76px;margin:auto;">
+            <button class="btn-success font"  id="btnRegister">Register</button>
+        </div>
+    </form>
+</div>
+</div>

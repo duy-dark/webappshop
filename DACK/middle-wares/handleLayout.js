@@ -5,9 +5,10 @@ module.exports = (req, res, next) => {
 
     if (req.session.isLogged === undefined) {
         req.session.isLogged = false;
-    }
-    var p1=categoryRepo.loaiALLLOAI();
-    var p2=categoryRepo.loaiALLNSX();
+    } /*
+    var p1=categoryRepo.loadALLLOAI();
+    var p2=categoryRepo.loadALLNSX();
+   
     Promise.all([p1, p2]).then(([rows, rows1])=>{
 
     	res.locals.layoutVM = {
@@ -19,5 +20,6 @@ module.exports = (req, res, next) => {
         }
 
         next();
-    });
+    });*/
+    next();
 }
