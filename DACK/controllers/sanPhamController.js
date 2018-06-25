@@ -5,6 +5,44 @@ var express = require('express'),
 
 var router = express.Router();
 
+router.get('/San-pham-theo-hang/search', (req, res) => {
+
+    var page = req.query.page;
+    if (!page) page = 1;
+    if (page < 1) page = 1;
+    if(page===1)
+    {
+        config.PRODUCTS_SEARCH="%"+ req.query.timkiem +"%";
+    }
+    var catId =config.PRODUCTS_SEARCH;
+    var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
+    var p1 = productRepo.loadPageBysearch(catId,offset);
+    var p2 = productRepo.countBysearch(catId);
+
+    Promise.all([p1, p2]).then(([rows, count_rows]) => {
+        var total = count_rows[0].total;
+        console.log(total);
+        console.log(config.PRODUCTS_SEARCH);
+        var nPages = total / config.PRODUCTS_PER_PAGE;
+        if (total % config.PRODUCTS_PER_PAGE > 0)
+            nPages++;
+
+        var numbers = [];
+        for (i = 1; i <= nPages; i++) {
+            numbers.push({
+                value: i,
+                isCurrentPage: i === +page
+            });
+        }
+
+        var vm = {
+            products: rows,
+            noProducts: rows.length === 0,
+            page_numbers: numbers
+        };
+        res.render('sanPham/San-pham-theo-hang', vm);
+    });
+});
 router.get('/San-pham-theo-hang/:id', (req, res) => {
     var catId = req.params.id;
     var page = req.query.page;
