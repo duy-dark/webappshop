@@ -1,11 +1,11 @@
 var db = require('../fn/db');
 
 exports.loadALLLOAI = () => {
-	var sql = `select LOAI from sanpham  GROUP BY LOAI`;
+	var sql = `select * from sanpham  GROUP BY LOAI`;
 	return db.load(sql);
 }
 exports.loadALLNSX = () => {
-	var sql = `select NSX from sanpham  GROUP BY NSX`;
+	var sql = `select * from sanpham  GROUP BY NSX`;
 	return db.load(sql);
 }
 exports.loadspmoinhat = () => {

@@ -1,4 +1,19 @@
 
+{{#section 'js'}}
+    <script type="text/javascript">
+        $('.addItem').on('click', function() {
+            var id = $(this).data('proid');
+            $('#txtP').val(id);
+            $('#txtQ').val(1);
+            $('#frmAddItem').submit();
+            //location.reload();
+        });
+    </script>
+{{/section}}
+    <form id="frmAddItem" method="POST" action="/gio-hang/add">
+        <input type="hidden" name="proId" id="txtP">
+        <input type="hidden" name="quantity" id="txtQ">
+    </form>
   <div id="content">
             <div class="slider-wrapper">
                 <div class="quangcao">
@@ -56,7 +71,7 @@
                                     <p><strong>HĐH: {{HDH}}</strong></p>
                                     <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
                                 </div>
-                                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                                <div class="cart"><a data-proid="{{MASP}}" href="" class="myButton addItem">Thêm giỏ hàng</a></div>
                             </div>
                             {{/each}}
                         </div>
@@ -79,7 +94,7 @@
                                     <p><strong>HĐH: {{HDH}}</strong></p>
                                     <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
                                 </div>
-                                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                                <div class="cart"><a data-proid="{{MASP}}" href="" class="myButton addItem">Thêm giỏ hàng</a></div>
                             </div>
                             {{/each}}
                         </div>
@@ -101,7 +116,7 @@
                                     <p><strong>HĐH: {{HDH}}</strong></p>
                                     <p><strong>Kết Nối: Wifi, Bluetooth</strong></p>
                                 </div>
-                                <div class="cart"><a href="#" class="myButton">Thêm giỏ hàng</a></div>
+                                <div class="cart"><a data-proid="{{MASP}}" href="" class="myButton addItem">Thêm giỏ hàng</a></div>
                             </div>
                             {{/each}}
                         </div>

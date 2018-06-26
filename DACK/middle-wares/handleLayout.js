@@ -9,26 +9,21 @@ module.exports = (req, res, next) => {
     if (req.session.isAdmin === undefined) {
         req.session.isAdmin = false;
     } 
-    /*
+    
     var p1=categoryRepo.loadALLLOAI();
     var p2=categoryRepo.loadALLNSX();
    
     Promise.all([p1, p2]).then(([rows, rows1])=>{
 
     	res.locals.layoutVM = {
-            LOAI: rows,
-            NSX: rows1,
-            isLogged: req.session.isLogged,
+            LOAIR: rows,
+            NSXR: rows1,
             curUser: req.session.curUser,
+            isLogged:req.session.isLogged,
+            isAdmin:req.session.isAdmin,
             cartSummary: cartRepo.getNumberOfItems(req.session.cart)
         }
 
         next();
-    });*/
-    res.locals.layoutVM = {
-       curUser: req.session.curUser,
-       isLogged:req.session.isLogged,
-       isAdmin:req.session.isAdmin
-    }
-    next();
+    });
 }
