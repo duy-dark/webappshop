@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 
 app.use('/home', homeController);
 app.use('/lien-he', lienHeController);
-app.use('/dash-board',dashBoardController);
+app.use('/dash-board',restrict,dashBoardController);
 app.use('/sanpham',sanPhamController);
 app.use('/gio-hang', restrict, gioHangController);
 app.use('/taiKhoan',taiKhoanController);

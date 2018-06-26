@@ -61,6 +61,7 @@ router.post('/dangNhap', (req, res) => {
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
+            console.log(req.query.retUrl);
             res.redirect(url);
         } else {
             taiKhoanRepo.checkAdmin(user).then(rows2 => {
@@ -69,6 +70,9 @@ router.post('/dangNhap', (req, res) => {
                     req.session.isAdmin=true;
                      req.session.curUser = rows2[0];
                     var url = '/';
+                    if (req.query.retUrl) {
+                        url = req.query.retUrl;
+                    }
                     res.redirect(url);
                 }
                 else{
