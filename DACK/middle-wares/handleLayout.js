@@ -5,7 +5,11 @@ module.exports = (req, res, next) => {
 
     if (req.session.isLogged === undefined) {
         req.session.isLogged = false;
-    } /*
+    } 
+    if (req.session.isAdmin === undefined) {
+        req.session.isAdmin = false;
+    } 
+    /*
     var p1=categoryRepo.loadALLLOAI();
     var p2=categoryRepo.loadALLNSX();
    
@@ -21,5 +25,10 @@ module.exports = (req, res, next) => {
 
         next();
     });*/
+    res.locals.layoutVM = {
+       curUser: req.session.curUser,
+       isLogged:req.session.isLogged,
+       isAdmin:req.session.isAdmin
+    }
     next();
 }

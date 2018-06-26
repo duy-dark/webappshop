@@ -36,13 +36,50 @@
                         </a>
                     </li>
                 </ul>
-                <li id="taiKhoan">
-                    <a href="#">
-                    <img class="header-right-image" src="/assets/image/user.png" alt="">
-                    <span>Tài Khoản</span>
+               {{#if layoutVM.isLogged}}
+                    {{#if layoutVM.isAdmin}}
+                            <form id="frmLogout" method="post" action="/taiKhoan/dangXuat"></form>
+                            <li id="taiKhoan">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img class="header-right-image" src="/assets/image/user.png" alt="">
+                                <span><strong>Hi, {{layoutVM.curUser.TEN}}!</strong> <b class="caret"></b></span>
+                                </a>
+                                 <ul class="dropdown-menu">
+                                        <li><a href="/taiKhoan/profile">Profile</a></li>                                        
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="/dash-board">Dash board</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#" id="lnkLogout" >Đang xuất</a></li>
+                                </ul>
+
+                            </li>
+                    {{else}}
+                            <form id="frmLogout" method="post" action="/taiKhoan/dangXuat"></form>
+                            <li id="taiKhoan">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img class="header-right-image" src="/assets/image/user.png" alt="">
+                                <span><strong>Hi, {{layoutVM.curUser.TEN}}!</strong> <b class="caret"></b></span>
+                                </a>
+                                 <ul class="dropdown-menu">
+                                        <li><a href="/taiKhoan/profile">Profile</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#" id="lnkLogout" >Đăng xuất</a></li>
+                                </ul>
+                            </li>
+                    {{/if}}        
+                {{else}}
+                    <li id="taiKhoan">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img class="header-right-image" src="/assets/image/user.png" alt="">
+                        <span>Tài khoản<b class="caret"></b></span>
                         </a>
-                </li>
-            
+                         <ul class="dropdown-menu">
+                                <li><a href="/taiKhoan/dangNhap">Đăng nhập</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/taiKhoan/dangKi" id="lnkLogout" >Đăng kí</a></li>
+                        </ul>
+                    </li>
+                {{/if}}
             </div>
         </div>
         <div id="menu1">
@@ -104,7 +141,10 @@
                         </li>
                          
                         <li><a href="/lien-he"><b  style="font-size: 1.7rem">Liên Hệ</b></a></li>
+                        {{#if layoutVM.isAdmin}}
                          <li><a href="/dash-board"><b  style="font-size: 1.7rem">Dash Board</b></a></li>
+                        {{/if}}
+
                     </ul>
                 </div>
             </nav>
@@ -175,6 +215,11 @@
     <script type="text/javascript" src="/assets/drop.js"></script>
     <script src="/assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/bootstrap-validator-master/dist/validator.min.js"></script>
+    <script type="text/javascript">
+        $('#lnkLogout').on('click', function() {
+            $('#frmLogout').submit();
+        });
+    </script>
         {{{_sections.js}}}
 
 </body>

@@ -17,6 +17,6 @@ exports.login = user => {
 	return db.load(sql);
 }
 exports.checkAdmin = user => {
-	var sql = `select * from admin where ADMIN = '${user.USERNAME}' and PASSWORD = '${user.PASSWORD}'`;
+	var sql = `select * from admin where USERNAME = '${user.USERNAME}' and PASSWORD = '${user.PASSWORD}'`;
 	return db.load(sql);
 }
