@@ -21,7 +21,7 @@ exports.getNumberOfItems = cart => {
 
 exports.add = (cart, item) => {
     for (var i = cart.length - 1; i >= 0; i--) {
-        if (cart[i].product.ProID === item.product.ProID) {
+        if (cart[i].product.MASP === item.product.MASP) {
             cart[i].quantity += item.quantity;
             return;
         }
@@ -32,7 +32,7 @@ exports.add = (cart, item) => {
 
 exports.remove = (cart, proId) => {
     for (var i = cart.length - 1; i >= 0; i--) {
-        if (proId === cart[i].product.ProID) {
+        if (proId === cart[i].product.MASP) {
             cart.splice(i, 1);
             return;
         }

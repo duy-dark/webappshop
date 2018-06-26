@@ -32,7 +32,7 @@
                     <li>
                         <a href="/gio-hang">
                             <img class="header-right-image" src="/assets/image/giohang.jpg" alt="">
-                            <span>&nbsp;Giỏ Hàng</span>
+                            <span>&nbsp;Giỏ Hàng ({{layoutVM.cartSummary}} items)</span>
                         </a>
                     </li>
                 </ul>
@@ -96,47 +96,23 @@
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b   style="font-size: 1.7rem">Loại sản phẩm</b><b class="caret"></b></a>
                             <ul class="dropdown-menu loaiSP-content">
+                                {{#each layoutVM.LOAIR}}
                                <li>
-                                  <a href="/sanpham/San-pham-theo-hang/danhsachloai/Gaming">Gaming</a>
+                                  <a href="/sanpham/San-pham-theo-hang/danhsachloai/{{LOAI}}">{{LOAI}}</a>
                                </li>
-                               <li>
-                                  <a href="/sanpham/San-pham-theo-hang/danhsachloai/Phổ thông">Phổ Thông</a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachloai/Cao cấp">Cao Cấp</a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachloai/Doanh nhân">Doanh Nhân</a>
-                               </li>
+                               {{/each}}
+                               
                            </ul>
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b   style="font-size: 1.7rem">Nhà sản xuất</b><b class="caret"></b></a>
                             <ul class="dropdown-menu nsx-content">
-                               <li>
-                                    <a href="/sanpham/San-pham-theo-hang/danhsachhang/MSI" style="text-decoration-line: none;"><span>MSI</span></a>
-                               </li>
-                               <li>
-                                    <a href="/sanpham/San-pham-theo-hang/danhsachhang/MASSTEL" style="text-decoration-line: none;"><span>MASSTEL</span></a>
-                               </li>
-                               <li>
-                                    <a href="/sanpham/San-pham-theo-hang/danhsachhang/LENOVO" style="text-decoration-line: none;"><span>LENOVO</span></a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachhang/HP" style="text-decoration-line: none;"><span>HP</span></a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachhang/DELL" style="text-decoration-line: none;"><span>DELL</span></a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachhang/Acer" style="text-decoration-line: none;"><span>Acer</span></a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachhang/Apple" style="text-decoration-line: none;"><span>Apple</span></a>
-                               </li>
-                               <li>
-                                   <a href="/sanpham/San-pham-theo-hang/danhsachhang/Asus" style="text-decoration-line: none;"><span>Asus</span></a>
-                               </li>
+                                {{#each layoutVM.NSXR}}
+                                <li>
+                                    <a href="/sanpham/San-pham-theo-hang/danhsachhang/{{NSX}}" style="text-decoration-line: none;"><span>{{NSX}}</span></a>
+                                </li>
+                               {{/each}}
+                               
                            </ul>
                         </li>
                          

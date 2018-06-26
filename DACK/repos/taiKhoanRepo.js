@@ -3,7 +3,7 @@ var db = require('../fn/db');
 exports.add = user => {
 	var sql = `insert into khachhang( TEN, DTHOAI, USERNAME, PASSWORD,EMAIL,NGAYSINH,CMND,GIOITINH,DCHI) 
 	values('${user.TEN}', '${user.DTHOAI}', '${user.USERNAME}', '${user.PASSWORD}', '${user.EMAIL}', '${user.NGAYSINH}',
-	'${user.CMND}','${user.GIOITINH}',${user.DCHI})`;
+	'${user.CMND}','${user.GIOITINH}','${user.DCHI}')`;
 	return db.save(sql);
 }
 exports.checkExist = user => {

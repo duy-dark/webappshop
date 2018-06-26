@@ -58,7 +58,7 @@ app.use('/home', homeController);
 app.use('/lien-he', lienHeController);
 app.use('/dash-board',dashBoardController);
 app.use('/sanpham',sanPhamController);
-app.use('/gio-hang', restrict, gioHangController);
+app.use('/gio-hang', gioHangController);
 app.use('/taiKhoan',taiKhoanController);
 
 app.use(handle404MDW);
