@@ -3,7 +3,11 @@
   </div>
 <div id="dangNhapBackground">
 <div id="dangNhapInform">
-    
+    {{#if showError}}
+        <div class="alert alert-warning" style="width:40%;margin: auto;text-align: center;font-family: 'Droid serif', serif;font-size: 20px !important; padding-top:5px !important;padding-bottom:5px !important;margin-bottom: 10px;border: 2px solid red !important;">
+          <img src="/assets/image/warning.png">Username hoặc Password sai !
+        </div>
+    {{/if}}
 </div>
 <div id="dangNhapContent">
 <form class=" form-horizontal" data-toggle="validator" role="form" method="post" >

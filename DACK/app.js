@@ -8,7 +8,8 @@ var session = require('express-session');
 
 var handleLayoutMDW = require('./middle-wares/handleLayout');
 var handle404MDW = require('./middle-wares/handle404');
-var restrict = require('./middle-wares/restrict');
+var restrict = require('./middle-wares/restrict'),
+    restrictAdmin= require('./middle-wares/restrictAdmin');
 
 var homeController = require('./controllers/homeController'),
 	gioHangController=require('./controllers/gioHangController'),
@@ -56,9 +57,9 @@ app.get('/', (req, res) => {
 
 app.use('/home', homeController);
 app.use('/lien-he', lienHeController);
-app.use('/dash-board',restrict,dashBoardController);
+app.use('/dash-board',restrict,restrictAdmin,dashBoardController);
 app.use('/sanpham',sanPhamController);
-app.use('/gio-hang', gioHangController);
+app.use('/gio-hang',restrict,gioHangController);
 app.use('/taiKhoan',taiKhoanController);
 
 app.use(handle404MDW);
