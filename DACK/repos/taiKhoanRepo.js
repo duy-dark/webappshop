@@ -37,3 +37,11 @@ exports.loadTTmuahang = id => {
 	return db.load(sql);
 }
 
+exports.addmessage = person => {
+	var sql = `insert into lienhe ( TEN, DTHOAI,EMAIL,DCHI,TINNHAN)  values('${person.TEN}','${person.DTHOAI}','${person.EMAIL}','${person.DCHI}','${person.TINNHAN}' )`;
+	return db.load(sql);
+}
+exports.loadAdmin = () => {
+	var sql = `select * from admin where IDADM=1`;
+	return db.load(sql);
+}

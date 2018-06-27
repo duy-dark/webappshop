@@ -36,7 +36,8 @@ router.get('/San-pham-theo-hang/search', (req, res) => {
         var vm = {
             products: rows,
             noProducts: rows.length === 0,
-            page_numbers: numbers
+            page_numbers: numbers,
+            page_last: numbers.length
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
@@ -68,7 +69,8 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
         var vm = {
             products: rows,
             noProducts: rows.length === 0,
-            page_numbers: numbers
+            page_numbers: numbers,
+            page_last: numbers.length
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
@@ -100,7 +102,8 @@ router.get('/San-pham-theo-hang/danhsachloai/:id', (req, res) => {
         var vm = {
             products: rows,
             noProducts: rows.length === 0,
-            page_numbers: numbers
+            page_numbers: numbers,
+            page_last: numbers.length
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
@@ -132,7 +135,8 @@ router.get('/San-pham-theo-hang/danhsachhang/:id', (req, res) => {
         var vm = {
             products: rows,
             noProducts: rows.length === 0,
-            page_numbers: numbers
+            page_numbers: numbers,
+            page_last: numbers.length
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });
@@ -164,7 +168,8 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
         var vm = {
             products: rows,
             noProducts: rows.length === 0,
-            page_numbers: numbers
+            page_numbers: numbers,
+            page_last: numbers.length
         };
         res.render('sanPham/San-pham-theo-hang', vm);
     });

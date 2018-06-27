@@ -3,9 +3,27 @@
 {{/section}}
 
 {{#section 'js'}}
-    
+    <script>
+         $('.addItem').on('click', function() {
+                
+                $('#txtT').val($('#TEN').val());
+                $('#txtDT').val($('#DTHOAI').val());
+                $('#txtE').val($('#EMAIL').val());
+                $('#txtDC').val($('#DCHI').val());
+                $('#txtTN').val($('#TINNHAN').val());
+                $('#frmAddItem').submit();
+            });
+    </script>
+   
 {{/section}}
 
+    <form id="frmAddItem" method="POST" action="/lien-he/send">
+        <input type="hidden" name="TEN" id="txtT">
+        <input type="hidden" name="DTHOAI" id="txtDT">
+        <input type="hidden" name="EMAIL" id="txtE">
+        <input type="hidden" name="DCHI" id="txtDC">
+        <input type="hidden" name="TINNHAN" id="txtTN">
+    </form>
   <div class="container1">
             <div class="row">
                 <section>
@@ -15,8 +33,7 @@
                                 <a href="../">Trang Chủ</a> &nbsp;>>&nbsp;
                                 <a href="#">Liên hệ</a>
                             </div>
-                            <h1><b>Liên hệ với chúng tôi</b></h1>
-                            <h2>ĐỊA CHỈ CỦA CHÚNG TÔI</h2>
+                           
                             <div class="contact-info">
                                 <div class="content">
                                     <div class="left">
@@ -24,7 +41,7 @@
                                             <h4>
                                                 <span class="glyphicon glyphicon-home" aria-hidden="true">&nbsp;ĐỊA CHỈ:</span>
                                             </h4>
-                                            <p>Quang Trung, Quận Gò Vấp, TP. HCM</p>
+                                            <p>{{admin.DCHI}}</p>
                                         </div>
                                     </div>
                                     <div class="right">
@@ -33,7 +50,7 @@
                                                 <h4>
                                                     <span class="glyphicon glyphicon-earphone" aria-hidden="true">&nbsp;SỐ ĐIỆN THOẠI:</span>
                                                 </h4>
-                                                <p>(012)3456789</p>
+                                                <p>{{admin.DTHOAI}}</p>
                                             </div>
                                         </div>
                                         <div class="left">
@@ -41,60 +58,60 @@
                                                 <h4>
                                                     <span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;EMAIL HỔ TRỢ:</span>
                                                 </h4>
-                                                <p>nguyentiendung@gmail.com</p>
+                                                <p>{{admin.EMAIL}}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <form action="">
-                                <div class="panel-heading">
-                                    <h2><b>GỬI TIN NHẮN LIÊN HỆ</b></h2>
-                                </div>
-                                <div>
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div style="margin-bottom: 30px;">
-                                                <label class="col-md-2">Người gửi:</label>
-                                                <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="name">
+                            <div class="panel-heading">
+                                <h2><b>GỬI TIN NHẮN LIÊN HỆ</b></h2>
+                            </div>
+                        
+                            <div>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <div style="margin-bottom: 30px;">
+                                            <label class="col-md-2">Người gửi:</label>
+                                            <input required type="text" class="col-md-10 form-control" style="width: 500px;" value="{{layoutVM.curUser.TEN}}" id="TEN">
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div style="margin-bottom: 30px;">
+                                            <label class="col-md-2">Số điện thoại:</label>
+                                            <input required type="text" class="col-md-10 form-control" style="width: 500px;" value="{{layoutVM.curUser.DTHOAI}}" id="DTHOAI">
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div style="margin-bottom: 30px;">
+                                            <label class="col-md-2">Địa chỉ:</label>
+                                            <input required type="text" class="col-md-10 form-control" style="width: 500px;" value="{{layoutVM.curUser.DCHI}}" id="DCHI">
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div style="margin-bottom: 30px;">
+                                            <label class="col-md-2">Email:</label>
+                                            <input required type="text" class="col-md-10 form-control" style="width: 500px;" value="{{layoutVM.curUser.EMAIL}}" id="EMAIL">
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div style="margin-bottom: 30px;">
+                                            <div class="content">
+                                                <form action="">
+                                                    <div class="form-group mb10">
+                                                        <textarea  id="TINNHAN" class="form-control" rows="10" placeholder="Nhập yêu cầu của bạn" style="padding: 5px 5px 5px 5px;"></textarea>
+                                                    </div>
+                                                </form>
                                             </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div style="margin-bottom: 30px;">
-                                                <label class="col-md-2">Số điện thoại:</label>
-                                                <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="phone">
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div style="margin-bottom: 30px;">
-                                                <label class="col-md-2">Địa chỉ:</label>
-                                                <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="address">
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div style="margin-bottom: 30px;">
-                                                <label class="col-md-2">Email:</label>
-                                                <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="address">
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div style="margin-bottom: 30px;">
-                                                <div class="content">
-                                                    <form action="">
-                                                        <div class="form-group mb10">
-                                                            <textarea name="name" class="form-control" rows="10" placeholder="Nhập yêu cầu của bạn" style="padding: 5px 5px 5px 5px;"></textarea>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="from-group">
-                                    <input type="submit" class="button" value="Gửi tin nhắn" style="width: 100%; height: 40px;">
-                                </div>
-                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <a  href="#" class="btn button addItem" style="width: 100%; height: 40px; background-color:red; font-style:normal; color: black;"><h4><b>Gửi tin nhắn</b></h4></a>
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
+        </div>
