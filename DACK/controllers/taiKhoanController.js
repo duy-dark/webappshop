@@ -4,6 +4,7 @@ var express = require('express'),
 
 var restrict = require('../middle-wares/restrict');
 var taiKhoanRepo = require('../repos/taiKhoanRepo');
+var categoryRepo = require('../repos/categoryRepo');
 
 var router = express.Router();
 
@@ -102,5 +103,40 @@ router.post('/dangXuat', (req, res) => {
 router.get('/profile', restrict, (req, res) => {
     res.render('taiKhoan/profile');
 });
-
+router.post('/profile/update', (req, res) => {
+    taiKhoanRepo.updateaccount(req.body).then(rows=>{
+        taiKhoanRepo.loadaccount(req.body.MAKH).then(rows => {
+            req.session.curUser = rows[0];
+        });
+        res.render('taiKhoan/profile');
+    });
+});
+router.get('/doimatkhau', (req, res) => {
+    var vm={
+        MAKH:req.query.id
+    };
+   res.render('taiKhoan/doimatkhau',vm);
+});
+router.post('/profile/updatematkhau', (req, res) => {
+    var pold=req.body.PASSOLD;
+    var pnew=req.body.PASSNEW;
+    var pnew1=req.body.PASSNEW1;
+    taiKhoanRepo.loadaccount(req.body.MAKH).then(rows => {
+        if(rows[0].PASSWORD===sha256(pold).toString() && pnew===pnew1)
+        {
+            taiKhoanRepo.updatematkhau(sha256(pnew).toString(),req.body.MAKH).then(rows1=>{
+                req.session.curUser = rows[0];
+                res.render('taiKhoan/profile');
+            });
+        }
+        else {
+            var vm={
+                NHAPSAI: true
+            };
+            res.render('taiKhoan/doimatkhau',vm);
+        }
+        
+    });
+    
+});
 module.exports = router;

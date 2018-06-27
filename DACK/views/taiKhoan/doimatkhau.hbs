@@ -1,0 +1,32 @@
+
+{{#if NHAPSAI}}
+	<div class="alert alert-warning alert-dismissible" role="alert">
+	  <strong>Warning!</strong> nhập sai mật khẩu cũ hoặc nhập lại mật khẩu mới sai.
+	</div>
+{{/if}}
+<b style="text-align: center;"><h3>ĐỔI MẬT KHẨU</h3></b>
+<div class="row">
+  
+  <div class=".col-xs-6" style="padding:10px 200px;">
+	<form action="/taiKhoan/profile/updatematkhau" method="POST" role="form">
+		<input class="form-control" type="hidden" name="MAKH" value="{{MAKH}}">
+		<div class="col-xs-6 col-md-4"><b>Mật khẩu cũ</b></div>
+		<div class="col-xs-12 col-md-8">
+			<input class="form-control" type="text" placeholder="mật khẩu cũ" name="PASSOLD">
+		</div>
+	  	<div class="col-xs-6 col-md-4"><b>Mật khẩu mới</b></div>
+		<div class="col-xs-12 col-md-8">
+			<input class="form-control" type="text" placeholder="mật khẩu mới" name="PASSNEW">
+		</div>
+		<div class="col-xs-6 col-md-4"><b>Nhập lại Mật khẩu mới</b></div>
+		<div class="col-xs-12 col-md-8">
+			<input class="form-control" type="text" placeholder="nhập lại" name="PASSNEW1">
+		</div>
+		<div>
+			<button type="submit">Đổi mật khẩu</button>
+		</div>
+	</form>
+  </div>
+
+</div>
+

@@ -20,3 +20,20 @@ exports.checkAdmin = user => {
 	var sql = `select * from admin where USERNAME = '${user.USERNAME}' and PASSWORD = '${user.PASSWORD}'`;
 	return db.load(sql);
 }
+exports.loadaccount = id => {
+	var sql = `select * from khachhang where MAKH=${id}`;
+	return db.load(sql);
+}
+exports.updateaccount = account => {
+	var sql = `UPDATE khachhang SET USERNAME='${account.USERNAME}',DTHOAI='${account.DTHOAI}',EMAIL='${account.EMAIL}',CMND='${account.CMND}',GIOITINH='${account.GIOITINH}' where MAKH=${account.MAKH}`;
+	return db.load(sql);
+}
+exports.updatematkhau = (PASSNEW,id) => {
+	var sql = `UPDATE khachhang SET PASSWORD='${PASSNEW}' WHERE MAKH=${id}  `;
+	return db.load(sql);
+}
+exports.loadTTmuahang = id => {
+	var sql = `select ql.MAKH,ql.MAGH,ql.NGAYDATHANG,gh.MASP,gh.SOLUONG,gh.THANHTIEN from quanlyhoadon ql,giohang gh where ql.MAKH=${id} and  ql.MAGH=gh.MAGH  `;
+	return db.load(sql);
+}
+
