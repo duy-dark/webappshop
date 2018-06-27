@@ -1,0 +1,107 @@
+
+
+<div class="top1">
+        <div class="row">
+          <div class=" col-md-4">
+            <div id="User-Avatar" class="">
+                <div id="user-image">
+                     <img src="/assets/image/default-avatar.png" style="background-image: /assets/image/background-avatar.png;">
+                     
+                </div>           
+                <div id="user-type">
+                    <b><h3>{{layoutVM.curUser.TEN}}</h3></b>
+                </div>   
+            </div>
+          </div>
+          <div class=" col-md-8">
+            <div id="User-Infor">
+                    <div id="Infor-Content">
+                        <form action="/taiKhoan/profile/update" method="POST" role="form">
+                            <div id="Account-Infor" class="form-group">
+                                <b><h3>THÔNG TIN TÀI KHOẢN ADMIN</h3></b>
+                                <div>
+                                    <div class=" col-md-4">
+                                        <label>USERNAME:</label>
+                                    </div>
+                                    <div class=" col-md-8">
+                                        <input type="text" name="USERNAME" value="{{layoutVM.curUser.USERNAME}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div >
+                                    <a href="/taiKhoan/doimatkhau?id={{layoutVM.curUser.MAKH}}" class="btn" style="border: solid;">Đổi mật khẩu</a>
+                                </div>
+                            </div>
+                            <div id="Personal-Infor">
+                                <b><h3>THÔNG TIN {{layoutVM.curUser.TEN}}</h3></b>
+                                <div>
+                                	<input type="hidden" name="MAKH" value="{{layoutVM.curUser.MAKH}}">
+                                	<div class=" col-md-4"><label>Ngày sinh:</label></div>
+                                      <div class=" col-md-8">
+                                        <input type="datetime-local" class="form-control" name="NGAYSINH" value="{{layoutVM.curUser.NGAYSINH}}" required >
+                                    </div>
+									<div class=" col-md-4"><label>Giới tính:</label></div>
+                                      <div class=" col-md-8">
+                                        <input type="text" name="GIOITINH" value="{{layoutVM.curUser.GIOITINH}}" class="form-control">
+                                    </div>
+                                    <div class=" col-md-4"><label>CMND:</label></div>
+                                      <div class=" col-md-8">
+                                        <input type="text" name="CMND" value="{{layoutVM.curUser.CMND}}" class="form-control">
+                                    </div>
+                                    <div class=" col-md-4"><label>Địa Chỉ:</label></div>
+                                      <div class=" col-md-8">
+                                        <input type="text" name="DCHI" value="{{layoutVM.curUser.DCHI}}" class="form-control">
+                                    </div>
+                                    <div class=" col-md-4">
+                                        <label>Số Điện Thoại:</label>
+                                    </div>
+                                    <div class=" col-md-8">
+                                        <input type="text" name="DTHOAI" value="{{layoutVM.curUser.DTHOAI}}" class="form-control">
+                                    </div>
+                                    <div class=" col-md-4">
+                                        <label>Email:</label>
+                                    </div>
+                                    <div class=" col-md-8">
+                                        <input type="text" name="EMAIL" value="{{layoutVM.curUser.EMAIL}}" class="form-control">
+                                    </div>
+                                    
+                                    
+                                </div> 
+                            </div>
+                            <br>
+                            <div id="button">
+                                <button type="submit">
+                                    Cập Nhật
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+             </div>
+          </div>
+        </div>
+    </div>
+    <div><b>Lịch sử mua hàng</b></div>
+    <div class="top1">
+    	<table class="table table-striped">
+            <thead>
+                <tr>
+                    <td class="image">Hình ảnh</td>
+                    <td class="name">Tên sản phẩm</td>
+                    <td class="price">Số lượng</td>
+                    <td class="quantity">Thành tiền</td>
+                    <td>Ngày mua</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each TT}}
+                    <tr>
+                        <td><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:50px"></td>
+                        <td>{{sp.TENSP}}</td>
+                        <td>{{SOLUONG}}</td>
+                        <td>{{THANHTIEN}}</td>
+                        <td>{{NGAYDATHANG}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
