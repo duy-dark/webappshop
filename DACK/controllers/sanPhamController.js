@@ -21,8 +21,6 @@ router.get('/San-pham-theo-hang/search', (req, res) => {
 
     Promise.all([p1, p2]).then(([rows, count_rows]) => {
         var total = count_rows[0].total;
-        console.log(total);
-        console.log(config.PRODUCTS_SEARCH);
         var nPages = total / config.PRODUCTS_PER_PAGE;
         if (total % config.PRODUCTS_PER_PAGE > 0)
             nPages++;

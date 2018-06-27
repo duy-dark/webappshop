@@ -4,10 +4,21 @@
 
 {{#section 'js'}}
     <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js"></script>
+    <script>
+    $('.addItem').on('click', function() {
+            var id = $(this).data('proid');
+            var sl= $('#sl').val();
+            $('#txtP').val(id);
+            $('#txtQ').val(sl);
+            $('#frmAddItem').submit();
+        });
+    </script>
 {{/section}}
 
-
-   </div>
+    <form id="frmAddItem" method="POST" action="/gio-hang/add">
+        <input type="" name="proId" id="txtP">
+        <input type="" name="quantity" id="txtQ">
+    </form>
     <div id="thongTinChiTietSanPham">
         <div class="title">
             <span><a href="/home">Trang chủ </a>></span>
@@ -55,13 +66,11 @@
                    
                     <div class="soLuong">
                         <h4><b>Mua ngay:</b></h4>
-                        <button>+</button><span>0</span>
+                        <button>+</button><input type="text" id="sl" class="" value="0"></input>
                         <button>-</button>
                     </div>
                     <div class="themVaoGioHang">
-                        <a href="#">
-                        <img src="/assets/image/giohang.jpg"> Thêm vào giỏ hàng
-                        </a>
+                        <a data-proid="{{sp.MASP}}" href="#" class="addItem"><img src="/assets/image/giohang.jpg"> Thêm vào giỏ hàng</a>
                     </div>
                     <div class="alert alert-success">
                       5 khách hàng vừa cho sản phẩm vào giỏ hàng 15 phút trước

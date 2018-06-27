@@ -8,13 +8,25 @@
         var id = $(this).data('proid');
         $('#txtP').val(id);
         $('#frmRemoveItem').submit();
-        location.reload();
+
+    });
+    $('.editItem').on('click', function() {
+        var id = $(this).data('proid');
+        var sl=$('#sl').val();
+        $('#txtK').val(id);
+        $('#txtH').val(sl);
+        $('#frmeditItem').submit();
+
     });
 </script>
 {{/section}}
-<form id="frmRemoveItem" method="post" action="/cart/remove">
+<form id="frmRemoveItem" method="post" action="/gio-hang/remove">
     <input type="hidden" name="proId" id="txtP">
 </form>
+<form id="frmeditItem" method="POST" action="/gio-hang/edit">
+        <input type="hidden" name="proId" id="txtK">
+        <input type="hidden" name="quantity" id="txtH">
+    </form>
  <div id="content">
         <div class="container1">
             <div class="row">
@@ -37,19 +49,26 @@
                                             <td class="price">Đơn giá</td>
                                             <td class="quantity">Số lượng</td>
                                             <td class="total">Tổng tiền</td>
+                                            <td></td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {{#each items}}
                                             <tr>
-                                                <td>{{product.ProName}}</td>
-                                                <td>{{number_format product.Price}}</td>
-                                                <td>{{quantity}}</td>
-                                                <td>{{number_format amount}}</td>
+                                                <td></td>
+                                                <td><img src="/assets/image/sanpham/{{product.MASP}}/1.jpg" alt="" style="width:50px"></td>
+                                                <td>{{product.TENSP}}</td>
+                                                <td>{{product.GIABAN}}</td>
+                                                <td><input id="sl" type="text" value="{{quantity}}"></td>
+                                                <td>{{amount}}</td>
                                                 <td class="text-right">
-                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs removeItem" href="" role="button">
+                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs removeItem" href="#" role="button">
                                                         <span class="glyphicon glyphicon-remove"></span>
                                                     </a>
+                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs editItem" href="#" role="button">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
+                                                    
                                                 </td>
                                             </tr>
                                         {{/each}}

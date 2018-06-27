@@ -13,6 +13,7 @@ exports.getNumberOfItems = cart => {
 
     var n = 0;
     for (var i = cart.length - 1; i >= 0; i--) {
+
         n += cart[i].quantity;
     }
 
@@ -23,6 +24,7 @@ exports.add = (cart, item) => {
     for (var i = cart.length - 1; i >= 0; i--) {
         if (cart[i].product.MASP === item.product.MASP) {
             cart[i].quantity += item.quantity;
+            cart[i].amount += item.amount;
             return;
         }
     }
@@ -34,6 +36,16 @@ exports.remove = (cart, proId) => {
     for (var i = cart.length - 1; i >= 0; i--) {
         if (proId === cart[i].product.MASP) {
             cart.splice(i, 1);
+            
+            return;
+        }
+    }
+}
+exports.edit = (cart, proId,quantity) => {
+    for (var i = cart.length - 1; i >= 0; i--) {
+        if (proId === cart[i].product.MASP) {
+            cart[i].quantity=quantity;
+            cart[i].amount = cart[i].product.GIABAN*quantity;
             return;
         }
     }
