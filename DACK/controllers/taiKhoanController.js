@@ -53,12 +53,12 @@ router.post('/dangNhap', (req, res) => {
         PASSWORD: sha256(req.body.fpassword).toString()
     };
     taiKhoanRepo.login(user).then(rows => {
+        var url='/';
         if (rows.length > 0) {
             req.session.isLogged = true;
             req.session.curUser = rows[0];
             req.session.cart = [];
 
-            var url = '/';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
@@ -68,8 +68,7 @@ router.post('/dangNhap', (req, res) => {
                 if (rows2.length > 0) {
                     req.session.isLogged = true;
                     req.session.isAdmin=true;
-                    req.session.curUser = rows2[0];
-                    var url = '/';
+                     req.session.curUser = rows2[0];
                     if (req.query.retUrl) {
                         url = req.query.retUrl;
                     }
