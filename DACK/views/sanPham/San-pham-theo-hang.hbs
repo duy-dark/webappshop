@@ -18,11 +18,11 @@
             $('#txtP').val(id);
             $('#txtQ').val(1);
             $('#frmAddItem').submit();
-            
         });
+        
     </script>
 {{/section}}
-
+    <input type="text" name="proId" id="gt">
     <form id="frmAddItem" method="POST" action="/gio-hang/add">
         <input type="hidden" name="proId" id="txtP">
         <input type="hidden" name="quantity" id="txtQ">
@@ -78,15 +78,15 @@
             <div style="width: 100%; display: inline-block; margin: 0 auto; text-align: center;">
                  <div id="inner">
                     <ul class="pagination">
-                        <li><a href="#" >&laquo;</a></li>
+                        <li><a href="?page=1" >&laquo;</a></li>
                         {{#each page_numbers}}
                             {{#if isCurrentPage}}
-                            <li class="active"><a href="javascript:;">{{value}}</a></li>
+                            <li class="active"><a href="#">{{value}}</a></li>
                             {{else}}
                             <li><a href="?page={{value}}">{{value}}</a></li>
                             {{/if}}
                         {{/each}}
-                        <li><a href="#">&raquo;</a></li>
+                        <li><a href="?page={{page_last}}" >&raquo;</a></li>
                     </ul>
                 </div>
             </div>
