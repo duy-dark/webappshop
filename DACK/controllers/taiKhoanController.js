@@ -3,6 +3,7 @@ var express = require('express'),
     moment = require('moment');
 
 var restrict = require('../middle-wares/restrict');
+var restrictDangNhap = require('../middle-wares/restrictDangNhap');
 var taiKhoanRepo = require('../repos/taiKhoanRepo');
 var categoryRepo = require('../repos/categoryRepo');
 
@@ -43,7 +44,7 @@ router.post('/dangKi', (req, res) => {
     });
 
 });
-router.get('/dangNhap', (req, res) => {
+router.get('/dangNhap',restrictDangNhap, (req, res) => {
     res.render('taiKhoan/dangNhap');
 });
 
@@ -95,8 +96,10 @@ router.post('/dangXuat', (req, res) => {
     req.session.isAdmin=false;
     req.session.curUser = null;
     req.session.cart = [];
-
-    res.redirect(req.headers.referer);
+    if(req.headers.referer.indexOf("/taiKhoan/yeuCauDangXuat") > -1){
+        res.redirect('/');
+    }else{
+    res.redirect(req.headers.referer);}
 });
 
 router.get('/profile', restrict, (req, res) => {
@@ -138,4 +141,8 @@ router.post('/profile/updatematkhau', (req, res) => {
     });
     
 });
+router.get('/yeuCauDangXuat', restrict,(req, res) => {
+    res.render('taiKhoan/dangXuat');
+});
+
 module.exports = router;

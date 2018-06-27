@@ -1,3 +1,5 @@
+var db = require('../fn/db');
+ var config = require('../config/config');
 // cart => [
 // 	{
 // 		product: {},
@@ -8,7 +10,7 @@
 
 exports.getNumberOfItems = cart => {
     if (!cart) {
-        return -1;
+        return 0;
     }
 
     var n = 0;
@@ -49,4 +51,30 @@ exports.edit = (cart, proId,quantity) => {
             return;
         }
     }
+}
+exports.cartSum = cart => {
+    if(!cart){return 0;}
+    var sum=0;
+    for (var i = cart.length - 1; i >= 0; i--) {
+        sum+=cart[i].amount;
+    }
+    return sum;
+}
+exports.saveCart=(cart,user,tttt)=>{
+    config.MAGH_LAST+=1;
+    for(i=0;i<cart.length;i++){
+    var sql = `insert into giohang(MAGH, MASP, SOLUONG, THANHTIEN) values(${config.MAGH_LAST}, ${cart[i].product.MASP},${cart[i].quantity},'${cart[i].amount}') `;
+    db.save(sql);
+    }
+
+    var d= new Date();
+    var strDate = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+    var tt='Chưa giao hàng';
+    var sum=0;
+    for (var i = cart.length - 1; i >= 0; i--) {
+        sum+=cart[i].amount;
+    }
+    var sql = `insert into quanlyhoadon(IDHD, IDKH, NGAYDATHANG, TINHTRANG,TONGTIEN,NGUOINHAN,SDT,DIACHI) 
+        values(${config.MAGH_LAST}, ${user.MAKH},'${strDate}','${tt}', ${sum},'${tttt.NGUOINHAN}','${tttt.SDT}','${tttt.DIACHI}')`;
+    db.save(sql);
 }

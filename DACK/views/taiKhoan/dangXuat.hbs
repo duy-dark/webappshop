@@ -1,0 +1,33 @@
+
+{{#section 'css'}}
+<style type="text/css">
+.btnDangXuat:hover{
+background-color: red !important;
+}
+.dangXuatContent{
+    background-color: #F8F8FA;
+    color:black;
+}
+</style>
+{{/section}}
+{{#section 'js'}}
+<script type="text/javascript">
+    $('.btnDangXuat').on('click',function(){
+        $('#frmLogout').submit();
+    });
+</script>
+{{/section}}
+<div class="dangXuatContent" style="font-family: 'Droid serif', serif;font-size:24px;width:36%;margin:auto;border: 2px solid #5E5A5A;padding: 10px 20px;text-align: center;text-decoration: underline;
+-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+border-radius: 6px 6px 6px 6px;
+-moz-border-radius: 6px 6px 6px 6px;
+-webkit-border-radius: 6px 6px 6px 6px;
+">
+    Để truy cập tài khoản khác,
+    <br>bạn cần đăng xuất tài khoản này
+    <br><br>
+    <button class='btn btn-warning btnDangXuat' style="font-weight:900; font-size: 25px;background-color: #CDC0BF;border:0px !important;margin-bottom: 5px;">Đăng xuất</button>
+ <form id="frmLogout" method="post" action="/taiKhoan/dangXuat"></form>
+</div>

@@ -1,22 +1,63 @@
 {{#section 'css'}}
-    
+<link rel="stylesheet" type="text/css" href="/assets/gio-hang.css">
 {{/section}}
 
 {{#section 'js'}}
+    
    <script type="text/javascript">
+if($('.c_sl').length===0){
+    $('#btnHt').attr('disabled',true);
+}
+
+   var slArr=[];
+   for(i=0;i<$('.c_btnSl').length;i++){
+    slArr.push( $('[id^="'+'sl'+(i+1)+'"]').val());
+   }
     $('.removeItem').on('click', function() {
         var id = $(this).data('proid');
         $('#txtP').val(id);
         $('#frmRemoveItem').submit();
 
     });
+    $('.c_sl').attr('disabled',true);
     $('.editItem').on('click', function() {
-        var id = $(this).data('proid');
-        var sl=$('#sl').val();
-        $('#txtK').val(id);
-        $('#txtH').val(sl);
-        $('#frmeditItem').submit();
+        var t=$(this).attr('id').slice(4, 5);
+        var a='btnSl'+t;
+        var b='sl'+t;
+        $('[id^="'+a+'"]').css('display','block');
+        $('[id^="'+b+'"]').prop('disabled',false);
 
+    });
+    $('button').on('click',function(){
+        var t=$(this).attr('id').slice(0,7);
+        if(t==='btnDong'){
+            var a='btnSl'+$(this).attr('id').slice(7,8);
+             var b='sl'+$(this).attr('id').slice(7,8);
+              $('[id^="'+a+'"]').css('display','none');
+              var tt=parseInt($(this).attr('id').slice(7,8))-1;
+               $('[id^="'+b+'"]').val(slArr[tt]);
+              $('[id^="'+b+'"]').prop('disabled',true);
+        return;
+        }
+        t=$(this).attr('id').slice(0,6);
+        if(t==='btnLuu'){
+            var t2=$(this).attr('id').slice(6,7);
+            var id = $('[id^="'+'edit'+t2+'"]').data('proid');
+            var sl= $('[id^="'+'sl'+t2+'"]').val();
+            $('#txtK').val(id);
+            $('#txtH').val(sl);
+            $('#frmeditItem').submit();
+        }
+    });
+     $('.c_sl').keydown(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+               return false;
+            }
+    });
+     $('input[name=sdt').keydown(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+               return false;
+            }
     });
 </script>
 {{/section}}
@@ -34,15 +75,16 @@
                     <div class="checkout-page">
                         <div id="content">
                             <div class="breadcrumb">
-                                <a href="../">Trang Chủ</a>
+                                <a href="/">Trang Chủ</a>
                                 &nbsp;>>&nbsp;
-                                <a href="#">Giỏ Hàng</a>
+                                <a href="javascript:">Giỏ Hàng</a>
                             </div>
-                            <h1 style="font-size: 18px;">Giỏ hàng của bạn (0) sản phẩm</h1>
+                            <h1 style="font-size: 18px;font-style: italic;">&nbsp;&nbsp;Giỏ hàng của bạn ({{layoutVM.cartSummary}}) sản phẩm</h1>
+
                             <form action="" style="margin-bottom:20px;">
-                                <table class="table table-striped">
+                                <table class="table table-striped" style=" border-top:1px solid black !important; border-bottom:1px solid black !important;">
                                     <thead>
-                                        <tr>
+                                        <tr style="font-weight: bold;font-size:18px;font-family: 'Droid serif', serif;">
                                             <td>STT</td>
                                             <td class="image">Hình ảnh</td>
                                             <td class="name">Tên sản phẩm</td>
@@ -55,17 +97,22 @@
                                     <tbody>
                                         {{#each items}}
                                             <tr>
-                                                <td></td>
+                                                <td>{{inc @index}}</td>
                                                 <td><img src="/assets/image/sanpham/{{product.MASP}}/1.jpg" alt="" style="width:50px"></td>
                                                 <td>{{product.TENSP}}</td>
-                                                <td>{{product.GIABAN}}</td>
-                                                <td><input id="sl" type="text" value="{{quantity}}"></td>
-                                                <td>{{amount}}</td>
+                                                <td>{{number_format product.GIABAN}}</td>
+                                                <td><input id="sl{{inc @index}}" type="text" value="{{quantity}}"  class="c_sl">
+                                                    <div id="btnSl{{inc @index}}" class="c_btnSl" style="font-family: 'Droid serif', serif;">
+                                                        <button type='button' id="btnLuu{{inc @index}}">Lưu</button>
+                                                        <button type='button' id="btnDong{{inc @index}}">Đóng</button>
+                                                    </div>
+                                                </td>
+                                                <td>{{number_format amount}}</td>
                                                 <td class="text-right">
-                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs removeItem" href="#" role="button">
+                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs removeItem" href="javascript:" role="button">
                                                         <span class="glyphicon glyphicon-remove"></span>
                                                     </a>
-                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs editItem" href="#" role="button">
+                                                    <a data-proid="{{product.MASP}}" class="btn btn-danger btn-xs editItem" id='edit{{inc @index}}' href="javascript:" role="button">
                                                         <span class="glyphicon glyphicon-pencil"></span>
                                                     </a>
                                                     
@@ -74,120 +121,41 @@
                                         {{/each}}
                                     </tbody>
                                 </table>
-                                <button style="background: #f15a23; margin-bottom: 50px; color: white; font-size: 20px;" class="button btn btn-block">
-                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                    Cập nhật
-                                </button>
+                                <div class="text-right" style="font-weight:bold; font-size: 24px;font-family: 'Droid serif', serif;padding-bottom: 5px;padding-top:5px;padding-right: 10px;">
+                                    Tổng tiền: <span style="color:red;text-decoration:underline;">{{number_format sum}} VNĐ</span>
+                                </div>
+                                <div style="background: #f15a23; margin-bottom: 30px; color: black;font-weight:bold; font-size: 24px;font-family: 'Droid serif', serif;text-align: center;padding-bottom: 5px;padding-top:5px;" >
+                                    <img src="/assets/image/pay.png">
+                                   Thanh toán
+                                </div>
                             </form>
-                            <h2>THÔNG TIN CỦA BẠN</h2>
+                            <h2 style="font-style: italic;font-weight:bold; font-size: 18px;font-family: 'Droid serif', serif;color:#DA4848;padding-top:10px;padding-bottom: 10px;text-decoration: underline;">! ĐỂ THANH TOÁN, VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN DƯỚI ĐÂY:</h2>
                             <div class="content">
-                                <p>Xác nhận thông tin chúng tôi gửi đến bạn</p>
-                                <form action="">
-                                    <div class="panel-group">
-                                        <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                              <a data-toggle="collapse" href="#collapse1">Thông tin và thanh toán</a>
-                                            </h4>
-                                          </div>
-                                          <div id="collapse1" class="panel-collapse collapse">
-                                            <ul class="list-group">
-                                              <li class="list-group-item">
-                                                <div style="margin-bottom: 30px;">
-                                                    <label class="col-md-2">Họ Tên:</label>
-                                                    <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="name">
-                                                </div>
-                                              </li>
-                                              <li class="list-group-item">
-                                                <div style="margin-bottom: 30px;">
-                                                    <label class="col-md-2">Số điện thoại:</label>
-                                                    <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="phone">
-                                                </div>
-                                              </li >
-                                              <li class="list-group-item">
-                                                <div style="margin-bottom: 30px;">
-                                                    <label class="col-md-2">Địa chỉ:</label>
-                                                    <input required type="text" class="col-md-10 form-control" style="width: 500px;" value name="address">
-                                                </div >
-                                                
-                                              </li>
-                                               <li class="list-group-item">
-                                                <div style="margin-bottom: 30px;">
-                                                    <label class="col-md-2">Thanh toán:</label>
-                                                    <select name="check_price" class="col-md-10 form-control" style="width: 500px;" >
-                                                        <option value="0">Thanh toán tại nhà</option>
-                                                        <option value="1">Thanh toán qua ngân hàng</option>
-                                                    </select>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                          <br>
-                                          <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                              <a data-toggle="collapse" href="#collapse2">Mã giảm giá</a>
-                                            </h4>
-                                          </div>
-                                          <div id="collapse2" class="panel-collapse collapse">
-                                            <ul class="list-group">
-                                              <li class="list-group-item">
-                                                <div style="margin-bottom: 30px;">
-                                                    <div class="content">
-                                                        Nhập mã giảm giá tại đây:
-                                                        <input type="text" name="code" value>
-                                                        &nbsp;
-                                                        <input type="submit" class="button" value="Kích hoạt">
-                                                    </div>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                          <br>
-                                          <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                              <a data-toggle="collapse" href="#collapse3">Yêu cầu của bạn</a>
-                                            </h4>
-                                          </div>
-                                          <div id="collapse3" class="panel-collapse collapse">
-                                            <ul class="list-group">
-                                              <li class="list-group-item">
-                                                <div style="margin-bottom: 30px;">
-                                                    <div class="content">
-                                                        <form action="">
-                                                            <div class="form-group mb10">
-                                                                <label>Hãy cho chúng tôi biết yêu cầu của bạn.</label>
-                                                                <textarea name="name" class="form-control" rows="4" placeholder="Nhập yêu cầu của bạn" style="padding: 5px 5px 5px 5px;"></textarea>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                        </div>
+                                <form action="/gio-hang/thanhToan" data-toggle="validator"  method="POST" role="form">
+                                
+                                    <div class="form-group">
+                                        <label for="">Họ tên người nhận:</label>
+                                        <input type="text" class="form-control" id="" name='htnn' placeholder="VD:Nguyễn A" data-error="Vui lòng nhập họ tên người nhận" required>
+                                          <p class="help-block with-errors"> </p>
                                     </div>
-                                    <button style="background: #ffc300; color: white;" class="right button btn">
-                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Hoàn tất mua hàng
-                                    </button>
-                                    <a href="home" style="background: #f15a23; color: white;" class="button btn">
-                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Tiếp tục mua hàng
-                                    </a>
+                                
+                                    <div class="form-group">
+                                        <label for="">Số điện thoại liên hệ:</label>
+                                        <input type="text" class="form-control" id="" name='sdt' placeholder="VD:0906120999" data-error="Vui lòng nhập số điện thoại người nhận" required>
+                                          <p class="help-block with-errors"> </p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">Địa chỉ nhận hàng:</label>
+                                        <input type="text" class="form-control" id="" name='diachi' placeholder="VD:10/2 Quang Trung, P6,Q.GV" data-error="Vui lòng nhập địa chỉ nơi nhận" required>
+                                          <p class="help-block with-errors"> </p>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-success" id='btnHt' style="font-weight:bold; font-size: 18px;font-family: 'Droid serif', serif;">Hoàn tất</button>
                                 </form>
+      
                             </div>
-                            <div class="cart-total">
-                                <table class="total">
-                                    <tbody>
-                                        <tr>
-                                            <td class="right"><b>Tổng hóa đơn:&nbsp;</b></td>
-                                            <td class="right">0 đ</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="right"><b>Tổng cộng:&nbsp;</b></td>
-                                            <td class="right">0 đ</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            
                         </div>
                     </div>
                 </section>

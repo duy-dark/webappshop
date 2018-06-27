@@ -33,7 +33,8 @@ app.engine('hbs', exphbs({
                 thousand: ','
             });
             return nf.to(n);
-        }
+        },
+        inc: n=>{return (n+1);}
     }
 }));
 app.set('view engine', 'hbs');

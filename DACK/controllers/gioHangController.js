@@ -1,12 +1,14 @@
 var express = require('express');
 var categoryRepo = require('../repos/categoryRepo'),
     cartRepo = require('../repos/cartRepo');
+ var config = require('../config/config');
 
 var router = express.Router();
 
 router.get('/', (req, res) => {
 	var vm = {
-        items: req.session.cart
+        items: req.session.cart,
+        sum:cartRepo.cartSum(req.session.cart)
     };
     res.render('gioHang/gio-hang',vm);
 });
@@ -28,5 +30,18 @@ router.post('/remove', (req, res) => {
 router.post('/edit', (req, res) => {
     cartRepo.edit(req.session.cart, +req.body.proId ,+req.body.quantity);
     res.redirect(req.headers.referer);
+});
+router.post('/thanhToan', (req, res) => {
+    console.log(req.body.htnn);
+    var tt={
+        NGUOINHAN:req.body.htnn,
+        SDT:req.body.sdt,
+        DIACHI:req.body.diachi
+    };
+   cartRepo.saveCart(req.session.cart,req.session.curUser,tt);
+   res.redirect('/gio-hang/thanhToanThanhCong');
+});
+router.get('/thanhToanThanhCong', (req, res) => {
+    res.render('gioHang/thanhToanThanhCong');
 });
 module.exports = router;

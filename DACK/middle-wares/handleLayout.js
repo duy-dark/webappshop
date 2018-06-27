@@ -21,7 +21,7 @@ module.exports = (req, res, next) => {
             curUser: req.session.curUser,
             isLogged:req.session.isLogged,
             isAdmin:req.session.isAdmin,
-            cartSummary: cartRepo.getNumberOfItems(req.session.cart)
+            cartSummary: cartRepo.getNumberOfItems(req.session.cart),
         }
 
         next();
