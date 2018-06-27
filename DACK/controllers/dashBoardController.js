@@ -1,6 +1,7 @@
 var express = require('express');
 var dashBoard = require('../repos/dashBoardRepo');
-var moment = require('moment');
+var moment = require('moment'),
+	sha256 = require('crypto-js/sha256');
 var router = express.Router();
 
 
@@ -92,9 +93,47 @@ router.get('/quan-li-khach-hang/Thong-tin-chi-tiet-tai-khoan-chu-shop-xem', (req
 
 //QUAN LY THONG TIN SHOP
 
-// router.get('/quan-li-thong-tin-shop', (req, res) => {
-//   res.render('quanLiThongTinShop/quan-li-thong-tin-shop');
-// });
+router.get('/quan-li-thong-tin-shop', (req, res) => {
+	dashBoard.loadadmin().then(rows => {
+		var vm={
+			accadmin:rows[0]
+		};
+		res.render('quanLiThongTinShop/quan-li-thong-tin-shop',vm);
+	});
+   
+});
+router.post('/quan-li-thong-tin-shop/update', (req, res) => {
+   	dashBoard.updateadmin(req.body).then(rows=>{
+   		res.redirect('/dash-board/quan-li-thong-tin-shop');
+   	});
+});
+router.post('/quan-li-thong-tin-shop/updatematkhau', (req, res) => {
+	var pold=req.body.PASSOLD;
+	var pnew=req.body.PASSNEW;
+	var pnew1=req.body.PASSNEW1;
+	dashBoard.loadadmin().then(rows => {
+		if(rows[0].PASSWORD===sha256(pold).toString() && pnew===pnew1)
+		{
+			dashBoard.updatematkhau(sha256(pnew).toString()).then(rows1=>{
+		   		var vm={
+					accadmin:rows[0],
+					NHAPSAI: false
+				};
+				res.render('quanLiThongTinShop/quan-li-thong-tin-shop',vm);
+		   	});
+		}
+		else {
+			var vm={
+				NHAPSAI: true
+			};
+			res.render('quanLiThongTinShop/doimatkhau',vm);
+		}
+		
+	});
+   	
+});
 
-
+router.get('/doimatkhau', (req, res) => {
+   res.render('quanLiThongTinShop/doimatkhau');
+});
 module.exports = router;

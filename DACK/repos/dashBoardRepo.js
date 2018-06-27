@@ -37,3 +37,15 @@ exports.add = (sanpham,day) => {
 	return db.save(sql);
 }
 
+exports.loadadmin = () => {
+	var sql = `select * from admin `;
+	return db.load(sql);
+}
+exports.updateadmin = admin => {
+	var sql = `UPDATE admin SET USERNAME='${admin.USERNAME}',DTHOAI='${admin.DTHOAI}',EMAIL='${admin.EMAIL}',FACEBOOK='${admin.FACEBOOK}' WHERE IDADM=1  `;
+	return db.load(sql);
+}
+exports.updatematkhau = PASSNEW => {
+	var sql = `UPDATE admin SET PASSWORD='${PASSNEW}' WHERE IDADM=1  `;
+	return db.load(sql);
+}
