@@ -272,3 +272,43 @@
     padding: 10px 10px;
 
 }
+#comment{
+    height: 600px;
+}
+#comment img{
+    width:60px;
+    float: left;
+    }
+
+#comment ul{
+    list-style-type:none;
+
+}
+#comment ul li{
+    clear: left;
+    padding:10px 10px;
+    
+
+
+}
+#comment li ul li{
+    margin-left: 50px;
+
+}
+#comment li ul li img{
+    width:45px;
+
+}
+#comment li div{
+    float: left;
+
+}
+#reply{
+    clear: left;
+    float: left;
+    display: none;
+}
+#reply a{
+    clear: left;
+    float: left;
+}

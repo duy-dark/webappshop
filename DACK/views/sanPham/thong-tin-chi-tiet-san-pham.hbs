@@ -12,16 +12,38 @@
             $('#txtQ').val(sl);
             $('#frmAddItem').submit();
         });
+    $('.addComment').on('click', function() {
+        var d= new Date();
+        var data={};
+        data.MASP= $(this).data('proid');
+        data.MES= $('#TINNHAN').val();
+        data.TEN= $('#TENCM').val();
+        data.CMDATE= d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+        $.ajax({
+            url:"/sanpham/thong-tin-chi-tiet-san-pham/themcomment",
+            type:"post",
+            data:data,
+        });
+        var html=`
+            <div style="background-color:#e5e5e5; padding:10px 10px; width:1100px;" class="form-group">
+                <img src="/assets/image/Avatar/avt.png" id="cmimage">   
+                <div>
+                    <b id="cmten">${data.TEN}</b> &nbsp; <p id="cmdate">${data.CMDATE} </p>
+                    <p id="cmmes">${data.MES}</p>
+                </div>
+            </div>`;
+        $("#comment ul li:eq(0)").html(html);
+    });
     </script>
 {{/section}}
 
     <form id="frmAddItem" method="POST" action="/gio-hang/add">
-        <input type="" name="proId" id="txtP">
-        <input type="" name="quantity" id="txtQ">
+        <input type="hidden" name="proId" id="txtP">
+        <input type="hidden" name="quantity" id="txtQ">
     </form>
     <div id="thongTinChiTietSanPham">
         <div class="title">
-            <span><a href="/home">Trang chủ </a>></span>
+            <span><a href="/home">Trang chủ </a></span>
             <span><a href="/sanpham/San-pham-theo-hang/{{sp.MASP}}">{{sp.NSX}} </a>></span> {{sp.TENSP}}
         </div>
         <div class="top">
@@ -358,7 +380,7 @@
         <div class="top1">
             <hr>
             <div id="sanPhamCungLoai">
-                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600;">
+                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600; padding:20px 5px;">
                     SẢN PHẨM CÙNG LOẠI:
                     <br>
                     <br>
@@ -381,7 +403,7 @@
         </div>
         <div class="top1">
             <div id="sanPhamCungNSX">
-                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600;">
+                <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600; padding:20px 5px;">
                     SẢN PHẨM CÙNG NHÀ SẢN XUẤT:
                     <br>
                     <br>
@@ -401,8 +423,38 @@
                 </div>
             </div>
         </div>
-            
-        <div class="top1">
-            
+        
+        <div class="top1" id="comment" style="overflow: visible;height: 100%;">
+            <div style="color: #3B59B1;font-family: 'Open Sans';font-size: 1.4em;font-weight: 600; padding:20px 5px;">
+                BÌNH LUẬN
+                <br>
+                <br>
+            </div>
+            <div style="margin-bottom: 30px;">
+                <div class="content">
+                    <form action="">
+                        <div class="form-group mb10">
+                            <textarea  id="TINNHAN" class="form-control" rows="5" placeholder="Nhập yêu cầu của bạn" style="padding: 5px 5px 5px 5px;"></textarea>
+                        </div>
+                        <input type="hidden" value="{{layoutVM.curUser.TEN}} " id="TENCM">
+                        <a data-proid="{{sp.MASP}}" href="#" class="btn button addComment">Comment</a>
+                    </form>
+                    <fieldset>
+                        <ul>
+                            {{#each cm}}
+                            <li>
+                                <div style="background-color:#e5e5e5; padding:10px 10px; width:1100px;" class="form-group">
+                                    <img src="/assets/image/Avatar/avt.png" id="cmimage">   
+                                    <div>
+                                        <b id="cmten">{{TEN}}</b> &nbsp; <p id="cmdate">{{CMDATE}} </p>
+                                        <p id="cmmes">{{MES}}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </fieldset>
+                </div>
+            </div>
         </div>
        
