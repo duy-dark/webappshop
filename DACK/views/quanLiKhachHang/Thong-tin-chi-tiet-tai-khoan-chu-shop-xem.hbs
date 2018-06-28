@@ -4,7 +4,10 @@
 {{/section}}
 
 {{#section 'js'}}
-          <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
+    <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js"></script>
+    <script type="text/javascript">
+        $("input").attr('disabled',true);
+        $("select").attr('disabled',true);
     </script>
 {{/section}}
 
@@ -49,7 +52,7 @@
                         </div>
                         <div>
                             <label>Ngày Sinh:</label>
-                            <input type="text" name="dob" placeholder="NGAYSINH" value="{{NGAYSINH}}">
+                            <input type="date" name="dob" placeholder="NGAYSINH" value="{{time_format NGAYSINH}}">
                         </div>
                         <div>
                             <label>Giới Tính:</label>
@@ -88,79 +91,25 @@
             <div id="history-orders">
                 <p><b>CÁC ĐƠN HÀNG ĐÃ ĐẶT MUA</b></p>
                 <div id="order-content">
+                    {{#each orders}}
                     <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            #123456
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            1/1/2018
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                               Đã thanh toan
-                        </div>
-                        <a href="gio-hang"><span class="glyphicon glyphicon-search"></span></a>
-                        
+                        <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang?id={{IDHD}}">
+                            <div>
+                                <ul id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    {{IDHD}}
+                                </ul>
+                                <ul id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    {{time_format NGAYDATHANG}}
+                                </ul>
+                                <ul id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    {{TINHTRANG}}
+                                </ul>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </div>
+                        </a>
                     </div>
-                    <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            #123456
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                               1/1/2018
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                               Đã thanh toan
-                        </div>
-                        <a href="gio-hang"><span class="glyphicon glyphicon-search"></span></a>
-                    </div>
-                    <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            #123456
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            1/1/2018
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            Đã thanh toan
-                        </div>
-                        <a href="gio-hang"><span class="glyphicon glyphicon-search"></span></a>
-                    </div >
-                    <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            #123456
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            1/1/2018
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            chuyển hàng thành công
-                        </div>
-                        <a href="gio-hang"><span class="glyphicon glyphicon-search"></span></a>
-                    </div>
-                    <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            #123456
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            1/1/2018
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            chuyển hàng thành công
-                        </div>
-                        <a href="gio-hang"><span class="glyphicon glyphicon-search"></span></a>
-                    </div>
-                    <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            #123456
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            1/1/2018
-                        </div>
-                        <div id="order-id" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            chuyển hàng thành công
-                        </div>
-                        <a href="gio-hang"><span class="glyphicon glyphicon-search"></span></a>
-                    </div>
-                </div> 
+                    {{/each}}
+                </div>
+
             </div>
         </div>

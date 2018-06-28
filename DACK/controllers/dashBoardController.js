@@ -53,16 +53,16 @@ router.post('/quan-li-hang-hoa/del', (req, res) => {
 	});
 });
 
-		//TIM KIEM HANG HOA
+//TIM KIEM HANG HOA
 
-		router.post('/quan-li-hang-hoa/search', (req, res) => {
-			dashBoard.searchPro(req.body.search).then(rows => {
-				var vm={
-					products: rows
-				}
-		        res.render('quanLiHangHoa/quan-li-hang-hoa',vm);
-			});
-		});
+router.post('/quan-li-hang-hoa/search', (req, res) => {
+	dashBoard.searchPro(req.body.search).then(rows => {
+		var vm={
+			products: rows
+		}
+        res.render('quanLiHangHoa/quan-li-hang-hoa',vm);
+	});
+});
 
 
 // QUAN LY DON HANG
@@ -89,16 +89,20 @@ router.get('/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang', (req, res) =
 	}); 
 });
 
-		//TIM KIEM DON HANG
+router.post('/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang', (req, res) => {
+    dashBoard.updateOrder(req.body.tinhtrang,+req.query.id).then(value => {
+        res.redirect('/dash-board/quan-li-hoa-don-hang');
+    });
+});
 
-		router.post('/quan-li-hoa-don-hang/search', (req, res) => {
-			dashBoard.searchOrder(req.body.search).then(rows => {
-				var vm={
-					orders: rows
-				}
-		        res.render('quanLiHoaDonHang/quan-li-hoa-don-hang',vm);
-			});
-		});
+router.post('/quan-li-hoa-don-hang/search', (req, res) => {
+	dashBoard.searchOrder(req.body.search).then(rows => {
+		var vm={
+			orders: rows
+		}
+        res.render('quanLiHoaDonHang/quan-li-hoa-don-hang',vm);
+	});
+});
 
 // QUAN LY KHACH
 
@@ -119,22 +123,25 @@ router.get('/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan', (req, res) => {
 });
 
 router.get('/quan-li-khach-hang/Thong-tin-chi-tiet-tai-khoan-chu-shop-xem', (req, res) => {
-	dashBoard.loadidacc(+req.query.id).then(rows =>{
-		var vm ={ 
-			acc: rows[0] 
+	var p1 = dashBoard.loadidacc(+req.query.id);
+	var p2 = dashBoard.loadaccorder(+req.query.id)
+	Promise.all([p1, p2]).then(([row ,rows]) =>{
+		var vm={
+		acc: row[0],
+		orders: rows
 		}
 		res.render('quanLiKhachHang/Thong-tin-chi-tiet-tai-khoan-chu-shop-xem',vm);
 	});
 });
 	
-	router.post('/quan-li-khach-hang/search', (req, res) => {
-		dashBoard.searchAcc(req.body.search).then(rows => {
-			var vm={
-				accounts: rows
-			}
-	        res.render('quanLiKhachHang/quan-li-khach-hang',vm);
-		});
+router.post('/quan-li-khach-hang/search', (req, res) => {
+	dashBoard.searchAcc(req.body.search).then(rows => {
+		var vm={
+			accounts: rows
+		}
+        res.render('quanLiKhachHang/quan-li-khach-hang',vm);
 	});
+});
 
 //QUAN LY THONG TIN SHOP
 

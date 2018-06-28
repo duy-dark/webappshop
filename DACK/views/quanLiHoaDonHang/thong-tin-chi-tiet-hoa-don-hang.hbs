@@ -36,7 +36,7 @@
                 <div id="top-ChiTietHoaDon">
                     <div id="tkkh">
                         TK khách hàng:
-                        <a href="Thong-tin-chi-tiet-tai-khoan-chu-shop-xem">
+                        <a href="/dash-board/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan-chu-shop-xem?id={{MAKH}}">
                             {{USERNAME}}
                         </a>
                     </div>
@@ -45,19 +45,20 @@
                        <span>{{TEN}}</span>
                     </div>
                     <div id="ndh">
-                        Ngày đặt hàng: <span style="color: black;">{{NGAYDATHANG}}</span>
+                        Ngày đặt hàng: <span style="color: black;">{{time_format NGAYDATHANG}}</span>
                     </div>
+                    <form action="" method="POST" role="form">
                     <div id="ttdh">
-                        Tình trạng đơn hàng: <span class="chuaGiaoHang">{{TINHTRANG}}</span>
-                        &nbsp;<button class="btn-danger">Thay đổi</button>
-                        <select>
-                            <option value="0"  class="chuaGiaoHang">Chưa giao hàng</option>
-                            <option value="1"  class="dangGiaoHang">Đang giao hàng</option>
-                            <option value="2"  class="daGiaoHang">Đã giao hàng</option>
-                            <option value="3"  class="daHuy">Đã hủy</option>
-                        </select>
+                    Tình trạng đơn hàng: <span class="chuaGiaoHang" >{{TINHTRANG}}</span>
+                    &nbsp;<button type="submit" class="btn-danger">Thay đổi</button>
+                    <select name="tinhtrang" >
+                        <option value="chưa giao hang"  class="chuaGiaoHang">Chưa giao hàng</option>
+                        <option value="đang giao hang"  class="dangGiaoHang">Đang giao hàng</option>
+                        <option value="đã giao hang"  class="daGiaoHang">Đã giao hàng</option>
+                        <option value="đã hủy"  class="daHuy">Đã hủy</option>
+                    </select>
                     </div>
-
+                    </form>
                 </div>
                 {{/with}}
                 <div>Doanh mục sản phẩm:</div>

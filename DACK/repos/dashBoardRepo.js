@@ -3,7 +3,7 @@ var config = require('../config/config');
 
 //quan li hang hoa
 exports.loadAllPro = () => {
-	var sql ='select * from sanpham'
+	var sql ='select *, from sanpham'
 	return db.load(sql);
 }
 
@@ -63,15 +63,20 @@ exports.searchAcc = (thongtin) => {
 	return db.load(sql);
 }
 
+exports.loadaccorder = id => {
+	var sql = `select * from quanlyhoadon WHERE IDKH = ${id}`;
+	return db.load(sql);
+}
+
 // quan li don hang
 
 exports.loadAllOrder = () => {
-	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG FROM khachhang, quanlyhoadon WHERE khachhang.MAKH=quanlyhoadon.IDKH`;
+	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG , DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang, quanlyhoadon WHERE khachhang.MAKH=quanlyhoadon.IDKH order by moinhat ASC`;
 	return db.load(sql);
 }
 
 exports.searchOrder = (thongtin) => {
-	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG FROM khachhang INNER JOIN quanlyhoadon on quanlyhoadon.IDKH = khachhang.MAKH WHERE IDHD LIKE '${thongtin}' OR USERNAME LIKE '${thongtin}' OR IDKH LIKE '${thongtin}' OR TEN LIKE '${thongtin}' OR TINHTRANG LIKE '${thongtin}'`;
+	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG, DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang INNER JOIN quanlyhoadon on quanlyhoadon.IDKH = khachhang.MAKH WHERE IDHD LIKE '${thongtin}' OR USERNAME LIKE '${thongtin}' OR IDKH LIKE '${thongtin}' OR TEN LIKE '${thongtin}' OR TINHTRANG LIKE '${thongtin}' order by moinhat ASC`;
 	return db.load(sql);
 }
 
@@ -83,4 +88,9 @@ exports.loadIdOrder = (id) => {
 exports.loadOrderPro = (id) => {
 	var sql = `SELECT * FROM giohang INNER JOIN sanpham ON giohang.MASP = sanpham.MASP WHERE MAGH='${id}'`;
 	return db.load(sql);
+}
+
+exports.updateOrder = (order, id) => {
+	var sql =  `update quanlyhoadon set TINHTRANG = '${order}' where IDHD = '${id}'`;
+	return db.save(sql);
 }
