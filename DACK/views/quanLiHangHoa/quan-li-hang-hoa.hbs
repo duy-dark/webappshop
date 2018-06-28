@@ -9,63 +9,29 @@
 {{#section 'js'}}
       <script type="text/javascript" src="/assets/quan-li-hoa-don-hang.js"></script>
       <script type="text/javascript">
-            $('.addItem').on('click', function() {
+            $('.delItem').on('click', function() {
             var id = $(this).data('proid');
             $('#txtP').val(id);
-            $('#frmAddItem').submit();
-    });
+            $('#frmdelItem').submit();
+            });    
       </script>
 {{/section}}
-        <form id="frmAddItem" method="post" action="/dash-board/quan-li-hang-hoa/del">
+        <form id="frmdelItem" method="post" action="/dash-board/quan-li-hang-hoa/del">
         <input type="hidden" name="proId" id="txtP">
         </form>
-       <div class="link">
+        <div class="link">
             <a href="/dash-board"> <span>  DashBoard</span></a> Quản lí sản phẩm
         </div>
         <div class="line"></div>
         <div class="row">
-            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
-               
-             
-                <div class="title">Tìm kiếm sản phẩm theo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
+            <div id="leftBox" href="javascript:;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title">Tìm kiếm sản phẩm
+                </div>
                 
                 <div class="inBox">
-                    <div>
-                        <label>
-                            <span> Mã sản phẩm</span>
-                            <input type="checkbox" name="maSanPham" class="extraCheck">
-                        </label>
-                        <input type="text" name="maSanPham-content" placeholder="Nhập mã sản phẩm">
-                    </div>
-                    <div>
-                        <label> <span>Tên sản phẩm</span>
-                            <input type="checkbox" name="tenSanPham" class="extraCheck">
-                        </label>
-                        <input type="text" name="tenSanPham-content" placeholder="Nhập tên sản phẩm">
-                    </div>
-                    <div>
-                        <label> <span>Loại sản phẩm</span>
-                            <input type="checkbox" name="loaiSanPham" class="extraCheck">
-                        </label>
-                        <input type="text" name="loaiSanPham-content" placeholder="Nhập loại sản phẩm">
-                    </div>
-                    <div>
-                        <label> <span>Xuất xứ sản phẩm</span>
-                            <input type="checkbox" name="xuatXuSanPham" class="extraCheck">
-                        </label>
-                        <input type="text" name="xuatXuSanPham-content" placeholder="Nhập xuất xứ sản phẩm">
-                    </div>
-                    <div>
-                        <label> <span>Nhà sản xuất sản phẩm</span>
-                            <input type="checkbox" name="nsxSanPham" class="extraCheck">
-                        </label>
-                        <input type="text" name="nsxSanPham-content" placeholder="Nhập nhà sản xuất sản phẩm">
-                    </div>
-                    <div>
-                        <label> <span>Tất cả</span>
-                            <input type="checkbox" name="tc" class="extraCheck">
-                        </label>
-                    </div>
+                    <form id="search-pro" method="post" action="/dash-board/quan-li-hang-hoa/search">
+                        <input type="text" name="search" placeholder="nhập thông tin tiềm kiếm">
+                    </form>
                 </div>
                  <div class="title">
                     <a href="/dash-board/quan-li-hang-hoa/them-san-pham" style="text-decoration: none; display: inline-block;">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></a>
@@ -93,7 +59,7 @@
                             <li class="sltk"><p>{{SOLUONGSPCON}}</p></li>
                             <li class="sldb"><p>{{SOLUONGSPDABAN}}</p></li>
                             <li class="tln" style="text-align: center;">
-                                <a data-proid="{{MASP}}" href="javascript:;" class="btn btn-default addItem">
+                                <a data-proid="{{MASP}}" href="javascript:;" class="btn btn-default delItem">
                                     <span class="glyphicon glyphicon-trash"></span>
                                     DELETE
                                 </a>

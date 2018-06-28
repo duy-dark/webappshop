@@ -22,18 +22,18 @@ router.get('/quan-li-hang-hoa', (req, res) => {
 
 router.get('/quan-li-hang-hoa/thong-tin-chi-tiet-hang-hoa', (req, res) => {
 	dashBoard.loadidpro(+req.query.id).then(rows =>{
-		
 		var vm ={
 			sp: rows[0]
 
 		}
-		res.render('quanLiHangHoa/thong-tin-chi-tiet-hang-hoa',vm);
-		
+		res.render('quanLiHangHoa/thong-tin-chi-tiet-hang-hoa',vm)
 	});
 });
+
 router.get('/quan-li-hang-hoa/them-san-pham', (req, res) => {
     res.render('quanLiHangHoa/them-san-pham')
 });
+
 router.post('/quan-li-hang-hoa/thong-tin-chi-tiet-hang-hoa', (req, res) => {
     dashBoard.updateSP(req.body,+req.query.id).then(value => {
         res.redirect('/dash-board/quan-li-hang-hoa');
@@ -53,16 +53,52 @@ router.post('/quan-li-hang-hoa/del', (req, res) => {
 	});
 });
 
+		//TIM KIEM HANG HOA
+
+		router.post('/quan-li-hang-hoa/search', (req, res) => {
+			dashBoard.searchPro(req.body.search).then(rows => {
+				var vm={
+					products: rows
+				}
+		        res.render('quanLiHangHoa/quan-li-hang-hoa',vm);
+			});
+		});
+
+
 // QUAN LY DON HANG
 
-// router.get('/quan-li-hoa-don-hang', (req, res) => {
-//   res.render('quanLiHoaDonHang/quan-li-hoa-don-hang');
-// });
+router.get('/quan-li-hoa-don-hang', (req, res) => {
+	dashBoard.loadAllOrder().then(rows => {
+		var vm = {
+			orders: rows
+		}
+		res.render('quanLiHoaDonHang/quan-li-hoa-don-hang',vm);
+	});
+});
 
 
-// router.get('/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang', (req, res) => {
-//   res.render('quanLiHoaDonHang/thong-tin-chi-tiet-hoa-don-hang');
-// });
+router.get('/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang', (req, res) => {
+	var p1 = dashBoard.loadIdOrder(+req.query.id);
+	var p2 = dashBoard.loadOrderPro(+req.query.id);
+	Promise.all([p1, p2]).then(([row ,rows]) =>{
+		var vm={
+		orders: row[0],
+		pro: rows
+		}
+		res.render('quanLiHoaDonHang/thong-tin-chi-tiet-hoa-don-hang',vm);
+	}); 
+});
+
+		//TIM KIEM DON HANG
+
+		router.post('/quan-li-hoa-don-hang/search', (req, res) => {
+			dashBoard.searchOrder(req.body.search).then(rows => {
+				var vm={
+					orders: rows
+				}
+		        res.render('quanLiHoaDonHang/quan-li-hoa-don-hang',vm);
+			});
+		});
 
 // QUAN LY KHACH
 
@@ -90,6 +126,15 @@ router.get('/quan-li-khach-hang/Thong-tin-chi-tiet-tai-khoan-chu-shop-xem', (req
 		res.render('quanLiKhachHang/Thong-tin-chi-tiet-tai-khoan-chu-shop-xem',vm);
 	});
 });
+	
+	router.post('/quan-li-khach-hang/search', (req, res) => {
+		dashBoard.searchAcc(req.body.search).then(rows => {
+			var vm={
+				accounts: rows
+			}
+	        res.render('quanLiKhachHang/quan-li-khach-hang',vm);
+		});
+	});
 
 //QUAN LY THONG TIN SHOP
 
