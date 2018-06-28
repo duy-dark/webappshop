@@ -51,3 +51,12 @@ exports.delete = id => {
 	var sql = `delete from sanpham where MASP = ${id}`;
 	return db.save(sql);
 }
+exports.addcomment = comment => {
+	var sql = `insert into comment(TEN,MES,CMDATE,MASP) values('${comment.TEN}','${comment.MES}','${comment.CMDATE}','${comment.MASP}')`;
+	return db.save(sql);
+}
+
+exports.loadcomment = id => {
+	var sql = `select * from comment where MASP = ${id} order by IDCM DESC limit 10 OFFSET 0`;
+	return db.load(sql);
+}

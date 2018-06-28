@@ -179,17 +179,24 @@ router.get('/thong-tin-chi-tiet-san-pham', (req, res) => {
     var p1= categoryRepo.loadid(+req.query.id);
     var p2= categoryRepo.loadloaiid(+req.query.id);
     var p3= categoryRepo.loadnsxidttct(+req.query.id);
-    Promise.all([p1, p2,p3]).then(([rows, rows1,rows2])=>
+    var p4=categoryRepo.loadcomment(+req.query.id);
+    Promise.all([p1, p2,p3,p4]).then(([rows, rows1,rows2,rows3])=>
     {
+        
         var vm = {
             sp: rows[0],
             sploai: rows1,
-            spnsx: rows2
+            spnsx: rows2,
+            cm:rows3
         };
         res.render('sanPham/thong-tin-chi-tiet-san-pham',vm);
     });
 });
-
+router.post('/thong-tin-chi-tiet-san-pham/themcomment',(req,res)=>{
+    categoryRepo.addcomment(req.body).then(rows=>{
+       res.redirect(req.headers.referer);
+    });
+});
 
 module.exports = router;
 

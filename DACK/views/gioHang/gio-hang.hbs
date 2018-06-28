@@ -124,10 +124,7 @@ if($('.c_sl').length===0){
                                 <div class="text-right" style="font-weight:bold; font-size: 24px;font-family: 'Droid serif', serif;padding-bottom: 5px;padding-top:5px;padding-right: 10px;">
                                     Tổng tiền: <span style="color:red;text-decoration:underline;">{{number_format sum}} VNĐ</span>
                                 </div>
-                                <div style="background: #f15a23; margin-bottom: 30px; color: black;font-weight:bold; font-size: 24px;font-family: 'Droid serif', serif;text-align: center;padding-bottom: 5px;padding-top:5px;" >
-                                    <img src="/assets/image/pay.png">
-                                   Thanh toán
-                                </div>
+                                
                             </form>
                             <h2 style="font-style: italic;font-weight:bold; font-size: 18px;font-family: 'Droid serif', serif;color:#DA4848;padding-top:10px;padding-bottom: 10px;text-decoration: underline;">! ĐỂ THANH TOÁN, VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN DƯỚI ĐÂY:</h2>
                             <div class="content">
@@ -135,23 +132,27 @@ if($('.c_sl').length===0){
                                 
                                     <div class="form-group">
                                         <label for="">Họ tên người nhận:</label>
-                                        <input type="text" class="form-control" id="" name='htnn' placeholder="VD:Nguyễn A" data-error="Vui lòng nhập họ tên người nhận" required>
+                                        <input type="text" class="form-control" id="" name='htnn' placeholder="VD:Nguyễn A" data-error="Vui lòng nhập họ tên người nhận" required value="{{layoutVM.curUser.TEN}}">
                                           <p class="help-block with-errors"> </p>
                                     </div>
                                 
                                     <div class="form-group">
                                         <label for="">Số điện thoại liên hệ:</label>
-                                        <input type="text" class="form-control" id="" name='sdt' placeholder="VD:0906120999" data-error="Vui lòng nhập số điện thoại người nhận" required>
+                                        <input type="text" class="form-control" id="" name='sdt' placeholder="VD:0906120999" data-error="Vui lòng nhập số điện thoại người nhận" required value="{{layoutVM.curUser.DTHOAI}}">
                                           <p class="help-block with-errors"> </p>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="">Địa chỉ nhận hàng:</label>
-                                        <input type="text" class="form-control" id="" name='diachi' placeholder="VD:10/2 Quang Trung, P6,Q.GV" data-error="Vui lòng nhập địa chỉ nơi nhận" required>
+                                        <input type="text" class="form-control" id="" name='diachi' placeholder="VD:10/2 Quang Trung, P6,Q.GV" data-error="Vui lòng nhập địa chỉ nơi nhận" required value="{{layoutVM.curUser.DCHI}}">
                                           <p class="help-block with-errors"> </p>
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-success" id='btnHt' style="font-weight:bold; font-size: 18px;font-family: 'Droid serif', serif;">Hoàn tất</button>
+                                   
+                                    <button type="submit" class="btn btn-success form-control" id='btnHt' style="background: #f15a23; margin-bottom: 30px; color: black;font-weight:bold; font-size: 24px;font-family: 'Droid serif', serif;text-align: center;padding-bottom: 5px;padding-top:5px; height: 80px;" >
+                                        <img src="/assets/image/pay.png">
+                                       Thanh toán
+                                    </button>
                                 </form>
       
                             </div>
