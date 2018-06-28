@@ -21,15 +21,17 @@ router.post('/add', (req, res) => {
         };
         cartRepo.add(req.session.cart, item);
         res.redirect(req.headers.referer);
+
     });
 });
 router.post('/remove', (req, res) => {
     cartRepo.remove(req.session.cart, +req.body.proId);
     res.redirect(req.headers.referer);
 });
-router.post('/edit', (req, res) => {
+router.post('/edit', (req, res,next) => {
     cartRepo.edit(req.session.cart, +req.body.proId ,+req.body.quantity);
-    res.redirect(req.headers.referer);
+    //res.redirect(req.headers.referer);
+   return next();
 });
 router.post('/thanhToan', (req, res) => {
     console.log(req.body.htnn);
@@ -39,6 +41,7 @@ router.post('/thanhToan', (req, res) => {
         DIACHI:req.body.diachi
     };
    cartRepo.saveCart(req.session.cart,req.session.curUser,tt);
+   req.session.cart=[];
    res.redirect('/gio-hang/thanhToanThanhCong');
 });
 router.get('/thanhToanThanhCong', (req, res) => {
