@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 	var p2=categoryRepo.loadxemnhieunhat();
 	var p3=categoryRepo.loadbanchay();
 	Promise.all([p1, p2, p3]).then(([rows,rows1,rows2]) =>{
+        
         var vm = {
             moi: rows,
             banchay: rows2,
