@@ -5,90 +5,21 @@
 {{/section}}
 
 {{#section 'js'}}
-      <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+    <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
     <script type="text/javascript" src="/assets/quan-li-khach-hang.js"></script>
 {{/section}}
 
   <div class="link">
-           
-               <a href="/dash-board"> <span>  DashBoard</span></a>
-             
-          Quản lí khách hàng
-           
-          
+        <a href="/dash-board"> <span>  DashBoard</span></a>
+        Quản lí khách hàng
         </div>
         <div class="body2">
             <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
                 <div class="title">Tìm kiếm khách hàng theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
                 <div class="inBox">
-                    <div>
-                        <label>
-                            <span>Tên tài khoản</span>
-                            <input type="checkbox" name="tenTaiKhoan" class="extraCheck">
-                        </label>
-                        <input type="text" name="tenTaiKhoan-content" placeholder="Nhập tên tài khoản">
-                    </div>
-                    <div>
-                        <label>
-                            <span>Tên khách hàng</span>
-                            
-                            <input type="checkbox" name="tenKhachHang" class="extraCheck">
-                        </label>
-                        <input type="text" name="tenKhachHang-content" placeholder="Nhập tên khách hàng">
-                    </div>
-
-                    <div>
-                        <label>
-                            <span>Ngày sinh</span>
-                            <input type="checkbox" name="ngaySinh" class="extraCheck">
-                        </label>
-                        <label id="tuNgay">
-                            <span> Từ ngày</span> <input type="date" name="ngaySinhTuNgay-content">
-                        </label>
-                         <label id="denNgay"> 
-                            <span>
-                                   Đến ngày</span>
-                                    <input type="date" name="ngaySinhDenNgay-content">
-                        </label>
-                    </div>
-                    <div>
-                        <label> <span>Giới tính</span>
-                            <input type="checkbox" name="gioiTinh" class="extraCheck">
-                        </label>
-                        <select id="gioiTinh">
-                            <option style="font-weight: bold;" >
-                                 Nam
-                               
-                            </option>
-                            <option   style="font-weight: bold;" >
-                              Nữ
-                            </option>
-                            
-                        </select>
-                    </div>
-                    <div>
-                        <label> <span>Loại khách hàng</span>
-                            <input type="checkbox" name="loaiKhachHang" class="extraCheck">
-                        </label>
-                        <select id="loaiKhachHang">
-                            <option class="thuong">
-                                 Thường
-                               
-                            </option>
-                            <option  class="den" >
-                              Đen
-                            </option>
-                            <option   class="vip">
-                              Vip
-                            </option>
-                        </select>
-                    </div>
-                    <div>
-                        <label> <span>Tất cả</span>
-                            <input type="checkbox" name="tc" class="extraCheck">
-                        </label>
-                    </div>
-                   
+                    <form id="search-pro" method="post" action="/dash-board/quan-li-khach-hang/search">
+                        <input type="text" name="search" placeholder="nhập thông tin tiềm kiếm">
+                    </form>
                 </div>
             </div>
             <div id="rightBox">
