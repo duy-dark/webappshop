@@ -1,85 +1,87 @@
 {{#section 'css'}}
-   <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
-    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
-    <link rel="stylesheet" type="text/css" href="/assets/quan-li-thong-tin-shop.css">
+<link rel="stylesheet" type="text/css" href="/assets/profile.css">
 {{/section}}
-
 {{#section 'js'}}
-         <script type="text/javascript" src="/assets/thongTinChiTietSanPham.js">
-    </script>
-    <script type="text/javascript" src="/assets/quan-li-thong-tin-shop.js">
-    </script>
-{{/section}}
+<script type="text/javascript">
 
-    <div class="link">
-       
-           <a href="/dash-board"> <span>  DashBoard</span></a>
-         
-      Quản lí thông tin shop
-       
-      
-    </div>
-    <div class="top1">
+    $("input[name='USERNAME']").attr('disabled',true);
+     $("input[name='DTHOAI']").keydown(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+               return false;
+            }
+    });
+     $("input[name='CMND']").keydown(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+               return false;
+            }
+    });
+</script>
+{{/section}}
+<div class="top1">
         <div class="row">
-          <div class=" col-md-4">
-            <div id="User-Avatar" class="">
-                <div id="user-image">
-                     <img src="/assets/image/default-avatar.png" style="background-image: /assets/image/background-avatar.png;">
-                     
-                </div>           
-                <div id="user-type">
-                    <b><h3>{{accadmin.TEN}}</h3></b>
-                </div>   
+          <div class=" col-md-3" style="margin-left: 30px;">
+            <div id="User-Avatar">
+            <div id="user-image" style="background: url('/assets/image/background-avatar.png');">
+                 <img id="avt" src="/assets/image/default-avatar.png"> 
+            </div>           
+            <div id="user-type" >
+               {{layoutVM.curUser.TEN}}
+            </div>             
             </div>
           </div>
-          <div class=" col-md-8">
+          <div class="  col-md-8">
             <div id="User-Infor">
                     <div id="Infor-Content">
-                        <form action="/dash-board/quan-li-thong-tin-shop/update" method="POST" role="form">
+                        <form action="/taiKhoan/profile/update" method="POST" role="form" id="fUser">
                             <div id="Account-Infor" class="form-group">
-                                <b><h3>THÔNG TIN TÀI KHOẢN ADMIN</h3></b>
-                                <div>
-                                    <div class=" col-md-4">
+                               <div class=" col-md-12" style="  font-family: 'Droid serif', serif;font-size:27px;font-weight: bold;padding-top:10px;border-bottom: 2px solid grey;margin-bottom:20px;background-color: #4CA3BF;"> <b >THÔNG TIN TÀI KHOẢN </b>
+                               </div>
+                                    <div class=" col-md-3"><label>Tên Admin:</label></div>
+                                      <div class=" col-md-9">
+                                        <input type="text" name="TEN" value="{{layoutVM.curUser.TEN}}" class="form-control" data-error="Vui lòng nhập họ tên của bạn" required>
+                                    </div>
+                                <div  class=" col-md-12">
+                                    <div class=" col-md-3" style="margin-top:10px;margin-bottom: 5px; padding-left: 0px;">
                                         <label>USERNAME:</label>
                                     </div>
-                                    <div class=" col-md-8">
-                                        <input type="text" name="USERNAME" value="{{accadmin.USERNAME}}" class="form-control">
+                                    <div class=" col-md-6"  style="margin-top:10px;margin-bottom: 5px; padding-left:10px; ">
+                                        <input type="text" name="USERNAME" value="{{layoutVM.curUser.USERNAME}}" class="form-control">
                                     </div>
-                                </div>
-                                <div >
-                                    <a href="/dash-board/doimatkhau" class="btn" style="border: solid;">Đổi mật khẩu</a>
+                                    <div class=" col-md-3"  style="margin-top:5px;margin-bottom: 5px;" id="btnDMK">
+                                        <a href="/dash-board/doimatkhau?id={{layoutVM.curUser.MAKH}}" class="btn " style="border: solid;float:right;margin-right:20px; ">Đổi mật khẩu</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="Personal-Infor">
-                                <b><h3>THÔNG TIN CỬA HÀNG</h3></b>
+                            <div id="Personal-Infor" >
                                 <div>
-                                    <div class=" col-md-4"><label>Địa Chỉ:</label></div>
-                                      <div class=" col-md-8">
-                                        <input type="text" name="DCHI" value="{{accadmin.DCHI}}" class="form-control">
+                                    <div class=" col-md-3"><label>Địa Chỉ:</label></div>
+                                      <div class="  col-md-9">
+                                        <input type="text" name="DCHI" value="{{layoutVM.curUser.DCHI}}" class="form-control" data-error="Vui lòng nhập địa chỉ của bạn" required>
                                     </div>
-                                    <div class=" col-md-4">
+                                    <div class=" col-md-3">
                                         <label>Số Điện Thoại:</label>
                                     </div>
-                                    <div class=" col-md-8">
-                                        <input type="text" name="DTHOAI" value="{{accadmin.DTHOAI}}" class="form-control">
+                                    <div class="  col-md-9">
+                                        <input type="text" name="DTHOAI" value="{{layoutVM.curUser.DTHOAI}}" class="form-control" data-error="Vui lòng nhập số điện thoại của bạn" required>
                                     </div>
-                                    <div class=" col-md-4">
+                                    <div class=" col-md-3">
                                         <label>Email:</label>
                                     </div>
-                                    <div class=" col-md-8">
-                                        <input type="text" name="EMAIL" value="{{accadmin.EMAIL}}" class="form-control">
+                                    <div class="  col-md-9">
+                                        <input type="text" name="EMAIL" value="{{layoutVM.curUser.EMAIL}}" class="form-control" data-error="Vui lòng nhập email của bạn" required>
                                     </div>
-                                    <div class=" col-md-4">
-                                        <label>Facebook</label>
+
+                                    <div class=" col-md-3">
+                                        <label>FACEBOOK:</label>
                                     </div>
-                                    <div class=" col-md-8">
-                                        <input type="text" name="FACEBOOK" value="{{accadmin.FACEBOOK}}" class="form-control">
+                                    <div class="  col-md-9">
+                                        <input type="text" name="FACEBOOK" value="{{layoutVM.curUser.FACEBOOK}}" class="form-control" data-error="Vui lòng nhập email của bạn" required>
                                     </div>
                                 </div> 
                             </div>
                             <br>
-                            <div id="button">
-                                <button type="submit">
+                            <div id="button">   
+                                <button  type="submit" class="btn btn-success" style=" font-family: 'Droid serif', serif;font-size:17px;font-weight: bold;margin-left:27%;margin-bottom:15px;" id="btnCapNhap">
                                     Cập Nhật
                                 </button>
                             </div>
@@ -89,5 +91,29 @@
           </div>
         </div>
     </div>
-        
-        
+    <div><b>Lịch sử mua hàng</b></div>
+    <div class="top1">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td class="image">Hình ảnh</td>
+                    <td class="name">Tên sản phẩm</td>
+                    <td class="price">Số lượng</td>
+                    <td class="quantity">Thành tiền</td>
+                    <td>Ngày mua</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each TT}}
+                    <tr>
+                        <td><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:50px"></td>
+                        <td>{{sp.TENSP}}</td>
+                        <td>{{SOLUONG}}</td>
+                        <td>{{THANHTIEN}}</td>
+                        <td>{{NGAYDATHANG}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
