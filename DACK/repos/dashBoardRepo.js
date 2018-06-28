@@ -63,6 +63,11 @@ exports.searchAcc = (thongtin) => {
 	return db.load(sql);
 }
 
+exports.loadaccorder = id => {
+	var sql = `select * from quanlyhoadon WHERE IDKH = ${id}`;
+	return db.load(sql);
+}
+
 // quan li don hang
 
 exports.loadAllOrder = () => {
@@ -83,4 +88,9 @@ exports.loadIdOrder = (id) => {
 exports.loadOrderPro = (id) => {
 	var sql = `SELECT * FROM giohang INNER JOIN sanpham ON giohang.MASP = sanpham.MASP WHERE MAGH='${id}'`;
 	return db.load(sql);
+}
+
+exports.updateOrder = (order, id) => {
+	var sql =  `update quanlyhoadon set TINHTRANG = '${order}' where IDHD = '${id}'`;
+	return db.save(sql);
 }
