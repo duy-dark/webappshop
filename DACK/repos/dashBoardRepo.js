@@ -3,7 +3,7 @@ var config = require('../config/config');
 
 //quan li hang hoa
 exports.loadAllPro = () => {
-	var sql ='select *, from sanpham'
+	var sql =`select * from sanpham`;
 	return db.load(sql);
 }
 
