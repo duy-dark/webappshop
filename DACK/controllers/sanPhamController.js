@@ -14,6 +14,7 @@ router.get('/San-pham-theo-hang/search', (req, res) => {
     {
         config.PRODUCTS_SEARCH="%"+ req.query.timkiem +"%";
     }
+    
     var catId =config.PRODUCTS_SEARCH;
     var offset = (page - 1) * config.PRODUCTS_PER_PAGE;
     var p1 = productRepo.loadPageBysearch(catId,offset);

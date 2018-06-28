@@ -4,7 +4,9 @@ var express_handlebars_sections = require('express-handlebars-sections');
 var bodyParser = require('body-parser');
 var path = require('path');
 var wnumb = require('wnumb');
+var  moment = require('moment');
 var session = require('express-session');
+
 
 var handleLayoutMDW = require('./middle-wares/handleLayout');
 var handle404MDW = require('./middle-wares/handle404');
@@ -34,7 +36,10 @@ app.engine('hbs', exphbs({
             });
             return nf.to(n);
         },
-        inc: n=>{return (n+1);}
+        inc: n=>{return (n+1);},
+        time_format: n=>{
+            return moment(n).format('YYYY-MM-DD');
+        }
     }
 }));
 app.set('view engine', 'hbs');
