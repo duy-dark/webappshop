@@ -66,7 +66,13 @@ exports.saveCart=(cart,user,tttt)=>{
     var sql = `insert into giohang(MAGH, MASP, SOLUONG, THANHTIEN) values(${config.MAGH_LAST}, ${cart[i].product.MASP},${cart[i].quantity},'${cart[i].amount}') `;
     db.save(sql);
     }
-
+    for(i=0;i<cart.length;i++){
+    var n_slc=cart[i].product.SOLUONGSPCON-cart[i].quantity,
+        n_sldb=cart[i].product.SOLUONGSPDABAN+cart[i].quantity;
+    var sql = `update sanpham set SOLUONGSPCON=${n_slc},SOLUONGSPDABAN=${n_sldb}
+                where MASP= ${cart[i].product.MASP}`;
+    db.save(sql);
+    }
     var d= new Date();
     var strDate = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
     var tt='Chưa giao hàng';

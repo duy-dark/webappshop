@@ -30,8 +30,8 @@ router.post('/remove', (req, res) => {
 });
 router.post('/edit', (req, res,next) => {
     cartRepo.edit(req.session.cart, +req.body.proId ,+req.body.quantity);
-    //res.redirect(req.headers.referer);
-   return next();
+    res.redirect(req.headers.referer);
+   
 });
 router.post('/thanhToan', (req, res) => {
     console.log(req.body.htnn);

@@ -1,0 +1,59 @@
+{{#section 'css'}}
+        <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+    <style type="text/css">
+    .ten{
+        width: 35%;
+    }
+    .slt{
+        width: 33%;
+    }
+    .sldb{
+        width: 30%;
+        border-right: 0px !important;
+    }
+    </style>
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+{{/section}}
+
+        <div class="link">  
+        <a href="/dash-board"> <span>  DashBoard</span></a>            
+        Quản lí nhà sản xuất
+        </div>
+        <div class="body2">
+            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title">Tìm kiếm nhà sản xuất theo &nbsp;&nbsp;&nbsp;&nbsp;
+                    <img  src="/assets/image/kinhlup.png">
+                </div>
+                <div class="inBox">
+                    <div class="inBox">
+                        <form id="search-order" method="post" action="/dash-board/quan-li-hoa-don-hang/search">
+                            
+                            <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="rightBox">
+                 
+                    <ul id="listName">
+                        <li class="ten" title="Tên NSX"><p>Tên NSX</p></li>
+                        <li class="slt" title="Số lượng sản phẩm tồn"><p>Số lượng SP tồn</p></li>
+                        <li class="sldb" title="Số lượng sản phẩm đã bán "><p>Số lượng SP đã bán</p></li>
+                    </ul>
+                    {{#each dt}}
+                    <ul id="content-ChiTietHoaDon">
+                        <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang?id={{IDHD}}">
+                            <li class="ten" ><a><p>{{nsx}}</p></a></li>
+                            <li class="slt"><p>{{slt}}</p></li>
+                            <li class="sldb" ><p>{{sldb}}</p></li>
+                        </a>
+                    </ul>
+                    {{/each}}
+            </div>
+            
+        </div>

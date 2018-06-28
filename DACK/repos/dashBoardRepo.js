@@ -94,3 +94,67 @@ exports.updateOrder = (order, id) => {
 	var sql =  `update quanlyhoadon set TINHTRANG = '${order}' where IDHD = '${id}'`;
 	return db.save(sql);
 }
+
+//quan li nsx
+exports.loadAllNsx = () => {
+	var sql = 'SELECT * FROM sanpham GROUP BY NSX'
+	return db.load(sql);
+}
+exports.loadSlt = (nsx) => {
+	return new Promise((resolve, reject) => {
+			var n=[];
+			for(var temp=0;temp<nsx.length;temp++){
+				n.push(0);
+			}
+
+			var p=[];
+			for(var i=0;i<nsx.length;i++){
+				var sql = `SELECT SOLUONGSPCON FROM sanpham WHERE NSX LIKE'${nsx[i].NSX}'`;
+				p.push(db.load(sql));
+			}
+			var kq=[];
+			Promise.all(p).then(kq=>{
+				for(var t=0;t<nsx.length;t++){
+					var s=0;
+					for(var t2=0;t2<kq[t].length;t2++){
+						s+=kq[t][t2].SOLUONGSPCON;
+					}
+					
+					n[t]=s;
+
+				}
+				resolve(n);
+
+			});
+	});
+	
+}
+exports.loadSldb = (nsx) => {
+	return new Promise((resolve, reject) => {
+			var m=[];
+			for(var temp=0;temp<nsx.length;temp++){
+				m.push(0);
+			}
+
+			var p=[];
+			for(var i=0;i<nsx.length;i++){
+				var sql = `SELECT SOLUONGSPDABAN FROM sanpham WHERE NSX LIKE'${nsx[i].NSX}'`;
+				p.push(db.load(sql));
+			}
+			var kq=[];
+			Promise.all(p).then(kq=>{
+				for(var t=0;t<nsx.length;t++){
+					var s=0;
+					for(var t2=0;t2<kq[t].length;t2++){
+						s+=kq[t][t2].SOLUONGSPDABAN;
+					}
+					
+					m[t]=s;
+
+				}
+				resolve(m);
+
+			});
+	});
+	
+}

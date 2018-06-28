@@ -186,6 +186,25 @@ router.get('/doimatkhau', (req, res) => {
 });
 
 router.get('/quanLiNSX', (req, res) => {
-   res.render('quanLiNSX/quanLiNSX');
+	dashBoard.loadAllNsx().then(rows => {
+		var p1=dashBoard.loadSlt(rows);
+		var p2=dashBoard.loadSldb(rows);
+		Promise.all([p1, p2]).then(([n,m]) =>{
+			var data=[];
+			for(var i=0;i<rows.length;i++){
+				var o={
+					nsx:rows[i].NSX,
+					slt:n[i],
+					sldb:m[i]
+				}
+				data.push(o);
+			}
+			var vm = {
+			dt:data
+			}
+		res.render('quanLiNSX/quanLiNSX',vm);
+	});
+
+	});
 });
 module.exports = router;
