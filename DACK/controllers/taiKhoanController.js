@@ -4,6 +4,7 @@ var express = require('express'),
 
 var restrict = require('../middle-wares/restrict');
 var restrictDangNhap = require('../middle-wares/restrictDangNhap');
+var restrictUser = require('../middle-wares/restrictUser');
 var taiKhoanRepo = require('../repos/taiKhoanRepo');
 var categoryRepo = require('../repos/categoryRepo');
 
@@ -59,10 +60,14 @@ router.post('/dangNhap', (req, res) => {
             req.session.isLogged = true;
             req.session.curUser = rows[0];
             req.session.cart = [];
-
+            var t=''+req.query.retUrl;
+            if(t.indexOf('/gio-hang/add')===-1){
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
+            }
+
+
             res.redirect(url);
         } else {
             taiKhoanRepo.checkAdmin(user).then(rows2 => {
@@ -102,7 +107,7 @@ router.post('/dangXuat', (req, res) => {
     res.redirect(req.headers.referer);}
 });
 
-router.get('/profile', restrict, (req, res) => {
+router.get('/profile', restrict,restrictUser, (req, res) => {
 
   res.render('taiKhoan/profile');
        
@@ -133,7 +138,7 @@ router.post('/profile/updatematkhau', (req, res) => {
         {
             taiKhoanRepo.updatematkhau(sha256(pnew).toString(),req.body.MAKH).then(rows1=>{
                 req.session.curUser = rows[0];
-                res.render('taiKhoan/profile');
+                res.redirect('/taiKhoan/profile');
             });
         }
         else {

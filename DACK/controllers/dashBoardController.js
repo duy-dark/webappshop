@@ -160,11 +160,7 @@ router.post('/quan-li-thong-tin-shop/updatematkhau', (req, res) => {
 		if(rows[0].PASSWORD===sha256(pold).toString() && pnew===pnew1)
 		{
 			dashBoard.updatematkhau(sha256(pnew).toString()).then(rows1=>{
-		   		var vm={
-					accadmin:rows[0],
-					NHAPSAI: false
-				};
-				res.render('quanLiThongTinShop/quan-li-thong-tin-shop',vm);
+				res.redirect('/dash-board/quan-li-thong-tin-shop');
 		   	});
 		}
 		else {
@@ -180,5 +176,9 @@ router.post('/quan-li-thong-tin-shop/updatematkhau', (req, res) => {
 
 router.get('/doimatkhau', (req, res) => {
    res.render('quanLiThongTinShop/doimatkhau');
+});
+
+router.get('/quanLiNSX', (req, res) => {
+   res.render('quanLiNSX/quanLiNSX');
 });
 module.exports = router;

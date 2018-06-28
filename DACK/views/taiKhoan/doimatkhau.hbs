@@ -1,11 +1,30 @@
-
+  {{#section 'css'}}
+   <style type="text/css">
+#titleDMK{
+		font-family: 'Droid serif', serif; 
+	font-size: 36px;
+	 font-weight: 400;
+	text-align: center;
+	border-bottom: 1px solid black;
+	margin-bottom: 20px;
+	margin-top:-5px;
+}
+#contentDMK{
+	font-family: 'Droid serif', serif; 
+	font-size: 20px;
+	 font-weight: 400;
+	}
+   </style>
+}
+}
+{{/section}}
 {{#if NHAPSAI}}
 	<div class="alert alert-warning alert-dismissible" role="alert">
 	  <strong>Warning!</strong> nhập sai mật khẩu cũ hoặc nhập lại mật khẩu mới sai.
 	</div>
 {{/if}}
-<b style="text-align: center;"><h3>ĐỔI MẬT KHẨU</h3></b>
-<div class="row">
+<div id="titleDMK">ĐỔI MẬT KHẨU</div>
+<div class="row" id="contentDMK">
   
   <div class=".col-xs-6" style="padding:10px 200px;">
 	<form action="/taiKhoan/profile/updatematkhau" method="POST" role="form">
@@ -16,14 +35,15 @@
 		</div>
 	  	<div class="col-xs-6 col-md-4"><b>Mật khẩu mới</b></div>
 		<div class="col-xs-12 col-md-8">
-			<input class="form-control" type="text" placeholder="mật khẩu mới" name="PASSNEW">
+			<input class="form-control" type="password" placeholder="mật khẩu mới" name="PASSNEW">
 		</div>
 		<div class="col-xs-6 col-md-4"><b>Nhập lại Mật khẩu mới</b></div>
 		<div class="col-xs-12 col-md-8">
-			<input class="form-control" type="text" placeholder="nhập lại" name="PASSNEW1">
+			<input class="form-control" type="password" placeholder="nhập lại" name="PASSNEW1">
 		</div>
-		<div>
-			<button type="submit">Đổi mật khẩu</button>
+		<div  class="col-md-5"></div>
+		<div  class="col-md-7" style="margin-top:20px;">
+			<button type="submit" class="btn-success">Đổi mật khẩu</button>
 		</div>
 	</form>
   </div>
