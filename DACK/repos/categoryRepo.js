@@ -9,7 +9,7 @@ exports.loadALLNSX = () => {
 	return db.load(sql);
 }
 exports.loadspmoinhat = () => {
-	var sql = `select *,DATEDIFF(NOW(),NGAYNHAP ) as moinhat from sanpham order by moinhat ASC  limit 4 OFFSET 0`;
+	var sql = `select *,DATEDIFF(NOW(),NGAYNHAP ) as moinhat from sanpham order by moinhat ASC  limit 10 OFFSET 0`;
 	return db.load(sql);
 }
 exports.loadid = id => {
@@ -33,11 +33,11 @@ exports.loadnsxidttct = id => {
 	return db.load(sql);
 }
 exports.loadbanchay = () => {
-	var sql = `select * from sanpham order by SOLUONGSPDABAN DESC  limit 4 OFFSET 0 `;
+	var sql = `select * from sanpham order by SOLUONGSPDABAN DESC  limit 10 OFFSET 0 `;
 	return db.load(sql);
 }
 exports.loadxemnhieunhat = () => {
-	var sql = `select * from sanpham order by LUOTXEM DESC  limit 4 OFFSET 0 `;
+	var sql = `select * from sanpham order by LUOTXEM DESC  limit 10 OFFSET 0 `;
 	return db.load(sql);
 }
 

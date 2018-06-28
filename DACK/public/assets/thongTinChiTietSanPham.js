@@ -17,15 +17,20 @@ $(".luotThich").on("click",function() {
     $(".luotThich span").text("" + number);
 });
 $(".soLuong button").on("click",function() {
-    var number = parseInt($(".soLuong input").val());
+    var number = parseInt($("#sl").val());
+    var slcon= parseInt($("#slcon").val());
     if ($(this).text() === '+') {
         number++;
     }
-    if ($(this).text() == '-') {
+
+    if ($(this).text() === '-') {
         if (number > 0) { number--; }
     }
-
-    $(".soLuong input").val(number);
+    if (number>slcon) {
+        number=slcon;
+        }
+    console.log(number);
+    $(".soLuong #sl").val(number);
 });
 $(".menu-dgsp").css('border-bottom', '2px solid white');
 $(".menu-dgsp").css('color', 'black');
