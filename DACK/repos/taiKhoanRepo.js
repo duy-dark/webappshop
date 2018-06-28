@@ -25,7 +25,8 @@ exports.loadaccount = id => {
 	return db.load(sql);
 }
 exports.updateaccount = account => {
-	var sql = `UPDATE khachhang SET USERNAME='${account.USERNAME}',DTHOAI='${account.DTHOAI}',EMAIL='${account.EMAIL}',CMND='${account.CMND}',GIOITINH='${account.GIOITINH}' where MAKH=${account.MAKH}`;
+	var sql = `UPDATE khachhang SET TEN='${account.TEN}',DTHOAI='${account.DTHOAI}',EMAIL='${account.EMAIL}',CMND='${account.CMND}',GIOITINH='${account.GIOITINH}',
+								NGAYSINH='${account.NGAYSINH}',DCHI='${account.DCHI}' where MAKH=${account.MAKH}`;
 	return db.load(sql);
 }
 exports.updatematkhau = (PASSNEW,id) => {

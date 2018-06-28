@@ -103,15 +103,20 @@ router.post('/dangXuat', (req, res) => {
 });
 
 router.get('/profile', restrict, (req, res) => {
-    res.render('taiKhoan/profile');
+
+  res.render('taiKhoan/profile');
+       
+
+   
 });
 router.post('/profile/update', (req, res) => {
     taiKhoanRepo.updateaccount(req.body).then(rows=>{
-        taiKhoanRepo.loadaccount(req.body.MAKH).then(rows => {
-            req.session.curUser = rows[0];
+         taiKhoanRepo.loadaccount(req.session.curUser.MAKH).then(rows2 => {     
+            req.session.curUser = rows2[0];       
+            res.redirect(req.headers.referer);         
         });
-        res.render('taiKhoan/profile');
     });
+    
 });
 router.get('/doimatkhau', (req, res) => {
     var vm={
