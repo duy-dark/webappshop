@@ -33,6 +33,7 @@
                 </div>
             </div>`;
         $("#comment ul li:eq(0)").html(html);
+        location.reload();
     });
     </script>
 {{/section}}
@@ -436,7 +437,7 @@
                         <div class="form-group mb10">
                             <textarea  id="TINNHAN" class="form-control" rows="5" placeholder="Nhập yêu cầu của bạn" style="padding: 5px 5px 5px 5px;"></textarea>
                         </div>
-                        <input type="hidden" value="{{layoutVM.curUser.TEN}} " id="TENCM">
+                        <input type="hidden" value="{{layoutVM.curUser.TEN}}" id="TENCM">
                         <a data-proid="{{sp.MASP}}" href="#" class="btn button addComment">Comment</a>
                     </form>
                     <fieldset>
@@ -446,7 +447,7 @@
                                 <div style="background-color:#e5e5e5; padding:10px 10px; width:1100px;" class="form-group">
                                     <img src="/assets/image/Avatar/avt.png" id="cmimage">   
                                     <div>
-                                        <b id="cmten">{{TEN}}</b> &nbsp; <p id="cmdate">{{CMDATE}} </p>
+                                        <b id="cmten">{{TEN}}</b> &nbsp; <p id="cmdate">{{time_format CMDATE}} </p>
                                         <p id="cmmes">{{MES}}</p>
                                     </div>
                                 </div>
