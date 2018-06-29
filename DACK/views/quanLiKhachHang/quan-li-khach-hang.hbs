@@ -7,6 +7,11 @@
 {{#section 'js'}}
     <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
     <script type="text/javascript" src="/assets/quan-li-khach-hang.js"></script>
+    <script type="text/javascript">
+        $("#btnSearch").on('click',function(){
+        $("#search-pro").submit();
+        });
+    </script>
 {{/section}}
 
   <div class="link">
@@ -15,12 +20,15 @@
         </div>
         <div class="body2">
             <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
-                <div class="title">Tìm kiếm khách hàng theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
-                <div class="inBox">
+                <div class="title" id="btnSearch">Tìm kiếm khách hàng theo &nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
+                <div class="inBox" style="padding: 10px 5px;">
                     <form id="search-pro" method="post" action="/dash-board/quan-li-khach-hang/search">
-                        <input type="text" name="search" placeholder="nhập thông tin tiềm kiếm">
+                        <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
                     </form>
                 </div>
+               <a href="/dash-board/quan-li-khach-hang" style="color: black;clear: both;"> 
+                 <div class="title"  id="btnAll">Tất cả</div>
+             </a>
             </div>
             <div id="rightBox">
                 <div class="title ">Danh sách khách hàng phù hợp kết quả tìm kiếm</div> 
@@ -29,17 +37,15 @@
                     <li class="tkh" title="Tên khách hàng"><p>Tên khách hàng</p></li>
                     <li class="ns" title="Ngày sinh"><p>Ngày sinh</p></li>
                     <li class="gt" title="Giới tính"><p>Giới tính</p></li>
-                    <li class="lkh" title="Loại khách hàng"><p>Loại khách hàng</p></li>
                 </ul>
                 {{#each accounts}}
-                <ul id="content-ChiTietKhachHang" ">
+                <ul id="content-ChiTietKhachHang">
                     <ul >
                          <a href="/dash-board/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan-chu-shop-xem?id={{MAKH}}">
                             <li class="tkkh" title="Tài khoản KH"><p>{{MAKH}}</p></li>
                             <li class="tkh" title="Tên khách hàng"><p>{{TEN}}</p></li>
                             <li class="ns" title="Ngày sinh"><p>{{time_format NGAYSINH}}</p></li>
                             <li class="gt" title="Giới tính"><p>{{GIOITINH}}</p></li>
-                            <li class="lkh" title="Loại khách hàng"><p>Loại khách hàng</p></li>
                         </a>
                     </ul>
                 </ul>

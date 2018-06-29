@@ -4,6 +4,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hang-hoa.css">
     <link rel="stylesheet" type="text/css" href="/assets/thongTinChiTietSanPham.css">
+}
 {{/section}}
 
 {{#section 'js'}}
@@ -13,7 +14,10 @@
             var id = $(this).data('proid');
             $('#txtP').val(id);
             $('#frmdelItem').submit();
-            });    
+            });  
+         $("#btnSearch").on('click',function(){
+        $("#search-pro").submit();
+        });  
       </script>
 {{/section}}
         <form id="frmdelItem" method="post" action="/dash-board/quan-li-hang-hoa/del">
@@ -25,16 +29,19 @@
         <div class="line"></div>
         <div class="row">
             <div id="leftBox" href="javascript:;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
-                <div class="title">Tìm kiếm sản phẩm
+                <div class="title" id="btnSearch">Tìm kiếm sản phẩm theo&nbsp;&nbsp;&nbsp;&nbsp; <img src="/assets/image/kinhLup.png">
                 </div>
                 
-                <div class="inBox">
+                <div class="inBox"  style="padding: 10px 5px;">
                     <form id="search-pro" method="post" action="/dash-board/quan-li-hang-hoa/search">
-                        <input type="text" name="search" placeholder="nhập thông tin tiềm kiếm">
+                        <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
                     </form>
                 </div>
+                <a href="/dash-board/quan-li-hang-hoa" style="color: black;clear: both;"> 
+                 <div class="title"  id="btnAll">Tất cả</div>
+             </a>
                  <div class="title">
-                    <a href="/dash-board/quan-li-hang-hoa/them-san-pham" style="text-decoration: none; display: inline-block;">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></a>
+                    <a href="/dash-board/quan-li-hang-hoa/them-san-pham" style="text-decoration: none; display: inline-block;color:black;">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></a>
                  </div>
             </div>
             

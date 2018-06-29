@@ -31,7 +31,11 @@
                 maxFileSize: 100,
                 initialCaption: "The Moon and the Earth"
             });
+          $("#btnSearch").on('click',function(){
+        $("#search-pro").submit();
         });
+        });
+
     </script>
 {{/section}}
         
@@ -40,18 +44,21 @@
         </div>
         <div class="line"></div>
         <div class="row">
-            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">    
-                <div class="title">Tìm kiếm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
-                <div class="inBox">
+            <div id="leftBox" href="javascript:;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title" id="btnSearch">Tìm kiếm sản phẩm theo&nbsp;&nbsp;&nbsp;&nbsp; <img src="/assets/image/kinhLup.png">
+                </div>
+                
+                <div class="inBox"  style="padding: 10px 5px;">
                     <form id="search-pro" method="post" action="/dash-board/quan-li-hang-hoa/search">
-                        <input type="text" name="search" placeholder="nhập thông tin tiềm kiếm">
+                        <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
                     </form>
                 </div>
-
+                <a href="/dash-board/quan-li-hang-hoa" style="color: black;clear: both;"> 
+                 <div class="title"  id="btnAll">Tất cả</div>
+             </a>
                  <div class="title">
-                    <a href="/dash-board/quan-li-hang-hoa/them-san-pham" style="text-decoration: none; display: inline-block;">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png">
-                    </a>
-                </div>
+                    <a href="/dash-board/quan-li-hang-hoa/them-san-pham" style="text-decoration: none; display: inline-block;color:black;">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></a>
+                 </div>
             </div>
             <form action="" method="POST" role="form">
             <div id="rightBox" >

@@ -63,8 +63,24 @@ router.post('/quan-li-hang-hoa/search', (req, res) => {
         res.render('quanLiHangHoa/quan-li-hang-hoa',vm);
 	});
 });
-
-
+//TIM KIEM  LSP
+router.post('/quanLiLSP/search', (req, res) => {
+	dashBoard.searchLSP(req.body.search).then(rows => {
+		var vm={
+			products: rows
+		}
+        res.render('quanLiLSP/quanLiLSP',vm);
+	});
+});
+//TIM KIEM NSX
+router.post('/quanLiNSX/search', (req, res) => {
+	dashBoard.searchNSX(req.body.search).then(rows => {
+		var vm={
+			products: rows
+		}
+        res.render('quanLiNSX/quanLiNSX',vm);
+	});
+});
 // QUAN LY DON HANG
 
 router.get('/quan-li-hoa-don-hang', (req, res) => {

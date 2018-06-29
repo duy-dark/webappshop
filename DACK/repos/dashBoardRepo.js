@@ -29,10 +29,20 @@ exports.add = (sanpham,day) => {
 }
 
 exports.searchPro = (thongtin) => {
-	var sql = `select * from sanpham where TENSP LIKE '${thongtin}' OR NSX LIKE '${thongtin}' OR LOAI LIKE '${thongtin}' OR DL_RAM LIKE '${thongtin}' OR L_RAM LIKE '${thongtin}' OR TD_RAM LIKE '${thongtin}' OR SL_RAM LIKE '${thongtin}' OR LD_DIACUNG LIKE '${thongtin}' OR DL_DIACUNG LIKE '${thongtin}' OR DOHOA LIKE '${thongtin}' OR KT_MANHINH LIKE '${thongtin}' OR CN_MANHINH LIKE '${thongtin}' OR CU_MANHINH LIKE '${thongtin}' OR AMTHANH LIKE '${thongtin}' OR DIAQUANG LIKE '${thongtin}' OR GIAOTIEP LIKE '${thongtin}' OR WIFI_MANG LIKE '${thongtin}' OR KNKD_MANG LIKE '${thongtin}' OR CARDREADER LIKE '${thongtin}' OR WEBCAM LIKE '${thongtin}' OR HDH LIKE '${thongtin}' OR PIN LIKE '${thongtin}' OR THONGTINKHAC_CBVT LIKE '${thongtin}' OR THONGTINKHAC_DBP LIKE '${thongtin}' OR THONGTINKHAC_PKKT LIKE '${thongtin}' OR KICHTHUOC LIKE '${thongtin}' OR TRONGLUONG LIKE '${thongtin}' OR CHATLIEU LIKE '${thongtin}' OR BAOHANH LIKE '${thongtin}' OR CPU LIKE '${thongtin}' OR GIABAN LIKE '${thongtin}'`;
-	return db.save(sql);
+	var sql = `select * from sanpham where MASP LIKE '${thongtin}' ,TENSP LIKE '${thongtin}' OR NSX LIKE '${thongtin}' OR LOAI LIKE '${thongtin}' OR DL_RAM LIKE '${thongtin}' OR L_RAM LIKE '${thongtin}' OR TD_RAM LIKE '${thongtin}' OR SL_RAM LIKE '${thongtin}' OR LD_DIACUNG LIKE '${thongtin}' OR DL_DIACUNG LIKE '${thongtin}' OR DOHOA LIKE '${thongtin}' OR KT_MANHINH LIKE '${thongtin}' OR CN_MANHINH LIKE '${thongtin}' OR CU_MANHINH LIKE '${thongtin}' OR AMTHANH LIKE '${thongtin}' OR DIAQUANG LIKE '${thongtin}' OR GIAOTIEP LIKE '${thongtin}' OR WIFI_MANG LIKE '${thongtin}' OR KNKD_MANG LIKE '${thongtin}' OR CARDREADER LIKE '${thongtin}' OR WEBCAM LIKE '${thongtin}' OR HDH LIKE '${thongtin}' OR PIN LIKE '${thongtin}' OR THONGTINKHAC_CBVT LIKE '${thongtin}' OR THONGTINKHAC_DBP LIKE '${thongtin}' OR THONGTINKHAC_PKKT LIKE '${thongtin}' OR KICHTHUOC LIKE '${thongtin}' OR TRONGLUONG LIKE '${thongtin}' OR CHATLIEU LIKE '${thongtin}' OR BAOHANH LIKE '${thongtin}' OR CPU LIKE '${thongtin}' OR GIABAN LIKE '${thongtin}'`;
+	return db.load(sql);
 }
-
+//TIM KIEN LOAI SAN PHAM
+exports.searchLsp = (thongtin) => {
+	var sql=`select * from sanpham  where NSX='${thongtin}'`;
+	db.load(sql).then(rows=>{
+		var slc=0,sldb=0;
+		for(var i=0;i<row.length;i++){
+				slc+=rows[i].SOLUONGSPCON;
+				sldb+=rows[i].SOLUONGSPDABAN;
+			}
+	});
+}
 // quan li tai khoan
 
 exports.loadAllAcc = () => {
