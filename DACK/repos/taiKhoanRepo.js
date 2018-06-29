@@ -25,7 +25,7 @@ exports.loadaccount = id => {
 	return db.load(sql);
 }
 exports.loadhoadonkh = id => {
-	var sql = `select qlhd.*,gh.MASP,sp.TENSP,gh.SOLUONG,gh.THANHTIEN from quanlyhoadon qlhd,giohang gh,sanpham sp where qlhd.IDKH=${id} and qlhd.IDHD=gh.MAGH and gh.MASP=sp.MASP`;
+	var sql = `select qlhd.*,gh.MASP,sp.TENSP,gh.SOLUONG,gh.THANHTIEN,DATEDIFF(NOW(),qlhd.NGAYDATHANG ) as moinhat from quanlyhoadon qlhd,giohang gh,sanpham sp where qlhd.IDKH=${id} and qlhd.IDHD=gh.MAGH and gh.MASP=sp.MASP order by moinhat ASC  limit 10 OFFSET 0`;
 	return db.load(sql);
 }
 
