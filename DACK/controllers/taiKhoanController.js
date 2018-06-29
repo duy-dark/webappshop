@@ -109,11 +109,13 @@ router.post('/dangXuat', (req, res) => {
 });
 
 router.get('/profile', restrict,restrictUser, (req, res) => {
-
-  res.render('taiKhoan/profile');
-       
-
-   
+    taiKhoanRepo.loadhoadonkh(req.session.curUser.MAKH).then(rows=>{
+        var vm={
+            hd:rows
+        };
+        res.render('taiKhoan/profile',vm);
+    });
+    
 });
 router.post('/profile/update', (req, res) => {
     taiKhoanRepo.updateaccount(req.body).then(rows=>{

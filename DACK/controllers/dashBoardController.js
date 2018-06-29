@@ -36,7 +36,7 @@ router.get('/quan-li-hang-hoa/them-san-pham', (req, res) => {
 
 router.post('/quan-li-hang-hoa/thong-tin-chi-tiet-hang-hoa', (req, res) => {
     dashBoard.updateSP(req.body,+req.query.id).then(value => {
-        res.redirect('/dash-board/quan-li-hang-hoa');
+        res.redirect('/dash-board/quan-li-hang-hoa/thong-tin-chi-tiet-hang-hoa?id='+req.query.id);
     });
 });
 
@@ -65,18 +65,28 @@ router.post('/quan-li-hang-hoa/search', (req, res) => {
 });
 //TIM KIEM  LSP
 router.post('/quanLiLSP/search', (req, res) => {
-	dashBoard.searchLSP(req.body.search).then(rows => {
+	dashBoard.searchLSP(req.body.search).then(o => {
+		var o2=[];
+		if(o!==null){
+			o2.push(o);
+		}
+
 		var vm={
-			products: rows
+			dt: o2
 		}
         res.render('quanLiLSP/quanLiLSP',vm);
 	});
 });
 //TIM KIEM NSX
 router.post('/quanLiNSX/search', (req, res) => {
-	dashBoard.searchNSX(req.body.search).then(rows => {
+	dashBoard.searchNSX(req.body.search).then(o => {
+		var o2=[];
+		if(o!==null){
+			o2.push(o);
+		}
+		console.log(o);
 		var vm={
-			products: rows
+			dt: o2
 		}
         res.render('quanLiNSX/quanLiNSX',vm);
 	});
@@ -133,7 +143,14 @@ router.get('/quan-li-khach-hang', (req, res) => {
 		res.render('quanLiKhachHang/quan-li-khach-hang',vm);
 	});
 });
-
+router.get('/quan-li-phan-hoi', (req, res) => {
+	dashBoard.loadAlllienhe().then(rows => {
+		var vm = {
+        	lienhe: rows
+        }
+		res.render('quanLiKhachHang/quan-li-phan-hoi',vm);
+	});
+});
 router.get('/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan', (req, res) => {
 	dashBoard.loadidacc(+req.query.id).then(rows =>{
 		var vm = rows[0]
@@ -161,7 +178,14 @@ router.post('/quan-li-khach-hang/search', (req, res) => {
         res.render('quanLiKhachHang/quan-li-khach-hang',vm);
 	});
 });
-
+router.post('/quan-li-phan-hoi/search', (req, res) => {
+	dashBoard.searchlienhe(req.body.search).then(rows => {
+		var vm={
+			lienhe: rows
+		}
+        res.render('quanLiKhachHang/quan-li-phan-hoi',vm);
+	});
+});
 //QUAN LY THONG TIN SHOP
 
 router.get('/quan-li-thong-tin-shop', (req, res) => {

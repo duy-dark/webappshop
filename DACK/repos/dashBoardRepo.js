@@ -6,7 +6,10 @@ exports.loadAllPro = () => {
 	var sql =`select * from sanpham`;
 	return db.load(sql);
 }
-
+exports.loadAlllienhe = () => {
+	var sql =`select * from lienhe limit 10 offset 0`;
+	return db.load(sql);
+}
 exports.loadidpro = id => {
 	var sql = `select * from sanpham where MASP = ${id} `;
 	return db.load(sql);
@@ -29,18 +32,55 @@ exports.add = (sanpham,day) => {
 }
 
 exports.searchPro = (thongtin) => {
-	var sql = `select * from sanpham where MASP LIKE '${thongtin}' ,TENSP LIKE '${thongtin}' OR NSX LIKE '${thongtin}' OR LOAI LIKE '${thongtin}' OR DL_RAM LIKE '${thongtin}' OR L_RAM LIKE '${thongtin}' OR TD_RAM LIKE '${thongtin}' OR SL_RAM LIKE '${thongtin}' OR LD_DIACUNG LIKE '${thongtin}' OR DL_DIACUNG LIKE '${thongtin}' OR DOHOA LIKE '${thongtin}' OR KT_MANHINH LIKE '${thongtin}' OR CN_MANHINH LIKE '${thongtin}' OR CU_MANHINH LIKE '${thongtin}' OR AMTHANH LIKE '${thongtin}' OR DIAQUANG LIKE '${thongtin}' OR GIAOTIEP LIKE '${thongtin}' OR WIFI_MANG LIKE '${thongtin}' OR KNKD_MANG LIKE '${thongtin}' OR CARDREADER LIKE '${thongtin}' OR WEBCAM LIKE '${thongtin}' OR HDH LIKE '${thongtin}' OR PIN LIKE '${thongtin}' OR THONGTINKHAC_CBVT LIKE '${thongtin}' OR THONGTINKHAC_DBP LIKE '${thongtin}' OR THONGTINKHAC_PKKT LIKE '${thongtin}' OR KICHTHUOC LIKE '${thongtin}' OR TRONGLUONG LIKE '${thongtin}' OR CHATLIEU LIKE '${thongtin}' OR BAOHANH LIKE '${thongtin}' OR CPU LIKE '${thongtin}' OR GIABAN LIKE '${thongtin}'`;
+	var sql = `select * from sanpham where MASP LIKE '${thongtin}' OR TENSP LIKE '${thongtin}' OR NSX LIKE '${thongtin}' OR LOAI LIKE '${thongtin}' OR DL_RAM LIKE '${thongtin}' OR L_RAM LIKE '${thongtin}' OR TD_RAM LIKE '${thongtin}' OR SL_RAM LIKE '${thongtin}' OR LD_DIACUNG LIKE '${thongtin}' OR DL_DIACUNG LIKE '${thongtin}' OR DOHOA LIKE '${thongtin}' OR KT_MANHINH LIKE '${thongtin}' OR CN_MANHINH LIKE '${thongtin}' OR CU_MANHINH LIKE '${thongtin}' OR AMTHANH LIKE '${thongtin}' OR DIAQUANG LIKE '${thongtin}' OR GIAOTIEP LIKE '${thongtin}' OR WIFI_MANG LIKE '${thongtin}' OR KNKD_MANG LIKE '${thongtin}' OR CARDREADER LIKE '${thongtin}' OR WEBCAM LIKE '${thongtin}' OR HDH LIKE '${thongtin}' OR PIN LIKE '${thongtin}' OR THONGTINKHAC_CBVT LIKE '${thongtin}' OR THONGTINKHAC_DBP LIKE '${thongtin}' OR THONGTINKHAC_PKKT LIKE '${thongtin}' OR KICHTHUOC LIKE '${thongtin}' OR TRONGLUONG LIKE '${thongtin}' OR CHATLIEU LIKE '${thongtin}' OR BAOHANH LIKE '${thongtin}' OR CPU LIKE '${thongtin}' OR GIABAN LIKE '${thongtin}'`;
 	return db.load(sql);
 }
 //TIM KIEN LOAI SAN PHAM
-exports.searchLsp = (thongtin) => {
+exports.searchLSP = (thongtin) => {
+	return new Promise((resolve, reject) => {
+	var sql=`select * from sanpham  where LOAI='${thongtin}'`;
+	db.load(sql).then(rows=>{
+		var s=0,s2=0;
+		if(rows.length>=1){
+		for(var i=0;i<rows.length;i++){
+				s+=rows[i].SOLUONGSPCON;
+				s2+=rows[i].SOLUONGSPDABAN;
+			}
+			var o={
+				lsp:rows[0].LOAI,
+				slt:s,
+				sldb:s2
+			}
+		resolve(o);
+		}
+		else{
+			resolve(null);
+		}
+		});
+	});
+}
+//TIM KIEM NSX
+exports.searchNSX = (thongtin) => {
+	return new Promise((resolve, reject) => {
 	var sql=`select * from sanpham  where NSX='${thongtin}'`;
 	db.load(sql).then(rows=>{
-		var slc=0,sldb=0;
-		for(var i=0;i<row.length;i++){
-				slc+=rows[i].SOLUONGSPCON;
-				sldb+=rows[i].SOLUONGSPDABAN;
+		var s=0,s2=0;
+		if(rows.length>=1){
+		for(var i=0;i<rows.length;i++){
+				s+=rows[i].SOLUONGSPCON;
+				s2+=rows[i].SOLUONGSPDABAN;
 			}
+			var o={
+				nsx:rows[0].NSX,
+				slt:s,
+				sldb:s2
+			}
+		resolve(o);
+		}
+		else{
+			resolve(null);
+		}
+		});
 	});
 }
 // quan li tai khoan
@@ -77,11 +117,14 @@ exports.loadaccorder = id => {
 	var sql = `select * from quanlyhoadon WHERE IDKH = ${id}`;
 	return db.load(sql);
 }
-
+exports.searchlienhe = (thongtin) => {
+	var sql = `SELECT * FROM lienhe WHERE MANG LIKE '${thongtin}' OR TEN LIKE '${thongtin}' OR DTHOAI LIKE '${thongtin}' OR DCHI LIKE '${thongtin}' OR EMAIL LIKE '${thongtin}'`;
+	return db.load(sql);
+}
 // quan li don hang
 
 exports.loadAllOrder = () => {
-	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG ,TONGTIEN,NGUOINHAN,SDT,DIACHI, DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang, quanlyhoadon WHERE khachhang.MAKH=quanlyhoadon.IDKH order by moinhat ASC`;
+	var sql = `SELECT IDHD,IDKH, USERNAME, TEN, NGAYDATHANG, TINHTRANG ,TONGTIEN,NGUOINHAN,SDT,DIACHI, DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang, quanlyhoadon WHERE khachhang.MAKH=quanlyhoadon.IDKH order by moinhat ASC`;
 	return db.load(sql);
 }
 

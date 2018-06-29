@@ -1,6 +1,11 @@
 {{#section 'css'}}
             <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+    <style type="text/css">
+        input{
+            padding-left: 10px;
+        }
+    </style>
 {{/section}}
 
 {{#section 'js'}}
@@ -23,14 +28,13 @@
                 <div style="margin-bottom: 80px;">
                     <img src="/assets/image/background-avatar.png">
                 </div>
-                 <img style="width: 150px; height: 150px;" src="/assets/image/Avatar/{{MAKH}}.jpg">
-                 <a href="#">
+                 <img style="width: 150px; height: 150px;" src="/assets/image/default-avatar.png">
+                 <a href="javascript:">
                      <span class="glyphicon glyphicon-camera" style="color: black;"></span>
                  </a>  
             </div>           
             <div id="user-type">
                 <a href="#">{{USERNAME}}</a>
-                <p>VIP</p>
             </div>   
         </div>
         <div id="User-Infor" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
@@ -38,14 +42,14 @@
                 <div id="Infor-Content">
                     
                     <div id="Account-Infor">
-                        THÔNG TIN TÀI KHOẢN
+                        <div style="font-style: italic; font-family: 'Droid serif', serif;font-size: 25px;margin-bottom: 15px;font-weight: bold;">THÔNG TIN TÀI KHOẢN</div>
                         <div>
                             <label>Username:</label>
                             <input type="text" name="usname" value="{{USERNAME}}">
                         </div>
                     </div>
                     <div id="Personal-Infor">
-                        THÔNG TIN KHÁCH HÀNG
+                        <div  style="font-style: italic; font-family: 'Droid serif', serif;font-size: 25px;margin-bottom: 15px;font-weight: bold;">THÔNG TIN KHÁCH HÀNG</div>
                         <div>
                             <label>Họ Tên:</label>
                             <input type="text" name="truename" value="{{TEN}}">
@@ -78,19 +82,11 @@
                         </div> 
                     </div>
                     {{/with}}
-                    <div id="button">
-                        <button style="margin-left:245px;color:green;">
-                            Chặn quyền truy cập
-                        </button>
-                        <button style="margin-left: 10px;color:green;">
-                            Gửi tin nhắn
-                        </button>
-                    </div>
                 </div>
             </form>
             <div id="history-orders">
-                <p><b>CÁC ĐƠN HÀNG ĐÃ ĐẶT MUA</b></p>
-                <div id="order-content">
+               <div style="text-decoration: underline; font-family: 'Droid serif', serif;font-size: 30px;margin-bottom: 15px;font-weight: bold;color:#DF7401;">Lịch sử mua hàng:</div>
+                <div id="order-content" style="height:200px;">
                     {{#each orders}}
                     <div id="order" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang?id={{IDHD}}">

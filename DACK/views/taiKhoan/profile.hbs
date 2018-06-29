@@ -99,9 +99,9 @@
           </div>
         </div>
     </div>
-    <div><b>Lịch sử mua hàng</b></div>
+    <div><b><h3>Lịch sử mua hàng</h3></b></div>
     <div class="top1">
-    	<table class="table table-striped">
+    	<table class="table table-striped" style="border-style: groove;">
             <thead>
                 <tr>
                     <td class="image">Hình ảnh</td>
@@ -113,13 +113,13 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each TT}}
+                {{#each hd}}
                     <tr>
                         <td><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:50px"></td>
-                        <td>{{sp.TENSP}}</td>
+                        <td>{{TENSP}}</td>
                         <td>{{SOLUONG}}</td>
                         <td>{{THANHTIEN}}</td>
-                        <td>{{NGAYDATHANG}}</td>
+                        <td>{{time_format NGAYDATHANG}}</td>
                     </tr>
                 {{/each}}
             </tbody>

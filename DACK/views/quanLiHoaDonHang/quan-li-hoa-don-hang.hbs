@@ -1,5 +1,5 @@
 {{#section 'css'}}
-        <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
 {{/section}}
 
@@ -22,6 +22,14 @@
             $(this).addClass(' daHuy');
         }
         });
+    
+    $(".sendM").each(function(){
+        $(this).click(function(){
+        var html=$(this).find('span').html();
+            $('#fs input[name="search"]').val(html);
+            $('#fs').submit();
+        });
+    });
 
     </script>
 {{/section}}
@@ -42,7 +50,9 @@
                 </div>
                 <a href="/dash-board/quan-li-hoa-don-hang" style="color: black;clear: both;">  <div class="title"  id="btnAll">Tất cả</div></a>
             </div>
-            
+            <form id="fs" method="post" action="/dash-board/quan-li-khach-hang/search">
+                <input type="hidden" name="search" >
+            </form>
             <div id="rightBox">
                   <div class="title ">Danh sách hóa đơn phù hợp kết quả tìm kiếm</div> 
                     <ul id="listName">
@@ -56,11 +66,15 @@
                     <ul id="content-ChiTietHoaDon">
                         <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang?id={{IDHD}}">
                             <li class="mhd" title="Mã hóa đơn"><p>{{IDHD}}</p></li>
-                            <li class="tkkh" title="Tài khoản KH"><p>{{USERNAME}}</p></li>
+                        </a >
+                        <a class="sendM">
+                         <li class="tkkh" title="Tài khoản KH"><p>{{USERNAME}}</p></li>
+                         <span style="display:none;">{{IDKH}}</span>
                             <li class="tkh" title="Tên khách hàng"><p>{{TEN}}</p></li>
+                        </a>
                             <li class="ndh" title="Ngày đặt hàng"><p>{{time_format NGAYDATHANG}}</p></li>
                             <li class="tt" title="Tình trạng"><p>{{TINHTRANG}}</p></li>
-                        </a>
+                       
                     </ul>
                     {{/each}}
 

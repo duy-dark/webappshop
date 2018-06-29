@@ -24,6 +24,11 @@ exports.loadaccount = id => {
 	var sql = `select * from khachhang where MAKH=${id}`;
 	return db.load(sql);
 }
+exports.loadhoadonkh = id => {
+	var sql = `select qlhd.*,gh.MASP,sp.TENSP,gh.SOLUONG,gh.THANHTIEN from quanlyhoadon qlhd,giohang gh,sanpham sp where qlhd.IDKH=${id} and qlhd.IDHD=gh.MAGH and gh.MASP=sp.MASP`;
+	return db.load(sql);
+}
+
 exports.updateaccount = account => {
 	var sql = `UPDATE khachhang SET TEN='${account.TEN}',DTHOAI='${account.DTHOAI}',EMAIL='${account.EMAIL}',CMND='${account.CMND}',GIOITINH='${account.GIOITINH}',
 								NGAYSINH='${account.NGAYSINH}',DCHI='${account.DCHI}' where MAKH=${account.MAKH}`;

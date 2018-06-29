@@ -13,6 +13,11 @@
 {{#section 'js'}}
     <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
     <script type="text/javascript " src="/assets/thong-tin-chi-tiet-hoa-don-hang.js "></script>
+    <script type="text/javascript">
+                  $("#btnSearch").on('click',function(){
+        $("#search-pro").submit();
+        });
+    </script>
 {{/section}}
 
         <div class="link">
@@ -43,7 +48,7 @@
             <div id="rightBox" >
 
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        
                         <h4 class="modal-title">Thông số kỹ thuật chi tiết</h4>
                     </div>
 
@@ -246,7 +251,7 @@
                         </legend>
                         <legend class="padht1">
                             <div class="row">
-                                <div class="col-xs-6 col-md-4">Chât liệu :<u></u> :</div>
+                                <div class="col-xs-6 col-md-4">Chất liệu :<u></u> </div>
                                 <input type="text" class="col-xs-12 col-md-8" name="CHATLIEU" placeholder="Input field" value="{{CHATLIEU}}">
                             </div>
                         </legend>
@@ -265,7 +270,7 @@
                         </legend>
                         <legend class="padht1">
                             <div class="row">
-                                <div class="col-xs-6 col-md-4">GIAMUA :</div>
+                                <div class="col-xs-6 col-md-4">Giá mua :</div>
                                 <input type="number" class="col-xs-12 col-md-8" name="GIAMUA" placeholder="Input field" value="{{GIAMUA}}">
                             </div>
                         </legend>

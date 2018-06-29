@@ -18,7 +18,9 @@
         format: 'dd-mm-yyyy',
         autoclose: true
         });
-
+            $("#btnSearch").on('click',function(){
+                $("#search-pro").submit();
+                });
         $(document).on('ready', function() {
             $("#input-24").fileinput({
                 initialPreviewAsData: true,
@@ -31,14 +33,11 @@
                 maxFileSize: 100,
                 initialCaption: "The Moon and the Earth"
             });
-          $("#btnSearch").on('click',function(){
-        $("#search-pro").submit();
-        });
+              
         });
 
     </script>
 {{/section}}
-        
         <div class="link">
             <a href="/dash-board"> <span>  DashBoard</span></a> Quản lí sản phẩm
         </div>
@@ -63,14 +62,14 @@
             <form action="" method="POST" role="form">
             <div id="rightBox" >
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        
                         <h4 class="modal-title">Thông số kỹ thuật chi tiết</h4>
                     </div>
 
                     <div class="modal-body">
                         <legend>
                             <div class="file-loading">
-                                <input id="input-24" name="input24[]" type="file" multiple>
+                                <input id="input-24" name="input24[]" type="file" multiple="">
                             </div>
                         </legend>
                         <legend class="maudo padht1"><b>Thông Tin</b></legend>

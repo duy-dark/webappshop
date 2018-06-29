@@ -2,14 +2,17 @@
         <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
     <style type="text/css">
+    .stt{
+        width: 10% !important;
+    }
     .ten{
-        width: 35%;
+        width: 35% !important;
     }
     .slt{
-        width: 33%;
+        width: 26% !important;
     }
     .sldb{
-        width: 30%;
+        width: 26% !important;
         border-right: 0px !important;
     }
     </style>
@@ -17,6 +20,16 @@
 
 {{#section 'js'}}
     <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+    <script type="text/javascript">
+    $("#content-ChiTietHoaDon .ten").each(function(){
+        $(this).click(function(){
+             var html=$(this).find('p').html();
+            $('#fs input[name="search"]').val(html);
+            $('#fs').submit();
+        });
+    });
+
+    </script>
 {{/section}}
 
         <div class="link">  
@@ -25,33 +38,38 @@
         </div>
         <div class="body2">
             <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
-                <div class="title">Tìm kiếm nhà sản xuất theo &nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="title" id="btnSearch">Tìm kiếm nhà sản xuất theo &nbsp;&nbsp;&nbsp;&nbsp;
                     <img  src="/assets/image/kinhlup.png">
                 </div>
                 <div class="inBox">
                     <div class="inBox">
-                        <form id="search-order" method="post" action="/dash-board/quan-li-hoa-don-hang/search">
+                        <form id="search-order" method="post" action="/dash-board/quanLiNSX/search">
 
                             <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
                         </form>
                     </div>
+                  <a href="/dash-board/quanLiNSX" style="color: black;clear: both;"> 
+                 <div class="title"  id="btnAll">Tất cả</div>
+             </a>
                 </div>
             </div>
-            
+            <form id="fs" method="post" action="/dash-board/quan-li-hang-hoa/search">
+                <input type="hidden" name="search" >
+            </form>
             <div id="rightBox">
-                 
+                   <div class="title ">Danh sách nhà sản xuất phù hợp kết quả tìm kiếm</div> 
                     <ul id="listName">
+                        <li class="stt">STT</li>
                         <li class="ten" title="Tên NSX"><p>Tên nhà sản xuất</p></li>
                         <li class="slt" title="Số lượng sản phẩm tồn"><p>Số lượng SP tồn</p></li>
                         <li class="sldb" title="Số lượng sản phẩm đã bán "><p>Số lượng SP đã bán</p></li>
                     </ul>
                     {{#each dt}}
                     <ul id="content-ChiTietHoaDon">
-                        <a href="/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang?id={{IDHD}}">
-                            <li class="ten" ><a><p>{{nsx}}</p></a></li>
+                         <li class="stt">{{inc @index}}</li>
+                            <li class="ten" ><a ><p>{{nsx}}</p></a></li>
                             <li class="slt"><p>{{slt}}</p></li>
                             <li class="sldb" ><p>{{sldb}}</p></li>
-                        </a>
                     </ul>
                     {{/each}}
             </div>

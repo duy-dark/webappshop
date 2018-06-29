@@ -57,6 +57,7 @@
             </div>
         </div>
         <div id="Items" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            {{#if noProducts}}
             <div id="Items-Content">
                 {{#each products}}
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -89,5 +90,9 @@
                     </ul>
                 </div>
             </div>
-           
+            {{else}}
+            <div  class="nen">
+                <h3 class="txtretroshadow">Không có sản phẩm phù hợp</h3>
+            </div>
+           {{/if}}
         </div>
