@@ -6,7 +6,10 @@ exports.loadAllPro = () => {
 	var sql =`select * from sanpham`;
 	return db.load(sql);
 }
-
+exports.loadAlllienhe = () => {
+	var sql =`select * from lienhe limit 10 offset 0`;
+	return db.load(sql);
+}
 exports.loadidpro = id => {
 	var sql = `select * from sanpham where MASP = ${id} `;
 	return db.load(sql);
@@ -77,7 +80,10 @@ exports.loadaccorder = id => {
 	var sql = `select * from quanlyhoadon WHERE IDKH = ${id}`;
 	return db.load(sql);
 }
-
+exports.searchlienhe = (thongtin) => {
+	var sql = `SELECT * FROM lienhe WHERE MANG LIKE '${thongtin}' OR TEN LIKE '${thongtin}' OR DTHOAI LIKE '${thongtin}' OR DCHI LIKE '${thongtin}' OR EMAIL LIKE '${thongtin}'`;
+	return db.load(sql);
+}
 // quan li don hang
 
 exports.loadAllOrder = () => {

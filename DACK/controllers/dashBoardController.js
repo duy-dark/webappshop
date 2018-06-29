@@ -133,7 +133,14 @@ router.get('/quan-li-khach-hang', (req, res) => {
 		res.render('quanLiKhachHang/quan-li-khach-hang',vm);
 	});
 });
-
+router.get('/quan-li-phan-hoi', (req, res) => {
+	dashBoard.loadAlllienhe().then(rows => {
+		var vm = {
+        	lienhe: rows
+        }
+		res.render('quanLiKhachHang/quan-li-phan-hoi',vm);
+	});
+});
 router.get('/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan', (req, res) => {
 	dashBoard.loadidacc(+req.query.id).then(rows =>{
 		var vm = rows[0]
@@ -161,7 +168,14 @@ router.post('/quan-li-khach-hang/search', (req, res) => {
         res.render('quanLiKhachHang/quan-li-khach-hang',vm);
 	});
 });
-
+router.post('/quan-li-phan-hoi/search', (req, res) => {
+	dashBoard.searchlienhe(req.body.search).then(rows => {
+		var vm={
+			lienhe: rows
+		}
+        res.render('quanLiKhachHang/quan-li-phan-hoi',vm);
+	});
+});
 //QUAN LY THONG TIN SHOP
 
 router.get('/quan-li-thong-tin-shop', (req, res) => {

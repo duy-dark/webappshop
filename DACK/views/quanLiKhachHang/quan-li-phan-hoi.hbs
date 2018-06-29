@@ -1,0 +1,49 @@
+
+
+{{#section 'css'}}
+        <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+    
+{{/section}}
+
+<div class="link">  
+        <a href="/dash-board"> <span>  DashBoard</span></a>            
+        Quản lí phản hồi
+        </div>
+        <div class="body2">
+            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+                <div class="title"  id="btnSearch">Tìm kiếm  &nbsp;&nbsp;&nbsp;&nbsp; <img src="/assets/image/kinhLup.png"></div>
+                <div class="inBox">
+                    <div class="inBox">
+                        <form id="search-order" method="post" action="/dash-board/quan-li-phan-hoi/search">
+                            <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
+                        </form>
+                    </div>
+                </div>
+                <a href="/dash-board/quan-li-phan-hoi" style="color: black;clear: both;">  <div class="title"  id="btnAll">Tất cả</div></a>
+            </div>
+            
+            <div id="rightBox">
+                  <div class="title ">Danh sách hóa đơn phù hợp kết quả tìm kiếm</div> 
+                    <ul id="listName">
+                        <li class="mhd" title="Mã nười gửi"><p>Mã</p></li>
+                        <li class="tkkh" title="Tên người gửi"><p>Tên</p></li>
+                        <li class="tkh" title="Email"><p>Email</p></li>
+                        <li class="tt" title="Tin nhắn"><p>Tin nhắn</p></li>
+                    </ul>
+                    {{#each lienhe}}
+                    <ul id="content-ChiTietHoaDon">
+                         <li class="mhd" title="Mã người gửi"><p>{{MANG}}</p></li>
+                        <li class="tkkh" title="Tên người gửi"><p>{{TEN}}</p></li>
+                        <li class="tkh" title="Email"><p>{{EMAIL}}</p></li>
+                        <li class="tt" title="Tin nhắn"><p>{{TINNHAN}}</p></li>
+                    </ul>
+                    {{/each}}
+
+            </div>
+            
+        </div>
