@@ -41,8 +41,8 @@ router.post('/quan-li-hang-hoa/thong-tin-chi-tiet-hang-hoa', (req, res) => {
 });
 
 router.post('/quan-li-hang-hoa/them-san-pham', (req, res) => {
-    var day = moment(req.body.day,'DD/MM/YYYY').format('YYYY-MM-DD');
-    dashBoard.add(req.body,day).then(value => {
+
+    dashBoard.add(req.body).then(value => {
         res.redirect('/dash-board/quan-li-hang-hoa');
     });
 });
