@@ -33,10 +33,19 @@ router.get('/San-pham-theo-hang/search', (req, res) => {
                 isCurrentPage: i === +page
             });
         }
-
+        var a=null;
+        if(count_rows[0].total>0)
+        {
+            a=true;
+        }
+        else
+        {
+            a=false;
+        }
+        
         var vm = {
             products: rows,
-            noProducts: rows.length === 0,
+            noProducts: a,
             page_numbers: numbers,
             page_last: numbers.length
         };
@@ -66,10 +75,19 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
                 isCurrentPage: i === +page
             });
         }
-
+        var a=null;
+        if(count_rows[0].total>0)
+        {
+            a=true;
+        }
+        else
+        {
+            a=false;
+        }
+      
         var vm = {
             products: rows,
-            noProducts: rows.length === 0,
+            noProducts: a,
             page_numbers: numbers,
             page_last: numbers.length
         };
@@ -99,10 +117,20 @@ router.get('/San-pham-theo-hang/danhsachloai/:id', (req, res) => {
                 isCurrentPage: i === +page
             });
         }
+        var a=null;
 
+        if(count_rows[0].total>0)
+        {
+            a=true;
+        }
+        else
+        {
+            a=false;
+        }
+        
         var vm = {
             products: rows,
-            noProducts: rows.length === 0,
+            noProducts: a,
             page_numbers: numbers,
             page_last: numbers.length
         };
@@ -132,10 +160,20 @@ router.get('/San-pham-theo-hang/danhsachhang/:id', (req, res) => {
                 isCurrentPage: i === +page
             });
         }
+        var a=null;
 
+        if(count_rows[0].total>0)
+        {
+            a=true;
+        }
+        else
+        {
+            a=false;
+        }
+        
         var vm = {
             products: rows,
-            noProducts: rows.length === 0,
+            noProducts: a,
             page_numbers: numbers,
             page_last: numbers.length
         };
@@ -165,10 +203,20 @@ router.get('/San-pham-theo-hang/:id', (req, res) => {
                 isCurrentPage: i === +page
             });
         }
+        var a=null;
 
+        if(count_rows[0].total>0)
+        {
+            a=true;
+        }
+        else
+        {
+            a=false;
+        }
+       
         var vm = {
             products: rows,
-            noProducts: rows.length === 0,
+            noProducts: a,
             page_numbers: numbers,
             page_last: numbers.length
         };

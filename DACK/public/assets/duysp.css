@@ -16,6 +16,19 @@ body {
   .affix + .container-fluid {
       padding-top: 70px;
   }
+  
+  
+  .txtretroshadow {
+  text-align: center;
+  font-size: 50px;
+  color: #2c2c2c;
+ 
+  letter-spacing: .05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  padding-top: 40px;
+
+}
 .main-wrapper {
     max-width: 1280px;
 	  margin: 0 auto;
