@@ -3,7 +3,7 @@ var dashBoard = require('../repos/dashBoardRepo');
 var moment = require('moment'),
 	sha256 = require('crypto-js/sha256');
 var router = express.Router();
-
+var db = require('../fn/db');
 
 router.get('/', (req, res) => {
     res.render('dashBoard/dash-board');
@@ -90,9 +90,12 @@ router.get('/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang', (req, res) =
 });
 
 router.post('/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang', (req, res) => {
-    dashBoard.updateOrder(req.body.tinhtrang,+req.query.id).then(value => {
-        res.redirect('/dash-board/quan-li-hoa-don-hang');
-    });
+	var sql4 =  `update quanlyhoadon set TINHTRANG = '${req.body.tinhtrang}' where IDHD = '${+req.query.id}'`;
+	db.load(sql4).then(roww=>{
+    dashBoard.updateOrder(req.body.tinhtrang,+req.query.id);
+	res.redirect('/dash-board/quan-li-hoa-don-hang/thong-tin-chi-tiet-hoa-don-hang?id='+req.query.id);
+	});
+    
 });
 
 router.post('/quan-li-hoa-don-hang/search', (req, res) => {
@@ -156,7 +159,11 @@ router.get('/quan-li-thong-tin-shop', (req, res) => {
 });
 router.post('/quan-li-thong-tin-shop/update', (req, res) => {
    	dashBoard.updateadmin(req.body).then(rows=>{
+   		dashBoard.loadadmin().then(row2=>{
+   		            req.session.curUser = row2[0];   
    		res.redirect('/dash-board/quan-li-thong-tin-shop');
+   		});
+
    	});
 });
 router.post('/quan-li-thong-tin-shop/updatematkhau', (req, res) => {
@@ -203,6 +210,29 @@ router.get('/quanLiNSX', (req, res) => {
 			dt:data
 			}
 		res.render('quanLiNSX/quanLiNSX',vm);
+	});
+
+	});
+});
+
+router.get('/quanLiLSP', (req, res) => {
+	dashBoard.loadAllLsp().then(rows => {
+		var p1=dashBoard.loadSltLsp(rows);
+		var p2=dashBoard.loadSldbLsp(rows);
+		Promise.all([p1, p2]).then(([n,m]) =>{
+			var data=[];
+			for(var i=0;i<rows.length;i++){
+				var o={
+					lsp:rows[i].LOAI,
+					slt:n[i],
+					sldb:m[i]
+				}
+				data.push(o);
+			}
+			var vm = {
+			dt:data
+			}
+		res.render('quanLiLSP/quanLiLSP',vm);
 	});
 
 	});

@@ -32,9 +32,9 @@
           <div class="  col-md-8">
             <div id="User-Infor">
                     <div id="Infor-Content">
-                        <form action="/taiKhoan/profile/update" method="POST" role="form" id="fUser">
+                        <form action="/dash-board/quan-li-thong-tin-shop/update" method="POST" role="form" id="fUser">
                             <div id="Account-Infor" class="form-group">
-                               <div class=" col-md-12" style="  font-family: 'Droid serif', serif;font-size:27px;font-weight: bold;padding-top:10px;border-bottom: 2px solid grey;margin-bottom:20px;background-color: #4CA3BF;"> <b >THÔNG TIN TÀI KHOẢN </b>
+                               <div class=" col-md-12" style="  font-family: 'Droid serif', serif;font-size:27px;font-weight: bold;padding-top:10px;border-bottom: 2px solid grey;margin-bottom:20px;background-color: #4CA3BF;"> <b >THÔNG TIN SHOP </b>
                                </div>
                                     <div class=" col-md-3"><label>Tên Admin:</label></div>
                                       <div class=" col-md-9">
@@ -90,30 +90,4 @@
              </div>
           </div>
         </div>
-    </div>
-    <div><b>Lịch sử mua hàng</b></div>
-    <div class="top1">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <td class="image">Hình ảnh</td>
-                    <td class="name">Tên sản phẩm</td>
-                    <td class="price">Số lượng</td>
-                    <td class="quantity">Thành tiền</td>
-                    <td>Ngày mua</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each TT}}
-                    <tr>
-                        <td><img src="/assets/image/sanpham/{{MASP}}/1.jpg" alt="" style="width:50px"></td>
-                        <td>{{sp.TENSP}}</td>
-                        <td>{{SOLUONG}}</td>
-                        <td>{{THANHTIEN}}</td>
-                        <td>{{NGAYDATHANG}}</td>
-                    </tr>
-                {{/each}}
-            </tbody>
-        </table>
     </div>

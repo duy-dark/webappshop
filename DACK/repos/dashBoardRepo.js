@@ -50,7 +50,7 @@ exports.loadadmin = () => {
 	return db.load(sql);
 }
 exports.updateadmin = admin => {
-	var sql = `UPDATE admin SET USERNAME='${admin.USERNAME}',DTHOAI='${admin.DTHOAI}',EMAIL='${admin.EMAIL}',FACEBOOK='${admin.FACEBOOK}' WHERE IDADM=1  `;
+	var sql = `UPDATE admin SET TEN='${admin.TEN}',DCHI='${admin.DCHI}',DTHOAI='${admin.DTHOAI}',EMAIL='${admin.EMAIL}',FACEBOOK='${admin.FACEBOOK}' WHERE IDADM=1  `;
 	return db.load(sql);
 }
 exports.updatematkhau = PASSNEW => {
@@ -71,12 +71,12 @@ exports.loadaccorder = id => {
 // quan li don hang
 
 exports.loadAllOrder = () => {
-	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG , DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang, quanlyhoadon WHERE khachhang.MAKH=quanlyhoadon.IDKH order by moinhat ASC`;
+	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG ,TONGTIEN,NGUOINHAN,SDT,DIACHI, DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang, quanlyhoadon WHERE khachhang.MAKH=quanlyhoadon.IDKH order by moinhat ASC`;
 	return db.load(sql);
 }
 
 exports.searchOrder = (thongtin) => {
-	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG, DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang INNER JOIN quanlyhoadon on quanlyhoadon.IDKH = khachhang.MAKH WHERE IDHD LIKE '${thongtin}' OR USERNAME LIKE '${thongtin}' OR IDKH LIKE '${thongtin}' OR TEN LIKE '${thongtin}' OR TINHTRANG LIKE '${thongtin}' order by moinhat ASC`;
+	var sql = `SELECT IDHD, USERNAME, TEN, NGAYDATHANG, TINHTRANG,TONGTIEN,NGUOINHAN,SDT,DIACHI, DATEDIFF(NOW(),NGAYDATHANG ) as moinhat FROM khachhang INNER JOIN quanlyhoadon on quanlyhoadon.IDKH = khachhang.MAKH WHERE IDHD LIKE '${thongtin}' OR USERNAME LIKE '${thongtin}' OR IDKH LIKE '${thongtin}' OR TEN LIKE '${thongtin}' OR TINHTRANG LIKE '${thongtin}' order by moinhat ASC`;
 	return db.load(sql);
 }
 
@@ -91,9 +91,42 @@ exports.loadOrderPro = (id) => {
 }
 
 exports.updateOrder = (order, id) => {
-	var sql =  `update quanlyhoadon set TINHTRANG = '${order}' where IDHD = '${id}'`;
-	return db.save(sql);
+
+			
+		
+	var sql=`select * from quanlyhoadon where IDHD='${id}'`;
+	db.load(sql).then(row=>{
+		if(row[0].TINHTRANG==='Đã hủy' && order==='Đã hủy'){
+			return;
+		}
+		if( order==='Đã hủy'){
+			var sql2=`select * from giohang where MAGH='${id}'`;
+			db.load(sql2).then(rows=>{
+				for(var i=0;i<rows.length;i++){
+					var temp=rows[i].SOLUONG;
+					var sql3=`update sanpham set SOLUONGSPCON=(SOLUONGSPCON+${temp}),SOLUONGSPDABAN=(SOLUONGSPDABAN-${temp})
+								where MASP='${rows[i].MASP}'`;
+					db.save(sql3);
+				}
+			});
+		}
+		if(row[0].TINHTRANG==='Đã hủy'){
+			var sql2=`select * from giohang where MAGH='${id}'`;
+			db.load(sql2).then(rows2=>{
+				for(var i=0;i<rows2.length;i++){
+					var temp=rows2[i].SOLUONG;
+					var sql3=`update sanpham set SOLUONGSPCON=(SOLUONGSPCON-${temp}),SOLUONGSPDABAN=(SOLUONGSPDABAN+${temp})
+								where MASP='${rows2[i].MASP}'`;
+					db.save(sql3);
+				}
+			});
+		}
+			
+		});
+	
+
 }
+
 
 //quan li nsx
 exports.loadAllNsx = () => {
@@ -144,6 +177,69 @@ exports.loadSldb = (nsx) => {
 			var kq=[];
 			Promise.all(p).then(kq=>{
 				for(var t=0;t<nsx.length;t++){
+					var s=0;
+					for(var t2=0;t2<kq[t].length;t2++){
+						s+=kq[t][t2].SOLUONGSPDABAN;
+					}
+					
+					m[t]=s;
+
+				}
+				resolve(m);
+
+			});
+	});
+	
+}
+//quan li loai sp
+exports.loadAllLsp = () => {
+	var sql = 'SELECT * FROM sanpham GROUP BY LOAI'
+	return db.load(sql);
+}
+exports.loadSltLsp = (lsp) => {
+	return new Promise((resolve, reject) => {
+			var n=[];
+			for(var temp=0;temp<lsp.length;temp++){
+				n.push(0);
+			}
+
+			var p=[];
+			for(var i=0;i<lsp.length;i++){
+				var sql = `SELECT SOLUONGSPCON FROM sanpham WHERE LOAI LIKE'${lsp[i].LOAI}'`;
+				p.push(db.load(sql));
+			}
+			var kq=[];
+			Promise.all(p).then(kq=>{
+				for(var t=0;t<lsp.length;t++){
+					var s=0;
+					for(var t2=0;t2<kq[t].length;t2++){
+						s+=kq[t][t2].SOLUONGSPCON;
+					}
+					
+					n[t]=s;
+
+				}
+				resolve(n);
+
+			});
+	});
+	
+}
+exports.loadSldbLsp = (lsp) => {
+	return new Promise((resolve, reject) => {
+			var m=[];
+			for(var temp=0;temp<lsp.length;temp++){
+				m.push(0);
+			}
+
+			var p=[];
+			for(var i=0;i<lsp.length;i++){
+				var sql = `SELECT SOLUONGSPDABAN FROM sanpham WHERE LOAI LIKE'${lsp[i].LOAI}'`;
+				p.push(db.load(sql));
+			}
+			var kq=[];
+			Promise.all(p).then(kq=>{
+				for(var t=0;t<lsp.length;t++){
 					var s=0;
 					for(var t2=0;t2<kq[t].length;t2++){
 						s+=kq[t][t2].SOLUONGSPDABAN;

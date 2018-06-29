@@ -75,6 +75,7 @@ router.post('/dangNhap', (req, res) => {
                     req.session.isLogged = true;
                     req.session.isAdmin=true;
                      req.session.curUser = rows2[0];
+                      req.session.cart = [];
                     if (req.query.retUrl) {
                         url = req.query.retUrl;
                     }

@@ -8,7 +8,9 @@
 if($('.c_sl').length===0){
     $('#btnHt').attr('disabled',true);
 }
-
+if($('#isAdmin').length!==0){
+    $('#btnHt').attr('disabled',true);
+}
    var slArr=[];
    for(i=0;i<$('.c_btnSl').length;i++){
     slArr.push( $('[id^="'+'sl'+(i+1)+'"]').val());
@@ -61,6 +63,10 @@ if($('.c_sl').length===0){
     });
 </script>
 {{/section}}
+{{#if layoutVM.isAdmin}}
+<div id="isAdmin" style="display:none">
+</div>
+{{/if}}
 <form id="frmRemoveItem" method="post" action="/gio-hang/remove">
     <input type="hidden" name="proId" id="txtP">
 </form>

@@ -39,3 +39,6 @@ $("#leftBox .inBox>div").hover(function(){
 	$(this).css('background-color',' white');}
 
 });
+$("#btnSearch").on('click',function(){
+$("#search-order").submit();
+});

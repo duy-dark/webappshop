@@ -4,12 +4,36 @@
     <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
     <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
     <link rel="stylesheet" type="text/css" href="/assets/thong-tin-chi-tiet-hoa-don-hang.css">
+<style type="text/css">
+    #tdtt{
+            font-family: 'Droid serif', serif;
+     font-size: 20px; 
+     font-weight: 400;
+    }
+</style>
 
 {{/section}}
 
 {{#section 'js'}}
     <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
     <script type="text/javascript " src="/assets/thong-tin-chi-tiet-hoa-don-hang.js "></script>
+    <script type="text/javascript">
+    $('.tt1').each(function(){
+        if($(this).html()==='Đang giao hàng'){
+           $(this).addClass('dangGiaoHang');
+
+        }
+        if($(this).html()==='Đã giao hàng'){
+            $(this).addClass(' daGiaoHang');
+        }
+        if($(this).html()==='Chưa giao hàng'){
+            $(this).addClass(' chuaGiaoHang');
+        }
+         if($(this).html()==='Đã hủy'){
+            $(this).addClass(' daHuy');
+        }
+        });
+    </script>
 {{/section}}
 
         <div class="link">
@@ -19,11 +43,13 @@
         </div>
         <div class="body2">
             <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
-                <div class="title">Tìm kiếm hóa đơn theo &nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="title" id="btnSearch" >Tìm kiếm hóa đơn theo &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="/assets/image/kinhLup.png">
+                </div>
                 <div class="inBox">
                     <div class="inBox">
                         <form id="search-order" method="post" action="/dash-board/quan-li-hoa-don-hang/search">
-                            <input type="text" name="search" placeholder="nhập thông tin tiềm kiếm">
+                            <input type="text" name="search" placeholder="nhập thông tin tìm kiếm">
                         </form>
                     </div>
                 </div>
@@ -35,27 +61,38 @@
                 </div> 
                 <div id="top-ChiTietHoaDon">
                     <div id="tkkh">
-                        TK khách hàng:
-                        <a href="/dash-board/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan-chu-shop-xem?id={{MAKH}}">
+                       Tài khoản KH:
+                        <a href="/dash-board/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan-chu-shop-xem?id={{MAKH}}"> 
                             {{USERNAME}}
                         </a>
                     </div>
                     <div id="kh">
                         Khách hàng:
-                       <span>{{TEN}}</span>
+                        <a href="/dash-board/quan-li-khach-hang/thong-tin-chi-tiet-tai-khoan-chu-shop-xem?id={{MAKH}}">
+                            <span>{{TEN}}</span>
+                        </a>
+                    </div>
+                    <div id="nn">
+                        <span>Người nhận: {{NGUOINHAN}}</span>
+                    </div>
+                     <div id="sdt">
+                        <span>SĐT người nhận: {{SDT}}</span>
+                    </div>
+                     <div id="dc">
+                        <span>Địa chỉ giao hàng: {{DIACHI}}</span>
                     </div>
                     <div id="ndh">
                         Ngày đặt hàng: <span style="color: black;">{{time_format NGAYDATHANG}}</span>
                     </div>
                     <form action="" method="POST" role="form">
                     <div id="ttdh">
-                    Tình trạng đơn hàng: <span class="chuaGiaoHang" >{{TINHTRANG}}</span>
-                    &nbsp;<button type="submit" class="btn-danger">Thay đổi</button>
+                    Tình trạng đơn hàng: <span class="tt1" >{{TINHTRANG}}</span>
+                    &nbsp;<button type="submit" id="tdtt" class="btn-danger">Thay đổi</button>
                     <select name="tinhtrang" >
-                        <option value="chưa giao hang"  class="chuaGiaoHang">Chưa giao hàng</option>
-                        <option value="đang giao hang"  class="dangGiaoHang">Đang giao hàng</option>
-                        <option value="đã giao hang"  class="daGiaoHang">Đã giao hàng</option>
-                        <option value="đã hủy"  class="daHuy">Đã hủy</option>
+                        <option value="Chưa giao hàng"  class="chuaGiaoHang">Chưa giao hàng</option>
+                        <option value="Đang giao hàng"  class="dangGiaoHang">Đang giao hàng</option>
+                        <option value="Đã giao hàng"  class="daGiaoHang">Đã giao hàng</option>
+                        <option value="Đã hủy"  class="daHuy">Đã hủy</option>
                     </select>
                     </div>
                     </form>
@@ -75,7 +112,7 @@
                                 <li class="msp" title="Mã SP">{{MASP}}</li>
                                 <li class="tsp"><p title="Laptop Dell Latitude E6540 Core i5 15.6 inch">{{TENSP}}</p> </li>
                                 <li  class="sl"><p>{{SOLUONG}}</p></li>
-                                <li  class="thanhTien"><p>{{GIABAN}}</p></li>
+                                <li  class="thanhTien"><p>{{number_format GIABAN}}</p></li>
                             </a>
                         </ul>
                         {{/each}}
@@ -83,7 +120,7 @@
                     <br>
                     {{#with orders}}
                     <div>Tổng tiền: 
-                        <span id="tongTien" style="color:#337AB7;">{{TONGTIEN}}</span>
+                        <span id="tongTien" style="color:#337AB7;">{{number_format TONGTIEN}}</span>
                     </div>
                     {{/with}}
                     <br>

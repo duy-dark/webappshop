@@ -61,11 +61,21 @@ exports.cartSum = cart => {
     return sum;
 }
 exports.saveCart=(cart,user,tttt)=>{
-    config.MAGH_LAST+=1;
+    var sql3=`SELECT * FROM quanlyhoadon q where q.IDHD>=ALL(SELECT q2.IDHD FROM quanlyhoadon q2  )`;
+     db.load(sql3).then(row=>{
+        var IDHD=-1;
+        if(row.length===0){
+            IDHD=1;
+        }
+        else{
+            IDHD=row[0].IDHD+1;
+        }
     for(i=0;i<cart.length;i++){
-    var sql = `insert into giohang(MAGH, MASP, SOLUONG, THANHTIEN) values(${config.MAGH_LAST}, ${cart[i].product.MASP},${cart[i].quantity},'${cart[i].amount}') `;
+    var sql = `insert into giohang(MAGH, MASP, SOLUONG, THANHTIEN) values(${IDHD}, ${cart[i].product.MASP},${cart[i].quantity},'${cart[i].amount}') `;
     db.save(sql);
     }
+
+
     for(i=0;i<cart.length;i++){
     var n_slc=cart[i].product.SOLUONGSPCON-cart[i].quantity,
         n_sldb=cart[i].product.SOLUONGSPDABAN+cart[i].quantity;
@@ -73,6 +83,7 @@ exports.saveCart=(cart,user,tttt)=>{
                 where MASP= ${cart[i].product.MASP}`;
     db.save(sql);
     }
+
     var d= new Date();
     var strDate = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
     var tt='Chưa giao hàng';
@@ -81,6 +92,8 @@ exports.saveCart=(cart,user,tttt)=>{
         sum+=cart[i].amount;
     }
     var sql = `insert into quanlyhoadon(IDHD, IDKH, NGAYDATHANG, TINHTRANG,TONGTIEN,NGUOINHAN,SDT,DIACHI) 
-        values(${config.MAGH_LAST}, ${user.MAKH},'${strDate}','${tt}', ${sum},'${tttt.NGUOINHAN}','${tttt.SDT}','${tttt.DIACHI}')`;
+        values(${IDHD}, ${user.MAKH},'${strDate}','${tt}', ${sum},'${tttt.NGUOINHAN}','${tttt.SDT}','${tttt.DIACHI}')`;
     db.save(sql);
+
+     });
 }
