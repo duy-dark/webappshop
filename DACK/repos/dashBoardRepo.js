@@ -3,7 +3,7 @@ var config = require('../config/config');
 
 //quan li hang hoa
 exports.loadAllPro = () => {
-	var sql ='select *, from sanpham'
+	var sql =`select * from sanpham`;
 	return db.load(sql);
 }
 
@@ -36,7 +36,7 @@ exports.searchPro = (thongtin) => {
 // quan li tai khoan
 
 exports.loadAllAcc = () => {
-	var sql = `select * from khachhang`
+	var sql = `select * from khachhang`;
 	return db.load(sql);
 }
 
@@ -130,7 +130,7 @@ exports.updateOrder = (order, id) => {
 
 //quan li nsx
 exports.loadAllNsx = () => {
-	var sql = 'SELECT * FROM sanpham GROUP BY NSX'
+	var sql = `SELECT * FROM sanpham GROUP BY NSX`;
 	return db.load(sql);
 }
 exports.loadSlt = (nsx) => {
