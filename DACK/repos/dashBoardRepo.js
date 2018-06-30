@@ -5,8 +5,14 @@ exports.loadAllPro = () => {
 	var sql ='select * from sanpham'
 	return db.load(sql);
 }
-exports.loadid = id => {
+
+exports.loadidpro = id => {
 	var sql = `select * from sanpham where MASP = ${id} `;
+	return db.load(sql);
+}
+
+exports.del = id => {
+	var sql = `delete from sanpham where MASP = ${id} `;
 	return db.load(sql);
 }
 
@@ -17,6 +23,17 @@ exports.updateSP = (sanpham, id) => {
 
 exports.loadAllAcc = () => {
 	var sql = `select * from khachhang`
+	return db.load(sql);
+}
+
+exports.loadidacc = id => {
+	var sql = `select * from khachhang where MAKH = ${id}`;
+	return db.load(sql);
+}
+
+exports.add = (sanpham,day) => {
+	var sql = `insert into sanpham(TENSP,NSX,LOAI,DL_RAM,L_RAM,TD_RAM,SL_RAM,LD_DIACUNG,DL_DIACUNG,DOHOA,KT_MANHINH,DP_GMANHINH,CN_MANHINH,CU_MANHINH,AMTHANH,DIAQUANG,GIAOTIEP,WIFI_MANG,KNKD_MANG,CARDREADER,WEBCAM,HDH,PIN,THONGTINKHAC_CBVT,THONGTINKHAC_DBP,THONGTINKHAC_PKKT,KICHTHUOC,TRONGLUONG,CHATLIEU,BAOHANH,LUOTXEM,LUOTTHICH,GIABAN,CPU,SOLUONGSPCON,GIAMUA,NGAYNHAP) 
+				values('${sanpham.TENSP}','${sanpham.NSX}','${sanpham.LOAI}','${sanpham.DLRAM}','${sanpham.L_RAM}','${sanpham.TD_RAM}','${sanpham.SL_RAM}','${sanpham.LD_DIACUNG}','${sanpham.DL_DIACUNG}','${sanpham.DOHOA}','${sanpham.KT_MANHINH}','${sanpham.DP_MANHINH}','${sanpham.CN_MANHINH}','${sanpham.CU_MANHINH}','${sanpham.AMTHANH}','${sanpham.DIAQUANG}','${sanpham.GIAOTIEP}','${sanpham.WIFI_MANG}','${sanpham.KNKD_MANG}','${sanpham.CARDREADER}','${sanpham.WEBCAM}','${sanpham.HDH}','${sanpham.PIN}','${sanpham.THONGTINKHAC_CBVT}','${sanpham.THONGTINKHAC_DBP}','${sanpham.THONGTINKHAC_PKKT}','${sanpham.KICHTHUOC}','${sanpham.TRONGLUONG}','${sanpham.CHATLIEU}','${sanpham.BAOHANH}',0,0,'${sanpham.GIABAN}','${sanpham.CPU}','${sanpham.SOLUONGSPCON}','${sanpham.GIAMUA}','${day}')`;
 	return db.save(sql);
 }
 

@@ -8,8 +8,17 @@
 
 {{#section 'js'}}
       <script type="text/javascript" src="/assets/quan-li-hoa-don-hang.js"></script>
+      <script type="text/javascript">
+            $('.addItem').on('click', function() {
+            var id = $(this).data('proid');
+            $('#txtP').val(id);
+            $('#frmAddItem').submit();
+    });
+      </script>
 {{/section}}
-
+        <form id="frmAddItem" method="post" action="/dash-board/quan-li-hang-hoa/del">
+        <input type="hidden" name="proId" id="txtP">
+        </form>
        <div class="link">
             <a href="/dash-board"> <span>  DashBoard</span></a> Quản lí sản phẩm
         </div>
@@ -58,7 +67,9 @@
                         </label>
                     </div>
                 </div>
-                 <div class="title">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></div>
+                 <div class="title">
+                    <a href="/dash-board/quan-li-hang-hoa/them-san-pham" style="text-decoration: none; display: inline-block;">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></a>
+                 </div>
             </div>
             
             <div id="rightBox" >
@@ -82,9 +93,10 @@
                             <li class="sltk"><p>{{SOLUONGSPCON}}</p></li>
                             <li class="sldb"><p>{{SOLUONGSPDABAN}}</p></li>
                             <li class="tln" style="text-align: center;">
-                                <p>
-                                    <button class="button">DEL</button>
-                                </p>
+                                <a data-proid="{{MASP}}" href="javascript:;" class="btn btn-default addItem">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    DELETE
+                                </a>
                             </li>
                         </a>
                     </ul>         

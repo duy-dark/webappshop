@@ -1,0 +1,323 @@
+{{#section 'css'}}
+    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hang-hoa.css">
+    <link rel="stylesheet" type="text/css" href="/assets/SanPhamTheoHang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/calendar.css">
+    <link rel="stylesheet" type="text/css" href="/assets/quan-li-hoa-don-hang.css">
+    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/thongTinChiTietSanPham.css">
+
+
+{{/section}}
+
+{{#section 'js'}}
+    <script type="text/javascript " src="/assets/quan-li-hoa-don-hang.js "></script>
+    <script type="text/javascript " src="/assets/thong-tin-chi-tiet-hoa-don-hang.js "></script>
+    <script src="/assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $('#txtDAY').datepicker({
+        format: 'dd-mm-yyyy',
+        autoclose: true
+    });
+    </script>
+{{/section}}
+        
+        <div class="link">
+            <a href="/dash-board"> <span>  DashBoard</span></a> Quản lí sản phẩm
+        </div>
+        <div class="line"></div>
+        <div class="row">
+            <div id="leftBox" class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">
+               
+             
+                <div class="title">Tìm kiếm sản phẩm theo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/kinhLup.png"></div>
+
+                <div class="inBox">
+                    <div>
+                        <label>
+                            <span> Mã sản phẩm</span>
+                            <input type="checkbox" name="maSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="maSanPham-content" placeholder="nhập mã sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Tên sản phẩm</span>
+                            <input type="checkbox" name="tenSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="tenSanPham-content" placeholder="Nhập tên sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Loại sản phẩm</span>
+                            <input type="checkbox" name="loaiSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="loaiSanPham-content" placeholder="Nhập loại sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Xuất xứ sản phẩm</span>
+                            <input type="checkbox" name="xuatXuSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="xuatXuSanPham-content" placeholder="Nhập xuất xứ sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Nhà sản xuất sản phẩm</span>
+                            <input type="checkbox" name="nsxSanPham" class="extraCheck">
+                        </label>
+                        <input type="text" name="nsxSanPham-content" placeholder="Nhập nhà sản xuất sản phẩm">
+                    </div>
+                    <div>
+                        <label> <span>Tất cả</span>
+                            <input type="checkbox" name="tc" class="extraCheck">
+                        </label>
+                    </div>
+                </div>
+
+                 <div class="title">Thêm sản phẩm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/assets/image/add.png"></div>
+            </div>
+            <form action="" method="POST" role="form">
+            <div id="rightBox" >
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Thông số kỹ thuật chi tiết</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <img src="/assets/image/sanpham/{{MASP}}/detail.jpg" style="width:60%;">
+                        <legend class="maudo padht1"><b>Thông Tin</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Mã SP:</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="MASP" readonly placeholder="ma san pham">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Tên Sản Phẩm :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="TENSP" placeholder="ten san pham">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Nhà Sản Xuất :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="NSX" placeholder="nha san xuat">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">loại Sản Phẩm :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="LOAI" placeholder="loai san pham">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Bo mạch</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Dung Lượng RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DL_RAM" placeholder="dung luong ram">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Loại RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="L_RAM" placeholder="loai ram">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Tốc độ RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="TD_RAM" placeholder="toc do ram">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Số Lượng RAM :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="SL_RAM" placeholder="so luong ram">
+                            </div>
+                        </legend> 
+                        <legend class="maudo padht1"><b>Bộ xử lý</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Chipset :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CPU" placeholder="CPU">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Đĩa Cứng</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Loại Đĩa Cứng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="LD_DIACUNG" placeholder="loai dia cung">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Dung Lượng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DL_DIACUNG" placeholder="dung luong dia cung">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Màn Hình</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Kích Thước :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="KT_MANHINH" placeholder="kich thuoc man hinh">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Độ Phân Giải :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DP_MANHINH" placeholder="do phan giai man hinh">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Công nghệ :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CN_MANHINH" placeholder="cong nghe man hinh">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Cảm ứng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CU_MANHINH" placeholder="cam ung man hinh">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Âm Thanh</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thông tin :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="AMTHANH" placeholder="am thanh">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Đĩa Quang</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Có sắn đĩa quang :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="DIAQUANG" placeholder="dia quang">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Tính năng mở rộng &amp; cổng giao tiếp</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Cổng giao tiếp :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="GIAOTIEP" placeholder="cong giao tiep">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Giao Tiếp Mạng</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Lan :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="LAN_MANG" placeholder="mang lan">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Wifi :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="WIFI_MANG" placeholder="card wifi">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Kết nối khác :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="KNKD_MANG" placeholder="KKND mang">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Card Reader</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thẻ nhớ :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CARDREADER" placeholder="card reader">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>WebCam</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thông tin :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="WEBCAM" placeholder="WebCam">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Hệ điều hành</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Hệ điều hành :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="HDH" placeholder="he dieu hanh">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>PIN/Battery</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Pin :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="PIN" placeholder="pin">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Thông tin khác</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Cảm biến vân tay :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="THONGTINKHAC_CBVT" placeholder="cam bien van tay">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Đèn bàn phím :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="THONGTINKHAC_DBP" placeholder="den ban phim">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Phụ kiện kèm theo :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="THONGTINKHAC_PKKT" placeholder="phu kien kem theo">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Kích thước &amp; trọng lượng</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Kich thước :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="KICHTHUOC" placeholder="kich thuoc">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Trọng lượng :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="TRONGLUONG" placeholder="trong luong">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Chât liệu :<u></u> :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="CHATLIEU" placeholder="chat lieu">
+                            </div>
+                        </legend>
+                        <legend class="maudo padht1"><b>Bảo hành</b></legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Thời gian bảo hành :</div>
+                                <input type="text" class="col-xs-12 col-md-8" name="BAOHANH" placeholder="thoi gian bao hanh">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Giá Bán :</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="GIABAN" placeholder="gia ban ra">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">GIAMUA :</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="GIAMUA" placeholder="gia mua vao">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">Số Lượng Còn :</div>
+                                <input type="number" class="col-xs-12 col-md-8" name="SOLUONGSPCON" placeholder="so luong con">
+                            </div>
+                        </legend>
+                        <legend class="padht1">
+                            <div class="row">
+                                <div for="txtDOB" class="col-xs-6 col-md-4">Ngày nhập :</div>
+                                <input type="text" class="col-xs-12 col-md-8" id="txtDAY" placeholder="d/m/yyyy" name="day">
+                            </div>
+                        </legend>
+                    </div>
+                    <div style="text-align: center; padding: 20px; ">
+                        <button type="submit" class="btn btn-success">THEM SP</button>      
+                    </div>
+                </div>
+            </form>
+
+        </div>
